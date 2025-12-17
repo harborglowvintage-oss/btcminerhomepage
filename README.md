@@ -1,0 +1,2 @@
+# btcminerhomepage
+btcminertemplandingpage
