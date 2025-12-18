@@ -35,6 +35,9 @@
       justify-content: center;
       padding: 60px 16px;
       position: relative;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transform: translateZ(0);
     }
 
     /* CRT OVERLAY */
@@ -102,6 +105,26 @@
       }
     }
 
+    /* BOLTS */
+    .bolt {
+      position: fixed;
+      pointer-events: none;
+      z-index: 3;
+      opacity: 0;
+      animation: boltFlash 0.3s ease-in-out;
+      will-change: opacity, transform;
+      contain: layout paint;
+    }
+
+    @keyframes boltFlash {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .bolt svg {
+      filter: drop-shadow(0 0 8px var(--teal)) drop-shadow(0 0 15px var(--cyan));
+    }
+
     /* CONTAINER */
     .container {
       position: relative;
@@ -125,8 +148,8 @@
     }
 
     img.logo {
-      width: 420px;
-      max-width: 90vw;
+      width: 315px;
+      max-width: 70vw;
       height: auto;
       filter: drop-shadow(0 0 32px rgba(0,224,196,.6)) drop-shadow(0 0 55px rgba(57,255,158,.35));
       -webkit-filter: drop-shadow(0 0 32px rgba(0,224,196,.6)) drop-shadow(0 0 55px rgba(57,255,158,.35));
