@@ -41,16 +41,16 @@
       z-index: 0;
       pointer-events: none;
       background-image:
-        repeating-linear-gradient(0deg, rgba(57,255,158,0.14) 0 1px, transparent 1px 20px),
-        repeating-linear-gradient(90deg, rgba(57,255,158,0.14) 0 1px, transparent 1px 20px),
-        repeating-linear-gradient(0deg, rgba(0,224,196,0.08) 0 1px, transparent 1px 40px),
-        repeating-linear-gradient(90deg, rgba(0,224,196,0.08) 0 1px, transparent 1px 40px),
-        radial-gradient(circle at center, rgba(0,224,196,0.12) 0%, transparent 65%);
+        repeating-linear-gradient(0deg, rgba(57,255,158,0.25) 0 1px, transparent 1px 20px),
+        repeating-linear-gradient(90deg, rgba(57,255,158,0.25) 0 1px, transparent 1px 20px),
+        repeating-linear-gradient(0deg, rgba(0,224,196,0.15) 0 1px, transparent 1px 40px),
+        repeating-linear-gradient(90deg, rgba(0,224,196,0.15) 0 1px, transparent 1px 40px),
+        radial-gradient(circle at center, rgba(0,224,196,0.2) 0%, transparent 65%);
       background-blend-mode: screen;
       animation: matrixMirror 60s linear infinite;
       transform: perspective(1200px) rotateX(2deg) rotateY(1deg);
-      filter: drop-shadow(0 0 24px rgba(57,255,158,0.45)) drop-shadow(0 0 12px rgba(0,224,196,0.25));
-      opacity: 0.42;
+      filter: drop-shadow(0 0 32px rgba(57,255,158,0.55)) drop-shadow(0 0 16px rgba(0,224,196,0.3));
+      opacity: 0.55;
     }
 
     @keyframes matrixMirror {
@@ -62,7 +62,6 @@
       }
     }
 
-    /* ===== SCANLINES ===== */
     body::after {
       content: "";
       position: fixed;
@@ -207,7 +206,6 @@
       color: rgba(138,43,226,.4);
     }
 
-    /* ✅ GEMINI WIDGET STYLES */
     .gemini-widget {
       position: fixed;
       bottom: 40px;
@@ -252,7 +250,6 @@
   <div class="fx-sweep"></div>
 
   <div class="container">
-
     <div class="logo-box">
       <img src="logo.png" class="logo" alt="BTCMiner GPT Logo">
     </div>
@@ -277,8 +274,11 @@
     </footer>
   </div>
 
-  <!-- ✅ Gemini Widget Link -->
-  <a href="https://creditcard.exchange.gemini.com/credit-card/apply?referral_code=44qnv2qrx" target="_blank" class="gemini-widget" title="Apply for Gemini Credit Card">
+  <!-- ✅ Gemini Widget -->
+  <a href="https://creditcard.exchange.gemini.com/credit-card/apply?referral_code=44qnv2qrx"
+     target="_blank"
+     class="gemini-widget"
+     title="Apply for Gemini Credit Card">
     <img src="gemini.png" alt="Gemini Credit Card">
   </a>
 
