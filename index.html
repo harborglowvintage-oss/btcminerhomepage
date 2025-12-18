@@ -33,7 +33,7 @@
       position: relative;
     }
 
-    /* MATRIX BACKGROUND (reduced glow by 20%) */
+    /* MATRIX BACKGROUND (with depth effect) */
     body::before {
       content: "";
       position: fixed;
@@ -47,15 +47,20 @@
         repeating-linear-gradient(90deg, rgba(0,224,196,0.12) 0 1px, transparent 1px 40px),
         radial-gradient(circle at center, rgba(0,224,196,0.16) 0%, transparent 65%);
       background-blend-mode: screen;
-      animation: matrixMirror 60s linear infinite;
-      transform: perspective(1200px) rotateX(2deg) rotateY(1deg);
+      animation: matrixDepth 60s linear infinite;
+      transform: perspective(2000px) rotateX(65deg) scale(1.25);
+      transform-origin: center center;
       filter: drop-shadow(0 0 24px rgba(57,255,158,0.4)) drop-shadow(0 0 12px rgba(0,224,196,0.25));
       opacity: 0.45;
     }
 
-    @keyframes matrixMirror {
-      0% { background-position: 0 0, 0 0, 0 0, 0 0, center; }
-      100% { background-position: 0 200px, 200px 0, 0 400px, 400px 0, center; }
+    @keyframes matrixDepth {
+      0% {
+        background-position: 0 0, 0 0, 0 0, 0 0, center;
+      }
+      100% {
+        background-position: 0 1000px, 1000px 0, 0 2000px, 2000px 0, center;
+      }
     }
 
     body::after {
@@ -109,7 +114,6 @@
       filter: drop-shadow(0 0 8px var(--teal)) drop-shadow(0 0 15px var(--cyan));
     }
 
-    /* Energy bolt - teal/green, sleek, no red */
     .energy-bolt {
       position: fixed;
       top: -100px;
@@ -253,6 +257,7 @@
         right: 20px;
         padding: 8px;
       }
+
       .gemini-widget img {
         height: 48px;
       }
@@ -261,7 +266,6 @@
 </head>
 
 <body>
-
   <div class="fx-sweep"></div>
 
   <div class="container">
@@ -276,12 +280,12 @@
     <div class="badge">contact us · bg@btcminergpt.ai</div>
 
     <div class="gallery">
-      <div class="gallery-item"><img src="rig.png" alt="rig"></div>
-      <div class="gallery-item"><img src="homepage.png" alt="homepage"></div>
-      <div class="gallery-item"><img src="dashone.png" alt="dashone"></div>
-      <div class="gallery-item"><img src="dashtwo.png" alt="dashtwo"></div>
-      <div class="gallery-item"><img src="fire.png" alt="fire"></div>
-      <div class="gallery-item"><img src="advanced.png" alt="advanced"></div>
+      <div class="gallery-item"><img src="rig.png" alt="custom mining dashboard"></div>
+      <div class="gallery-item"><img src="homepage.png" alt="bitcoin gpu rig"></div>
+      <div class="gallery-item"><img src="dashone.png" alt="btc home mining"></div>
+      <div class="gallery-item"><img src="dashtwo.png" alt="home mining dashboards"></div>
+      <div class="gallery-item"><img src="fire.png" alt="btc consulting"></div>
+      <div class="gallery-item"><img src="advanced.png" alt="ai partnership programs"></div>
     </div>
 
     <footer>
@@ -293,7 +297,7 @@
      target="_blank"
      class="gemini-widget"
      title="Apply for Gemini Credit Card">
-    <img src="gemini.png" alt="Gemini Credit Card">
+    <img src="gemini.png" alt="Gemini Credit Card Application Link">
   </a>
 
   <script>
@@ -351,4 +355,10 @@
 
     function scheduleEnergyBolts() {
       createEnergyBolt();
+      setTimeout(scheduleEnergyBolts, 10000);
+    }
 
+    scheduleEnergyBolts();
+  </script>
+</body>
+</html>
