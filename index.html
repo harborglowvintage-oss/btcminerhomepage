@@ -128,7 +128,6 @@
       transform-origin: top center;
     }
 
-    /* ✅ SMOKE LAYER INSIDE LOGO-BOX */
     #logo-smoke {
       position: absolute;
       top: 50%;
@@ -253,8 +252,28 @@
       object-fit: cover;
     }
 
+    .badge-icon {
+      background: rgba(0,224,196,.12);
+      border: 1px solid rgba(0,224,196,.3);
+      padding: 14px 24px;
+      border-radius: 22px;
+      margin-top: 36px;
+      margin-bottom: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 22px rgba(0,224,196,.25);
+      animation: badgePulse 3s ease-in-out infinite;
+    }
+
+    .badge-icon img {
+      height: 48px;
+      width: auto;
+      filter: drop-shadow(0 0 8px #00e0c4) drop-shadow(0 0 16px #39ff9e);
+    }
+
     footer {
-      margin-top: 90px;
+      margin-top: 60px;
       font-family: 'Share Tech Mono', monospace;
       font-size: .75rem;
       color: rgba(138,43,226,.4);
@@ -269,7 +288,7 @@
   <div class="container">
 
     <div class="logo-box">
-      <div id="logo-smoke"></div> <!-- 🟢 Smoke inside logo-box -->
+      <div id="logo-smoke"></div>
       <img src="logo.png" class="logo" alt="BTCMiner GPT Logo">
     </div>
 
@@ -286,6 +305,13 @@
       <div class="gallery-item"><img src="dashtwo.png" alt="dashtwo"></div>
       <div class="gallery-item"><img src="fire.png" alt="fire"></div>
       <div class="gallery-item"><img src="advanced.png" alt="advanced"></div>
+    </div>
+
+    <!-- ✅ Glowing Badge Image Below Gallery -->
+    <div style="text-align: center;">
+      <div class="badge-icon">
+        <img src="hgv.png" alt="Harbor Glow Vintage">
+      </div>
     </div>
 
     <footer>
