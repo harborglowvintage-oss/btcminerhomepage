@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BTCMiner GPT — Coming Soon</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #000;
+      --mint: #39ff9e;
+      --teal: #00e0c4;
       --cyan: #00d4ff;
-      --mint: #00c9a7;
-      --teal: #008b8b;
-      --purple: #6b2be2;
+      --bg: #000;
     }
 
     * {
@@ -25,131 +25,142 @@
       background: linear-gradient(180deg, #000 0%, #0a0015 40%, #050008 100%);
       color: var(--mint);
       font-family: 'Orbitron', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       min-height: 100vh;
+      display: flex;
+      justify-content: center;
       padding: 80px 24px;
-      position: relative;
       overflow-x: hidden;
+      position: relative;
     }
 
-    body::before,
+    /* ================= MATRIX GRID (STABLE) ================= */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, rgba(57,255,158,.25) 0 1px, transparent 1px 60px),
+        repeating-linear-gradient(90deg, rgba(57,255,158,.25) 0 1px, transparent 1px 60px),
+        repeating-linear-gradient(0deg, rgba(0,224,196,.15) 0 1px, transparent 1px 160px),
+        repeating-linear-gradient(90deg, rgba(0,224,196,.15) 0 1px, transparent 1px 160px),
+        radial-gradient(circle at 50% 50%, rgba(57,255,158,.25) 0%, transparent 45%);
+      opacity: 0.28;
+      pointer-events: none;
+      z-index: 0;
+      animation: gridRotate 140s linear infinite;
+      filter: drop-shadow(0 0 28px rgba(57,255,158,.45));
+    }
+
+    @keyframes gridRotate {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(1deg); }
+    }
+
+    /* ================= SCANLINES ================= */
+
     body::after {
       content: "";
       position: fixed;
       inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,.08) 0 1px,
+        transparent 1px 3px
+      );
       pointer-events: none;
-    }
-
-    body::before {
-      background-image:
-        repeating-linear-gradient(0deg, rgba(0,201,167,.2) 0 1px, transparent 1px 60px),
-        repeating-linear-gradient(90deg, rgba(0,201,167,.2) 0 1px, transparent 1px 60px);
-      opacity: .3;
-      z-index: 0;
-    }
-
-    body::after {
-      background:
-        linear-gradient(90deg, transparent, rgba(0,224,196,.6), transparent);
-      background-size: 40% 6px;
-      background-position: -100% 70%;
-      animation: dataFlow 12s linear infinite;
       z-index: 1;
     }
 
-    @keyframes dataFlow {
-      from { background-position: -100% 70%; }
-      to   { background-position: 100% 70%; }
-    }
-
-    /* ===== SUGGESTED SCALE CHANGES ===== */
+    /* ================= CONTENT ================= */
 
     .container {
       position: relative;
       z-index: 10;
+      width: 100%;
+      max-width: 1600px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width: 1600px; /* was 1200px */
-      width: 100%;
     }
 
     .logo-box {
-      padding: 60px; /* was 40px */
-      border: 2px solid var(--teal);
+      padding: 60px;
       border-radius: 24px;
-      margin-bottom: 60px;
+      border: 2px solid var(--teal);
       background: linear-gradient(135deg, rgba(0,28,34,.45), rgba(8,10,12,.65));
       box-shadow:
-        0 0 60px rgba(0,139,139,.25),
-        inset 0 0 40px rgba(0,139,139,.08);
-      backdrop-filter: blur(8px);
+        0 0 70px rgba(0,224,196,.35),
+        inset 0 0 40px rgba(0,224,196,.1);
+      margin-bottom: 60px;
       text-align: center;
     }
 
     img.logo {
-      width: 420px;      /* was 320px */
+      width: 420px;
       max-width: 90vw;
       filter:
-        drop-shadow(0 0 30px rgba(0,139,139,.55))
-        drop-shadow(0 0 50px rgba(0,201,167,.3));
+        drop-shadow(0 0 32px rgba(0,224,196,.6))
+        drop-shadow(0 0 55px rgba(57,255,158,.35));
     }
 
     .affiliate-note {
-      margin-top: 24px;
-      font-size: .95rem;
-      color: rgba(0,201,167,.7);
+      margin-top: 22px;
       font-family: 'Share Tech Mono', monospace;
+      font-size: .9rem;
       letter-spacing: .08em;
+      color: rgba(57,255,158,.7);
+    }
+
+    .affiliate-note a {
+      color: var(--mint);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--mint);
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 4.2rem); /* bigger hero */
-      font-weight: 900;
-      color: #eafffb;
+      font-size: clamp(3rem, 8vw, 4.2rem);
       letter-spacing: .14em;
+      color: #eafffb;
       text-shadow:
-        0 0 12px var(--teal),
-        0 0 30px rgba(0,139,139,.8);
+        0 0 14px var(--teal),
+        0 0 40px var(--cyan);
       margin-bottom: 18px;
     }
 
-    p.tagline {
-      font-size: clamp(1.4rem, 4vw, 1.9rem); /* larger */
+    .tagline {
       font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
       letter-spacing: .18em;
-      color: #fff;
       margin-bottom: 80px;
-      text-shadow:
-        0 0 20px rgba(0,201,167,.35);
+      color: var(--teal);
     }
 
+    /* ================= GALLERY ================= */
+
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr)); /* was 456px */
-      gap: 36px; /* was 28px */
       width: 100%;
       max-width: 1500px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 36px;
     }
 
     .gallery-item {
+      aspect-ratio: 4 / 3;
       border-radius: 18px;
       overflow: hidden;
-      aspect-ratio: 4 / 3;
       background: linear-gradient(135deg, rgba(8,10,12,.85), rgba(20,15,30,.6));
       box-shadow:
-        0 10px 50px rgba(0,0,0,.7),
-        inset 0 0 30px rgba(0,139,139,.08);
-      transition: transform .4s ease, box-shadow .4s ease;
+        0 10px 50px rgba(0,0,0,.75),
+        inset 0 0 30px rgba(0,224,196,.08);
+      transition: transform .35s ease, box-shadow .35s ease;
     }
 
     .gallery-item:hover {
       transform: translateY(-14px) scale(1.04);
       box-shadow:
-        0 25px 70px rgba(0,139,139,.35);
+        0 24px 70px rgba(0,224,196,.4);
     }
 
     .gallery-item img {
@@ -159,6 +170,8 @@
       filter: contrast(1.1) saturate(1.15);
     }
 
+    /* ================= CTA + FOOTER ================= */
+
     .contact-cta {
       margin-top: 80px;
       text-align: center;
@@ -166,16 +179,17 @@
     }
 
     .contact-cta a {
-      color: var(--mint);
       font-size: 1.25rem;
+      color: var(--mint);
       text-decoration: none;
       border-bottom: 2px solid var(--mint);
+      text-shadow: 0 0 12px rgba(57,255,158,.7);
     }
 
     footer {
       margin-top: 90px;
-      font-size: .75rem;
       font-family: 'Share Tech Mono', monospace;
+      font-size: .75rem;
       color: rgba(138,43,226,.4);
     }
 
@@ -191,32 +205,22 @@
   <div class="container">
 
     <div class="logo-box">
-      <img src="logo.png" alt="BTCMiner GPT Logo" class="logo" />
+      <img src="logo.png" class="logo" alt="BTCMiner GPT Logo">
       <p class="affiliate-note">
         A partner project of <a href="https://llmadvisor.ai" target="_blank">LLMAdvisor.ai</a>
       </p>
     </div>
 
     <h1>Coming Soon</h1>
-    <p class="tagline">highsignal.movefast.playlong</p>
+    <p class="tagline">highsignal · movefast · playlong</p>
 
     <div class="gallery">
-      <figure class="gallery-item"><img src="rig.png" alt="Mining Rig"></figure>
-      <figure class="gallery-item"><img src="homepage.png" alt="Homepage"></figure>
-      <figure class="gallery-item"><img src="dashone.png" alt="Dashboard One"></figure>
-      <figure class="gallery-item"><img src="dashtwo.png" alt="Dashboard Two"></figure>
+      <div class="gallery-item"><img src="rig.png"></div>
+      <div class="gallery-item"><img src="homepage.png"></div>
+      <div class="gallery-item"><img src="dashone.png"></div>
+      <div class="gallery-item"><img src="dashtwo.png"></div>
     </div>
 
     <div class="contact-cta">
       <p>Want to learn more?</p>
-      <a href="mailto:bg@btcminergpt.ai">Email us @ bg@btcminergpt.ai</a>
-    </div>
-
-    <footer>
-      &copy; 2025 BTCMiner GPT. All rights reserved.
-    </footer>
-
-  </div>
-
-</body>
-</html>
+      <a href="mailto:bg
