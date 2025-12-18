@@ -33,7 +33,6 @@
       position: relative;
     }
 
-    /* CLASSIC MATRIX GRID - NO GLOW OR BREATHING */
     body::before {
       content: "";
       position: fixed;
@@ -90,6 +89,7 @@
       z-index: 3;
       opacity: 0;
       animation: boltFlash 0.3s ease-in-out;
+      transform: scale(0.25); /* 4x smaller */
     }
 
     @keyframes boltFlash {
@@ -98,13 +98,13 @@
     }
 
     .bolt svg {
-      filter: drop-shadow(0 0 8px var(--teal)) drop-shadow(0 0 15px var(--cyan));
+      filter: drop-shadow(0 0 4px var(--teal)) drop-shadow(0 0 8px var(--cyan));
     }
 
     .energy-bolt {
       position: fixed;
       top: -100px;
-      width: 3px;
+      width: 1.5px; /* half as thin */
       height: 100vh;
       background: linear-gradient(to bottom, #00ffc3, #39ff9e 50%, transparent);
       z-index: 3;
@@ -289,7 +289,7 @@
   <script>
     const boltSVG = `
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#00e0c4" stroke="#39ff9e" stroke-width="1.5"/>
+        <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#00e0c4" stroke="#39ff9e" stroke-width="0.75"/>
       </svg>
     `;
 
