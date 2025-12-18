@@ -33,7 +33,7 @@
       position: relative;
     }
 
-    /* ===== MATRIX MIRROR GRID (BRIGHTER) ===== */
+    /* MATRIX BACKGROUND (reduced glow by 20%) */
     body::before {
       content: "";
       position: fixed;
@@ -41,25 +41,21 @@
       z-index: 0;
       pointer-events: none;
       background-image:
-        repeating-linear-gradient(0deg, rgba(57,255,158,0.25) 0 1px, transparent 1px 20px),
-        repeating-linear-gradient(90deg, rgba(57,255,158,0.25) 0 1px, transparent 1px 20px),
-        repeating-linear-gradient(0deg, rgba(0,224,196,0.15) 0 1px, transparent 1px 40px),
-        repeating-linear-gradient(90deg, rgba(0,224,196,0.15) 0 1px, transparent 1px 40px),
-        radial-gradient(circle at center, rgba(0,224,196,0.2) 0%, transparent 65%);
+        repeating-linear-gradient(0deg, rgba(57,255,158,0.20) 0 1px, transparent 1px 20px),
+        repeating-linear-gradient(90deg, rgba(57,255,158,0.20) 0 1px, transparent 1px 20px),
+        repeating-linear-gradient(0deg, rgba(0,224,196,0.12) 0 1px, transparent 1px 40px),
+        repeating-linear-gradient(90deg, rgba(0,224,196,0.12) 0 1px, transparent 1px 40px),
+        radial-gradient(circle at center, rgba(0,224,196,0.16) 0%, transparent 65%);
       background-blend-mode: screen;
       animation: matrixMirror 60s linear infinite;
       transform: perspective(1200px) rotateX(2deg) rotateY(1deg);
-      filter: drop-shadow(0 0 32px rgba(57,255,158,0.55)) drop-shadow(0 0 16px rgba(0,224,196,0.3));
-      opacity: 0.55;
+      filter: drop-shadow(0 0 24px rgba(57,255,158,0.4)) drop-shadow(0 0 12px rgba(0,224,196,0.25));
+      opacity: 0.45;
     }
 
     @keyframes matrixMirror {
-      0% {
-        background-position: 0 0, 0 0, 0 0, 0 0, center;
-      }
-      100% {
-        background-position: 0 200px, 200px 0, 0 400px, 400px 0, center;
-      }
+      0% { background-position: 0 0, 0 0, 0 0, 0 0, center; }
+      100% { background-position: 0 200px, 200px 0, 0 400px, 400px 0, center; }
     }
 
     body::after {
@@ -113,31 +109,24 @@
       filter: drop-shadow(0 0 8px var(--teal)) drop-shadow(0 0 15px var(--cyan));
     }
 
-    /* ===== VERTICAL ENERGY BOLT ===== */
+    /* Energy bolt - teal/green, sleek, no red */
     .energy-bolt {
       position: fixed;
       top: -100px;
-      width: 4px;
+      width: 3px;
       height: 100vh;
-      background: linear-gradient(to bottom, red, #00e0c4 50%, transparent);
-      z-index: 4;
-      opacity: 0.8;
+      background: linear-gradient(to bottom, #00ffc3, #39ff9e 50%, transparent);
+      z-index: 3;
+      opacity: 0.75;
       animation: fall 15s linear forwards;
       pointer-events: none;
+      filter: drop-shadow(0 0 8px #00ffc3) drop-shadow(0 0 12px #39ff9e);
     }
 
     @keyframes fall {
-      0% {
-        transform: translateY(-100%);
-        opacity: 1;
-      }
-      90% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh);
-        opacity: 0;
-      }
+      0% { transform: translateY(-100%); opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
     }
 
     .container {
@@ -264,7 +253,6 @@
         right: 20px;
         padding: 8px;
       }
-
       .gemini-widget img {
         height: 48px;
       }
@@ -342,17 +330,24 @@
 
     scheduleBolts();
 
-    // Create vertical red-tipped bolt every 10 seconds
     function createEnergyBolt() {
       const bolt = document.createElement('div');
       bolt.className = 'energy-bolt';
-      bolt.style.left = Math.random() * 100 + 'vw';
+      const container = document.querySelector('.container');
+      const containerRect = container.getBoundingClientRect();
+      let left;
+
+      do {
+        left = Math.random() * window.innerWidth;
+      } while (
+        left > containerRect.left - 100 &&
+        left < containerRect.right + 100
+      );
+
+      bolt.style.left = left + 'px';
       document.body.appendChild(bolt);
       setTimeout(() => bolt.remove(), 16000);
     }
 
-    setInterval(createEnergyBolt, 10000);
-  </script>
-
-</body>
-</html>
+    function scheduleEnergyBolts() {
+      createEnergyBolt();
