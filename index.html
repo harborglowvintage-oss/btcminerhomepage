@@ -242,6 +242,43 @@
       box-shadow: 0 0 12px rgba(0,224,196,.25);
     }
 
+.globe-widget {
+  margin: 60px auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.globe-container {
+  background: rgba(0, 224, 196, 0.12);
+  border: 2px solid rgba(0, 224, 196, 0.35);
+  padding: 20px 24px;
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(57,255,158,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+}
+
+.globe-image {
+  width: 96px;
+  height: 96px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 12px #00e0c4) drop-shadow(0 0 22px #39ff9e);
+}
+
+.globe-label {
+  margin-top: 12px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.7rem;
+  color: #00e0c4;
+  text-shadow: 0 0 6px #00e0c4;
+  text-align: center;
+}
+
+    
     /* ===== MAGNETAR TRACKER STYLES ===== */
     .magnetar-container {
       position: relative;
@@ -719,6 +756,14 @@
 
     <footer>© 2025 BTCMiner GPT. All rights reserved.</footer>
 
+<!-- VINTAGE GLOBE LOCATION WIDGET -->
+<div class="globe-widget">
+  <div class="globe-container">
+    <img src="globe.gif" alt="Rotating Globe" class="globe-image">
+    <div class="globe-label">📍 Boston, MA</div>
+  </div>
+</div>
+    
     <div class="gemini-widget">
       <a href="https://creditcard.exchange.gemini.com/credit-card/apply?referral_code=44qnv2qrx" target="_blank" title="Apply for Gemini Credit Card">
         <img src="gemini.png" alt="Gemini Credit Card Application Link">
@@ -961,6 +1006,7 @@
   </script>
 </body>
 </html>
+
 
 
 
