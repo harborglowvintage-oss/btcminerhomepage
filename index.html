@@ -33,10 +33,62 @@
       position: relative;
     }
 
-    body::before { /* unchanged */ }
-    body::after { /* unchanged */ }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, rgba(57,255,158,.35) 0 1px, transparent 1px 40px),
+        repeating-linear-gradient(90deg, rgba(57,255,158,.35) 0 1px, transparent 1px 40px),
+        repeating-linear-gradient(0deg, rgba(57,255,158,.25) 0 1px, transparent 1px 60px),
+        repeating-linear-gradient(90deg, rgba(57,255,158,.25) 0 1px, transparent 1px 60px),
+        repeating-linear-gradient(0deg, rgba(0,224,196,.2) 0 1px, transparent 1px 120px),
+        repeating-linear-gradient(90deg, rgba(0,224,196,.2) 0 1px, transparent 1px 120px),
+        repeating-linear-gradient(0deg, rgba(0,224,196,.15) 0 1px, transparent 1px 160px),
+        repeating-linear-gradient(90deg, rgba(0,224,196,.15) 0 1px, transparent 1px 160px),
+        repeating-linear-gradient(0deg, rgba(0,212,255,.08) 0 1px, transparent 1px 240px),
+        repeating-linear-gradient(90deg, rgba(0,212,255,.08) 0 1px, transparent 1px 240px),
+        radial-gradient(circle at 50% 50%, rgba(57,255,158,.25) 0%, transparent 45%);
+      opacity: 0.28;
+      pointer-events: none;
+      z-index: 0;
+      animation: gridRotate 140s linear infinite;
+      filter: drop-shadow(0 0 28px rgba(57,255,158,.45));
+    }
 
-    .fx-sweep { /* unchanged */ }
+    @keyframes gridRotate {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(1deg); }
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,.08) 0 1px,
+        transparent 1px 3px
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .fx-sweep {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      background:
+        linear-gradient(90deg, transparent 0%, rgba(0,224,196,.7) 20%, transparent 60%),
+        linear-gradient(90deg, transparent 0%, rgba(57,255,158,.6) 25%, transparent 65%),
+        linear-gradient(90deg, transparent 0%, rgba(0,212,255,.55) 30%, transparent 70%);
+      background-size: 40% 6px, 45% 5px, 50% 4px;
+      background-position: -120% 30%, -140% 55%, -160% 75%;
+      background-repeat: no-repeat;
+      animation: sweep 12s linear infinite;
+      filter: drop-shadow(0 0 8px rgba(0,224,196,.6));
+    }
 
     @keyframes sweep {
       from {
@@ -47,9 +99,22 @@
       }
     }
 
-    .bolt { /* unchanged */ }
-    @keyframes boltFlash { /* unchanged */ }
-    .bolt svg { /* unchanged */ }
+    .bolt {
+      position: fixed;
+      pointer-events: none;
+      z-index: 3;
+      opacity: 0;
+      animation: boltFlash 0.3s ease-in-out;
+    }
+
+    @keyframes boltFlash {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .bolt svg {
+      filter: drop-shadow(0 0 8px var(--teal)) drop-shadow(0 0 15px var(--cyan));
+    }
 
     .container {
       position: relative;
@@ -63,17 +128,16 @@
       transform-origin: top center;
     }
 
-    /* 🧨 NEW: Aggressive Smoke Layer */
+    /* ✅ SMOKE LAYER INSIDE LOGO-BOX */
     #logo-smoke {
       position: absolute;
-      top: 60px;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
       width: 420px;
       height: 420px;
-      z-index: 9; /* behind logo-box */
+      transform: translate(-50%, -50%);
+      z-index: 0;
       pointer-events: none;
-      overflow: visible;
     }
 
     #logo-smoke::before, #logo-smoke::after {
@@ -95,25 +159,24 @@
     @keyframes puff {
       0% {
         transform: scale(1) translateY(0) rotate(0deg);
-        opacity: 0.4;
+        opacity: 0.6;
       }
       100% {
-        transform: scale(2.2) translateY(-80px) rotate(360deg);
+        transform: scale(3.2) translateY(-90px) rotate(720deg);
         opacity: 0;
       }
     }
 
     .logo-box {
+      position: relative;
       padding: 60px;
       border-radius: 24px;
       border: 2px solid var(--teal);
       background: linear-gradient(135deg, rgba(0,28,34,.45), rgba(8,10,12,.65));
-      box-shadow:
-        0 0 70px rgba(0,224,196,.35),
-        inset 0 0 40px rgba(0,224,196,.1);
+      box-shadow: 0 0 70px rgba(0,224,196,.35), inset 0 0 40px rgba(0,224,196,.1);
       margin-bottom: 40px;
       text-align: center;
-      position: relative;
+      z-index: 10;
     }
 
     img.logo {
@@ -122,10 +185,39 @@
       filter:
         drop-shadow(0 0 32px rgba(0,224,196,.6))
         drop-shadow(0 0 55px rgba(57,255,158,.35));
+      z-index: 1;
+      position: relative;
     }
 
-    h1, .tagline, .badge, .gallery, footer {
-      /* unchanged */
+    h1 {
+      font-size: clamp(3rem, 8vw, 4.2rem);
+      letter-spacing: .14em;
+      color: #eafffb;
+      text-shadow: 0 0 14px var(--teal), 0 0 40px var(--cyan);
+      margin-bottom: 14px;
+    }
+
+    .tagline {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
+      letter-spacing: .18em;
+      margin-bottom: 26px;
+      color: var(--teal);
+    }
+
+    .badge {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.35rem;
+      color: var(--teal);
+      background: rgba(0,224,196,.12);
+      border: 1px solid rgba(0,224,196,.3);
+      padding: 12px 30px;
+      border-radius: 22px;
+      margin-bottom: 18px;
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 8px var(--teal);
+      box-shadow: 0 0 18px rgba(0,224,196,.25);
+      animation: badgePulse 3s ease-in-out infinite;
     }
 
     @keyframes badgePulse {
@@ -133,8 +225,32 @@
       50% { box-shadow: 0 0 32px rgba(0,224,196,.45), 0 0 45px rgba(57,255,158,.2); }
     }
 
-    .gallery, .gallery-item, .gallery-item:hover, .gallery-item img {
-      /* unchanged */
+    .gallery {
+      width: 100%;
+      max-width: 1500px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 36px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 4 / 3;
+      border-radius: 18px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(8,10,12,.85), rgba(20,15,30,.6));
+      box-shadow: 0 10px 50px rgba(0,0,0,.75), inset 0 0 30px rgba(0,224,196,.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 50px rgba(0,0,0,.75), 0 0 40px rgba(0,224,196,.4), inset 0 0 30px rgba(0,224,196,.15);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     footer {
@@ -152,10 +268,8 @@
 
   <div class="container">
 
-    <!-- 🧨 NEW SMOKE LAYER HERE -->
-    <div id="logo-smoke"></div>
-
     <div class="logo-box">
+      <div id="logo-smoke"></div> <!-- 🟢 Smoke inside logo-box -->
       <img src="logo.png" class="logo" alt="BTCMiner GPT Logo">
     </div>
 
@@ -197,9 +311,7 @@
       const bolt = document.createElement('div');
       bolt.className = 'bolt';
       bolt.innerHTML = boltSVG();
-      
       const isXAxis = Math.random() < 0.5;
-      
       if (isXAxis) {
         const isTop = Math.random() < 0.5;
         bolt.style.left = Math.random() * 100 + '%';
@@ -211,7 +323,6 @@
         bolt.style.left = isLeft ? '0' : 'auto';
         bolt.style.right = isLeft ? 'auto' : '0';
       }
-      
       document.body.appendChild(bolt);
       setTimeout(() => bolt.remove(), 300);
     }
