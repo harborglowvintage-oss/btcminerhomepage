@@ -8,16 +8,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
 <style>
-:root {
+:root{
   --mint:#39ff9e;
   --teal:#00e0c4;
   --cyan:#00d4ff;
 }
 
-/* ===== RESET ===== */
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box}
 
-/* ===== BODY ===== */
+/* BODY */
 body{
   background:linear-gradient(180deg,#000 0%,#0a0015 40%,#050008 100%);
   color:var(--mint);
@@ -30,7 +30,7 @@ body{
   position:relative;
 }
 
-/* ===== MATRIX GRID ===== */
+/* MATRIX GRID */
 body::before{
   content:"";
   position:fixed;
@@ -40,11 +40,11 @@ body::before{
     repeating-linear-gradient(90deg,rgba(57,255,158,.22) 0 1px,transparent 1px 60px),
     repeating-linear-gradient(0deg,rgba(0,224,196,.12) 0 1px,transparent 1px 160px),
     repeating-linear-gradient(90deg,rgba(0,224,196,.12) 0 1px,transparent 1px 160px);
-  opacity:.28;
+  opacity:.26;
   pointer-events:none;
   z-index:0;
   animation:gridRotate 140s linear infinite;
-  filter:drop-shadow(0 0 22px rgba(57,255,158,.35));
+  filter:drop-shadow(0 0 20px rgba(57,255,158,.35));
   transform:scale(.74);
   transform-origin:top center;
 }
@@ -54,7 +54,7 @@ body::before{
   to{transform:scale(.74) rotate(1deg)}
 }
 
-/* ===== SCANLINES ===== */
+/* SCANLINES */
 body::after{
   content:"";
   position:fixed;
@@ -70,8 +70,8 @@ body::after{
   transform-origin:top center;
 }
 
-/* ===== VERTICAL BOLTS (RANDOMIZED) ===== */
-.bolt-layer{
+/* STREAK LAYER */
+.streak-layer{
   position:fixed;
   inset:0;
   pointer-events:none;
@@ -80,7 +80,8 @@ body::after{
   transform-origin:top center;
 }
 
-.bolt{
+/* VERTICAL STREAK */
+.v-streak{
   position:absolute;
   top:-30%;
   width:2px;
@@ -88,35 +89,58 @@ body::after{
   background:linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(0,224,196,.0) 10%,
-    rgba(57,255,158,.55) 40%,
-    rgba(0,224,196,.85) 70%,
-    rgba(255,60,60,.95) 100%
+    rgba(57,255,158,.15) 30%,
+    rgba(0,224,196,.55) 60%,
+    rgba(255,70,70,.9) 100%
   );
   filter:
-    drop-shadow(0 0 8px rgba(0,224,196,.6))
-    drop-shadow(0 0 14px rgba(255,60,60,.7));
-  animation:boltFall linear infinite;
-  opacity:.9;
+    drop-shadow(0 0 10px rgba(0,224,196,.5))
+    drop-shadow(0 0 14px rgba(255,70,70,.7));
+  animation:vFall linear infinite;
+  opacity:.8;
 }
 
-/* pseudo-random placement + timing */
-.bolt:nth-child(1){left:8%;animation-duration:7s;animation-delay:-1s}
-.bolt:nth-child(2){left:18%;animation-duration:9s;animation-delay:-4s}
-.bolt:nth-child(3){left:27%;animation-duration:6.5s;animation-delay:-2s}
-.bolt:nth-child(4){left:36%;animation-duration:10s;animation-delay:-6s}
-.bolt:nth-child(5){left:48%;animation-duration:8s;animation-delay:-3s}
-.bolt:nth-child(6){left:58%;animation-duration:11s;animation-delay:-7s}
-.bolt:nth-child(7){left:67%;animation-duration:7.5s;animation-delay:-5s}
-.bolt:nth-child(8){left:78%;animation-duration:9.5s;animation-delay:-2s}
-.bolt:nth-child(9){left:88%;animation-duration:6.8s;animation-delay:-4s}
+/* HORIZONTAL STREAK */
+.h-streak{
+  position:absolute;
+  left:-30%;
+  height:2px;
+  width:160%;
+  background:linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(57,255,158,.15) 30%,
+    rgba(0,224,196,.55) 60%,
+    rgba(255,70,70,.9) 100%
+  );
+  filter:
+    drop-shadow(0 0 10px rgba(0,224,196,.5))
+    drop-shadow(0 0 14px rgba(255,70,70,.7));
+  animation:hSweep linear infinite;
+  opacity:.8;
+}
 
-@keyframes boltFall{
+/* RANDOMIZED TIMING / POSITIONS */
+.v-streak:nth-child(1){left:12%;animation-duration:14s;animation-delay:-3s}
+.v-streak:nth-child(2){left:38%;animation-duration:18s;animation-delay:-9s}
+.v-streak:nth-child(3){left:62%;animation-duration:16s;animation-delay:-6s}
+.v-streak:nth-child(4){left:82%;animation-duration:20s;animation-delay:-12s}
+
+.h-streak:nth-child(5){top:22%;animation-duration:15s;animation-delay:-4s}
+.h-streak:nth-child(6){top:48%;animation-duration:19s;animation-delay:-10s}
+.h-streak:nth-child(7){top:74%;animation-duration:17s;animation-delay:-7s}
+
+@keyframes vFall{
   from{transform:translateY(-40%)}
   to{transform:translateY(120%)}
 }
 
-/* ===== CONTENT ===== */
+@keyframes hSweep{
+  from{transform:translateX(-40%)}
+  to{transform:translateX(120%)}
+}
+
+/* CONTENT */
 .container{
   position:relative;
   z-index:10;
@@ -129,12 +153,13 @@ body::after{
   transform-origin:top center;
 }
 
+/* LOGO */
 .logo-box{
   padding:60px;
   border-radius:24px;
   border:2px solid var(--teal);
   background:linear-gradient(135deg,rgba(0,28,34,.45),rgba(8,10,12,.65));
-  box-shadow:0 0 70px rgba(0,224,196,.35),inset 0 0 40px rgba(0,224,196,.1);
+  box-shadow:0 0 70px rgba(0,224,196,.35);
   margin-bottom:40px;
 }
 
@@ -169,7 +194,6 @@ h1{
   padding:12px 30px;
   border-radius:22px;
   margin-bottom:18px;
-  text-shadow:0 0 8px var(--teal);
   box-shadow:0 0 18px rgba(0,224,196,.25);
 }
 
@@ -185,7 +209,7 @@ h1{
   aspect-ratio:4/3;
   border-radius:18px;
   overflow:hidden;
-  background:linear-gradient(135deg,rgba(8,10,12,.85),rgba(20,15,30,.6));
+  background:#000;
   box-shadow:0 10px 50px rgba(0,0,0,.75);
 }
 
@@ -206,37 +230,18 @@ footer{
 
 <body>
 
-<!-- BOLT FX -->
-<div class="bolt-layer">
-  <div class="bolt"></div><div class="bolt"></div><div class="bolt"></div>
-  <div class="bolt"></div><div class="bolt"></div><div class="bolt"></div>
-  <div class="bolt"></div><div class="bolt"></div><div class="bolt"></div>
+<!-- STREAK FX -->
+<div class="streak-layer">
+  <div class="v-streak"></div>
+  <div class="v-streak"></div>
+  <div class="v-streak"></div>
+  <div class="v-streak"></div>
+
+  <div class="h-streak"></div>
+  <div class="h-streak"></div>
+  <div class="h-streak"></div>
 </div>
 
 <div class="container">
-
   <div class="logo-box">
-    <img src="logo.png" class="logo" alt="BTCMiner GPT Logo">
-  </div>
-
-  <h1>Coming Soon</h1>
-  <p class="tagline">⚡ highsignal · 🌪️ movefast · 📏 playlong</p>
-
-  <div class="badge">powered by llmadvisor.ai</div>
-  <div class="badge">contact us · bg@btcminergpt.ai</div>
-
-  <div class="gallery">
-    <div class="gallery-item"><img src="rig.png"></div>
-    <div class="gallery-item"><img src="homepage.png"></div>
-    <div class="gallery-item"><img src="dashone.png"></div>
-    <div class="gallery-item"><img src="dashtwo.png"></div>
-    <div class="gallery-item"><img src="fire.png"></div>
-    <div class="gallery-item"><img src="advanced.png"></div>
-  </div>
-
-  <footer>© 2025 BTCMiner GPT. All rights reserved.</footer>
-
-</div>
-
-</body>
-</html>
+    <img src="logo.png" class="logo" alt="BT
