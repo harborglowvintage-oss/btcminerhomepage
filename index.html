@@ -1,218 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BTCMiner GPT — Coming Soon</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BTCMiner GPT — Coming Soon</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --mint: #39ff9e;
-      --teal: #00e0c4;
-      --cyan: #00d4ff;
-      --bg: #000;
-      --bolt-green: rgba(57,255,158,.8);
-      --bolt-teal: rgba(0,224,196,.9);
-      --bolt-red: rgba(255,80,80,.95);
-    }
+<style>
+:root {
+  --mint:#39ff9e;
+  --teal:#00e0c4;
+  --cyan:#00d4ff;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* ===== RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box}
 
-    body {
-      background: linear-gradient(180deg, #000 0%, #0a0015 40%, #050008 100%);
-      color: var(--mint);
-      font-family: 'Orbitron', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 60px 24px;
-      overflow-x: hidden;
-      position: relative;
-    }
+/* ===== BODY ===== */
+body{
+  background:linear-gradient(180deg,#000 0%,#0a0015 40%,#050008 100%);
+  color:var(--mint);
+  font-family:'Orbitron',sans-serif;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding:60px 24px;
+  overflow-x:hidden;
+  position:relative;
+}
 
-    /* ===== MATRIX GRID ===== */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image:
-        repeating-linear-gradient(0deg, rgba(57,255,158,.25) 0 1px, transparent 1px 60px),
-        repeating-linear-gradient(90deg, rgba(57,255,158,.25) 0 1px, transparent 1px 60px),
-        repeating-linear-gradient(0deg, rgba(0,224,196,.15) 0 1px, transparent 1px 160px),
-        repeating-linear-gradient(90deg, rgba(0,224,196,.15) 0 1px, transparent 1px 160px),
-        radial-gradient(circle at 50% 50%, rgba(57,255,158,.25) 0%, transparent 45%);
-      opacity: 0.28;
-      pointer-events: none;
-      z-index: 0;
-      animation: gridRotate 140s linear infinite;
-      filter: drop-shadow(0 0 28px rgba(57,255,158,.45));
-    }
+/* ===== MATRIX GRID ===== */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    repeating-linear-gradient(0deg,rgba(57,255,158,.22) 0 1px,transparent 1px 60px),
+    repeating-linear-gradient(90deg,rgba(57,255,158,.22) 0 1px,transparent 1px 60px),
+    repeating-linear-gradient(0deg,rgba(0,224,196,.12) 0 1px,transparent 1px 160px),
+    repeating-linear-gradient(90deg,rgba(0,224,196,.12) 0 1px,transparent 1px 160px);
+  opacity:.28;
+  pointer-events:none;
+  z-index:0;
+  animation:gridRotate 140s linear infinite;
+  filter:drop-shadow(0 0 22px rgba(57,255,158,.35));
+  transform:scale(.74);
+  transform-origin:top center;
+}
 
-    @keyframes gridRotate {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(1deg); }
-    }
+@keyframes gridRotate{
+  from{transform:scale(.74) rotate(0deg)}
+  to{transform:scale(.74) rotate(1deg)}
+}
 
-    /* ===== SCANLINES ===== */
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        rgba(0,0,0,.08) 0 1px,
-        transparent 1px 3px
-      );
-      pointer-events: none;
-      z-index: 1;
-    }
+/* ===== SCANLINES ===== */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,.08) 0 1px,
+    transparent 1px 3px
+  );
+  pointer-events:none;
+  z-index:1;
+  transform:scale(.74);
+  transform-origin:top center;
+}
 
-    /* ===== GRID BOLTS ===== */
-    .grid-bolts {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 2;
-    }
+/* ===== VERTICAL BOLTS (RANDOMIZED) ===== */
+.bolt-layer{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:2;
+  transform:scale(.74);
+  transform-origin:top center;
+}
 
-    .bolt {
-      position: absolute;
-      top: -20%;
-      width: 3px;
-      height: 140%;
-      background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        var(--bolt-teal) 40%,
-        var(--bolt-green) 75%,
-        transparent 100%
-      );
-      filter: drop-shadow(0 0 10px var(--bolt-green));
-      animation: boltFall linear infinite;
-      opacity: 0.75;
-    }
+.bolt{
+  position:absolute;
+  top:-30%;
+  width:2px;
+  height:160%;
+  background:linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0,224,196,.0) 10%,
+    rgba(57,255,158,.55) 40%,
+    rgba(0,224,196,.85) 70%,
+    rgba(255,60,60,.95) 100%
+  );
+  filter:
+    drop-shadow(0 0 8px rgba(0,224,196,.6))
+    drop-shadow(0 0 14px rgba(255,60,60,.7));
+  animation:boltFall linear infinite;
+  opacity:.9;
+}
 
-    /* red glowing tip */
-    .bolt::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: -3px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--bolt-red);
-      box-shadow:
-        0 0 10px var(--bolt-red),
-        0 0 22px rgba(255,80,80,.85);
-    }
+/* pseudo-random placement + timing */
+.bolt:nth-child(1){left:8%;animation-duration:7s;animation-delay:-1s}
+.bolt:nth-child(2){left:18%;animation-duration:9s;animation-delay:-4s}
+.bolt:nth-child(3){left:27%;animation-duration:6.5s;animation-delay:-2s}
+.bolt:nth-child(4){left:36%;animation-duration:10s;animation-delay:-6s}
+.bolt:nth-child(5){left:48%;animation-duration:8s;animation-delay:-3s}
+.bolt:nth-child(6){left:58%;animation-duration:11s;animation-delay:-7s}
+.bolt:nth-child(7){left:67%;animation-duration:7.5s;animation-delay:-5s}
+.bolt:nth-child(8){left:78%;animation-duration:9.5s;animation-delay:-2s}
+.bolt:nth-child(9){left:88%;animation-duration:6.8s;animation-delay:-4s}
 
-    @keyframes boltFall {
-      from { transform: translateY(-100%); }
-      to   { transform: translateY(100%); }
-    }
+@keyframes boltFall{
+  from{transform:translateY(-40%)}
+  to{transform:translateY(120%)}
+}
 
-    /* staggered bolts aligned to grid columns */
-    .bolt.b1 { left: 12%; animation-duration: 9s; animation-delay: 0s; }
-    .bolt.b2 { left: 28%; animation-duration: 11s; animation-delay: 3s; }
-    .bolt.b3 { left: 44%; animation-duration: 8s; animation-delay: 6s; }
-    .bolt.b4 { left: 61%; animation-duration: 12s; animation-delay: 1s; }
-    .bolt.b5 { left: 77%; animation-duration: 10s; animation-delay: 4s; }
+/* ===== CONTENT ===== */
+.container{
+  position:relative;
+  z-index:10;
+  width:100%;
+  max-width:1600px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  transform:scale(.74);
+  transform-origin:top center;
+}
 
-    /* ===== HORIZONTAL DATA SWEEPS ===== */
-    .fx-sweep {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 3;
-      background:
-        linear-gradient(90deg, transparent 0%, rgba(0,224,196,.7) 20%, transparent 60%),
-        linear-gradient(90deg, transparent 0%, rgba(57,255,158,.6) 25%, transparent 65%),
-        linear-gradient(90deg, transparent 0%, rgba(0,212,255,.55) 30%, transparent 70%);
-      background-size: 40% 6px, 45% 5px, 50% 4px;
-      background-position: -120% 30%, -140% 55%, -160% 75%;
-      background-repeat: no-repeat;
-      animation: sweep 12s linear infinite;
-      filter: drop-shadow(0 0 8px rgba(0,224,196,.6));
-    }
+.logo-box{
+  padding:60px;
+  border-radius:24px;
+  border:2px solid var(--teal);
+  background:linear-gradient(135deg,rgba(0,28,34,.45),rgba(8,10,12,.65));
+  box-shadow:0 0 70px rgba(0,224,196,.35),inset 0 0 40px rgba(0,224,196,.1);
+  margin-bottom:40px;
+}
 
-    @keyframes sweep {
-      from {
-        background-position:
-          -120% 30%,
-          -140% 55%,
-          -160% 75%;
-      }
-      to {
-        background-position:
-          160% 30%,
-          180% 55%,
-          200% 75%;
-      }
-    }
+img.logo{
+  width:420px;
+  max-width:90vw;
+  filter:drop-shadow(0 0 32px rgba(0,224,196,.6));
+}
 
-    /* ===== CONTENT ===== */
-    .container {
-      position: relative;
-      z-index: 10;
-      width: 100%;
-      max-width: 1600px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transform: scale(0.74);
-      transform-origin: top center;
-    }
+h1{
+  font-size:clamp(3rem,8vw,4.2rem);
+  letter-spacing:.14em;
+  color:#eafffb;
+  text-shadow:0 0 14px var(--teal),0 0 40px var(--cyan);
+  margin-bottom:14px;
+}
 
-    /* (rest unchanged from baseline) */
-  </style>
+.tagline{
+  font-family:'Share Tech Mono',monospace;
+  font-size:clamp(1.4rem,4vw,1.9rem);
+  letter-spacing:.18em;
+  margin-bottom:26px;
+  color:var(--teal);
+}
+
+.badge{
+  font-family:'Share Tech Mono',monospace;
+  font-size:1.35rem;
+  color:var(--teal);
+  background:rgba(0,224,196,.12);
+  border:1px solid rgba(0,224,196,.3);
+  padding:12px 30px;
+  border-radius:22px;
+  margin-bottom:18px;
+  text-shadow:0 0 8px var(--teal);
+  box-shadow:0 0 18px rgba(0,224,196,.25);
+}
+
+.gallery{
+  width:100%;
+  max-width:1500px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(520px,1fr));
+  gap:36px;
+}
+
+.gallery-item{
+  aspect-ratio:4/3;
+  border-radius:18px;
+  overflow:hidden;
+  background:linear-gradient(135deg,rgba(8,10,12,.85),rgba(20,15,30,.6));
+  box-shadow:0 10px 50px rgba(0,0,0,.75);
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+footer{
+  margin-top:90px;
+  font-family:'Share Tech Mono',monospace;
+  font-size:.75rem;
+  color:rgba(138,43,226,.4);
+}
+</style>
 </head>
 
 <body>
 
-  <!-- GRID BOLTS -->
-  <div class="grid-bolts">
-    <div class="bolt b1"></div>
-    <div class="bolt b2"></div>
-    <div class="bolt b3"></div>
-    <div class="bolt b4"></div>
-    <div class="bolt b5"></div>
+<!-- BOLT FX -->
+<div class="bolt-layer">
+  <div class="bolt"></div><div class="bolt"></div><div class="bolt"></div>
+  <div class="bolt"></div><div class="bolt"></div><div class="bolt"></div>
+  <div class="bolt"></div><div class="bolt"></div><div class="bolt"></div>
+</div>
+
+<div class="container">
+
+  <div class="logo-box">
+    <img src="logo.png" class="logo" alt="BTCMiner GPT Logo">
   </div>
 
-  <div class="fx-sweep"></div>
+  <h1>Coming Soon</h1>
+  <p class="tagline">⚡ highsignal · 🌪️ movefast · 📏 playlong</p>
 
-  <div class="container">
+  <div class="badge">powered by llmadvisor.ai</div>
+  <div class="badge">contact us · bg@btcminergpt.ai</div>
 
-    <div class="logo-box">
-      <img src="logo.png" class="logo" alt="BTCMiner GPT Logo">
-    </div>
-
-    <h1>Coming Soon</h1>
-    <p class="tagline">⚡ highsignal · 🌪️ movefast · 📏 playlong</p>
-
-    <div class="badge">powered by llmadvisor.ai</div>
-    <div class="badge">contact us · bg@btcminergpt.ai</div>
-
-    <div class="gallery">
-      <div class="gallery-item"><img src="rig.png"></div>
-      <div class="gallery-item"><img src="homepage.png"></div>
-      <div class="gallery-item"><img src="dashone.png"></div>
-      <div class="gallery-item"><img src="dashtwo.png"></div>
-      <div class="gallery-item"><img src="fire.png"></div>
-      <div class="gallery-item"><img src="advanced.png"></div>
-    </div>
-
-    <footer>
-      © 2025 BTCMiner GPT. All rights reserved.
-    </footer>
-
+  <div class="gallery">
+    <div class="gallery-item"><img src="rig.png"></div>
+    <div class="gallery-item"><img src="homepage.png"></div>
+    <div class="gallery-item"><img src="dashone.png"></div>
+    <div class="gallery-item"><img src="dashtwo.png"></div>
+    <div class="gallery-item"><img src="fire.png"></div>
+    <div class="gallery-item"><img src="advanced.png"></div>
   </div>
+
+  <footer>© 2025 BTCMiner GPT. All rights reserved.</footer>
+
+</div>
 
 </body>
 </html>
