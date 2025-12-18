@@ -34,27 +34,6 @@
       overflow-x: hidden;
     }
 
-    /* Animated grid background */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: 
-        repeating-linear-gradient(0deg, rgba(13, 255, 95, 0.3) 0px, rgba(13, 255, 95, 0.3) 1px, transparent 1px, transparent 60px),
-        repeating-linear-gradient(90deg, rgba(13, 255, 95, 0.3) 0px, rgba(13, 255, 95, 0.3) 1px, transparent 1px, transparent 60px),
-        repeating-linear-gradient(0deg, rgba(0, 224, 196, 0.2) 0px, rgba(0, 224, 196, 0.2) 1px, transparent 1px, transparent 160px),
-        repeating-linear-gradient(90deg, rgba(0, 224, 196, 0.2) 0px, rgba(0, 224, 196, 0.2) 1px, transparent 1px, transparent 160px),
-        radial-gradient(circle at 50% 50%, rgba(13, 255, 95, 0.3) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(13, 255, 95, 0.08) 0%, transparent 60%);
-      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.3;
-      animation: gridBreathing 12s ease-in-out infinite, gridRotate 60s linear infinite;
-      transform-origin: center center;
-      filter: drop-shadow(0 0 30px rgba(13, 255, 95, 0.6));
-    }
-
     @keyframes gridBreathing {
       0%, 100% { 
         transform: scale(1) rotateZ(0deg);
@@ -64,11 +43,6 @@
         transform: scale(1.04) rotateZ(0.3deg);
         filter: drop-shadow(0 0 50px rgba(13, 255, 95, 0.8)) drop-shadow(0 0 15px rgba(0, 224, 196, 0.4));
       }
-    }
-
-    @keyframes gridRotate {
-      0% { transform: scale(1) rotateZ(0deg); }
-      100% { transform: scale(1) rotateZ(1deg); }
     }
 
     @keyframes borderPulse {
@@ -212,7 +186,7 @@
       pointer-events: none;
       z-index: 0;
       opacity: 0.3;
-      animation: gridBreathing 12s ease-in-out infinite, gridRotate 60s linear infinite;
+      animation: gridBreathing 12s ease-in-out infinite; 
       transform-origin: center center;
       filter: drop-shadow(0 0 30px rgba(13, 255, 95, 0.6));
     }
@@ -562,4 +536,5 @@
   </div>
 
 </body>
+
 </html>
