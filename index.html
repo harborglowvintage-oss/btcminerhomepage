@@ -33,32 +33,44 @@
       position: relative;
     }
 
+    /* ===== MATRIX GRID ===== */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      z-index: 0;
-      pointer-events: none;
       background-image:
-        repeating-linear-gradient(0deg, rgba(13,255,95,0.25) 0 1px, transparent 1px 60px),
-        repeating-linear-gradient(90deg, rgba(13,255,95,0.25) 0 1px, transparent 1px 60px),
-        repeating-linear-gradient(0deg, rgba(0,224,196,0.15) 0 1px, transparent 1px 160px),
-        repeating-linear-gradient(90deg, rgba(0,224,196,0.15) 0 1px, transparent 1px 160px),
-        radial-gradient(circle at 50% 50%, rgba(13, 255, 95, 0.1) 0%, transparent 45%);
-      background-size: 100% 100%;
-      background-repeat: repeat;
-      opacity: 0.25;
+        repeating-linear-gradient(0deg, rgba(57,255,158,.25) 0 1px, transparent 1px 60px),
+        repeating-linear-gradient(90deg, rgba(57,255,158,.25) 0 1px, transparent 1px 60px),
+        repeating-linear-gradient(0deg, rgba(0,224,196,.15) 0 1px, transparent 1px 160px),
+        repeating-linear-gradient(90deg, rgba(0,224,196,.15) 0 1px, transparent 1px 160px),
+        radial-gradient(circle at 50% 50%, rgba(57,255,158,.25) 0%, transparent 45%);
+      opacity: 0.28;
+      pointer-events: none;
+      z-index: 0;
+      animation: gridRotate 140s linear infinite;
+      filter: drop-shadow(0 0 28px rgba(57,255,158,.45));
     }
 
+    @keyframes gridRotate {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(1deg); }
+    }
+
+    /* ===== SCANLINES ===== */
     body::after {
       content: "";
       position: fixed;
       inset: 0;
-      background: repeating-linear-gradient(0deg, rgba(0,0,0,.08) 0 1px, transparent 1px 3px);
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,.08) 0 1px,
+        transparent 1px 3px
+      );
       pointer-events: none;
       z-index: 1;
     }
 
+    /* ===== HORIZONTAL DATA SWEEPS ===== */
     .fx-sweep {
       position: fixed;
       inset: 0;
@@ -72,24 +84,31 @@
       background-position: -120% 30%, -140% 55%, -160% 75%;
       background-repeat: no-repeat;
       animation: sweep 12s linear infinite;
+      filter: drop-shadow(0 0 8px rgba(0,224,196,.6));
     }
 
     @keyframes sweep {
       from {
-        background-position: -120% 30%, -140% 55%, -160% 75%;
+        background-position:
+          -120% 30%,
+          -140% 55%,
+          -160% 75%;
       }
       to {
-        background-position: 160% 30%, 180% 55%, 200% 75%;
+        background-position:
+          160% 30%,
+          180% 55%,
+          200% 75%;
       }
     }
 
+    /* ===== BOLTS ===== */
     .bolt {
       position: fixed;
       pointer-events: none;
       z-index: 3;
       opacity: 0;
       animation: boltFlash 0.3s ease-in-out;
-      transform: scale(0.25); /* 4x smaller */
     }
 
     @keyframes boltFlash {
@@ -98,27 +117,10 @@
     }
 
     .bolt svg {
-      filter: drop-shadow(0 0 4px var(--teal)) drop-shadow(0 0 8px var(--cyan));
+      filter: drop-shadow(0 0 8px var(--teal)) drop-shadow(0 0 15px var(--cyan));
     }
 
-    .energy-bolt {
-      position: fixed;
-      top: -100px;
-      width: 1.5px; /* half as thin */
-      height: 100vh;
-      background: linear-gradient(to bottom, #00ffc3, #39ff9e 50%, transparent);
-      z-index: 3;
-      opacity: 0.75;
-      animation: fall 15s linear forwards;
-      pointer-events: none;
-    }
-
-    @keyframes fall {
-      0% { transform: translateY(-100%); opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(100vh); opacity: 0; }
-    }
-
+    /* ===== CONTENT ===== */
     .container {
       position: relative;
       z-index: 10;
@@ -136,7 +138,9 @@
       border-radius: 24px;
       border: 2px solid var(--teal);
       background: linear-gradient(135deg, rgba(0,28,34,.45), rgba(8,10,12,.65));
-      box-shadow: 0 0 70px rgba(0,224,196,.35), inset 0 0 40px rgba(0,224,196,.1);
+      box-shadow:
+        0 0 70px rgba(0,224,196,.35),
+        inset 0 0 40px rgba(0,224,196,.1);
       margin-bottom: 40px;
       text-align: center;
     }
@@ -144,14 +148,18 @@
     img.logo {
       width: 420px;
       max-width: 90vw;
-      filter: drop-shadow(0 0 32px rgba(0,224,196,.6)) drop-shadow(0 0 55px rgba(57,255,158,.35));
+      filter:
+        drop-shadow(0 0 32px rgba(0,224,196,.6))
+        drop-shadow(0 0 55px rgba(57,255,158,.35));
     }
 
     h1 {
       font-size: clamp(3rem, 8vw, 4.2rem);
       letter-spacing: .14em;
       color: #eafffb;
-      text-shadow: 0 0 14px var(--teal), 0 0 40px var(--cyan);
+      text-shadow:
+        0 0 14px var(--teal),
+        0 0 40px var(--cyan);
       margin-bottom: 14px;
     }
 
@@ -163,6 +171,7 @@
       color: var(--teal);
     }
 
+    /* ===== BADGES ===== */
     .badge {
       font-family: 'Share Tech Mono', monospace;
       font-size: 1.35rem;
@@ -177,11 +186,12 @@
       box-shadow: 0 0 18px rgba(0,224,196,.25);
     }
 
+    /* ===== GALLERY ===== */
     .gallery {
       width: 100%;
       max-width: 1500px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(416px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
       gap: 36px;
     }
 
@@ -190,13 +200,9 @@
       border-radius: 18px;
       overflow: hidden;
       background: linear-gradient(135deg, rgba(8,10,12,.85), rgba(20,15,30,.6));
-      box-shadow: 0 10px 50px rgba(0,0,0,.75), inset 0 0 30px rgba(0,224,196,.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .gallery-item:hover {
-      transform: scale(1.02);
-      box-shadow: 0 10px 50px rgba(0,0,0,.75), 0 0 40px rgba(0,224,196,.4), inset 0 0 30px rgba(0,224,196,.15);
+      box-shadow:
+        0 10px 50px rgba(0,0,0,.75),
+        inset 0 0 30px rgba(0,224,196,.08);
     }
 
     .gallery-item img {
@@ -211,50 +217,15 @@
       font-size: .75rem;
       color: rgba(138,43,226,.4);
     }
-
-    .gemini-widget {
-      position: fixed;
-      bottom: 40px;
-      right: 40px;
-      z-index: 999;
-      background: rgba(0, 224, 196, 0.15);
-      border: 1px solid rgba(0, 224, 196, 0.3);
-      padding: 12px;
-      border-radius: 16px;
-      box-shadow: 0 0 22px rgba(0,224,196,.4);
-      backdrop-filter: blur(4px);
-      transition: transform 0.3s ease;
-    }
-
-    .gemini-widget:hover {
-      transform: scale(1.05);
-    }
-
-    .gemini-widget img {
-      height: 64px;
-      width: auto;
-      display: block;
-      filter: drop-shadow(0 0 8px #00e0c4) drop-shadow(0 0 16px #39ff9e);
-    }
-
-    @media (max-width: 600px) {
-      .gemini-widget {
-        bottom: 20px;
-        right: 20px;
-        padding: 8px;
-      }
-
-      .gemini-widget img {
-        height: 48px;
-      }
-    }
   </style>
 </head>
 
 <body>
+
   <div class="fx-sweep"></div>
 
   <div class="container">
+
     <div class="logo-box">
       <img src="logo.png" class="logo" alt="BTCMiner GPT Logo">
     </div>
@@ -265,7 +236,7 @@
     <div class="badge">powered by llmadvisor.ai</div>
     <div class="badge">contact us · bg@btcminergpt.ai</div>
 
-    <div class="gallery">
+   <div class="gallery">
       <div class="gallery-item"><img src="rig.png" alt="custom mining dashboard"></div>
       <div class="gallery-item"><img src="homepage.png" alt="bitcoin gpu rig"></div>
       <div class="gallery-item"><img src="dashone.png" alt="btc home mining"></div>
@@ -279,6 +250,7 @@
     </footer>
   </div>
 
+
   <a href="https://creditcard.exchange.gemini.com/credit-card/apply?referral_code=44qnv2qrx"
      target="_blank"
      class="gemini-widget"
@@ -289,7 +261,7 @@
   <script>
     const boltSVG = `
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#00e0c4" stroke="#39ff9e" stroke-width="0.75"/>
+        <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#00e0c4" stroke="#39ff9e" stroke-width="1.5"/>
       </svg>
     `;
 
@@ -297,54 +269,38 @@
       const bolt = document.createElement('div');
       bolt.className = 'bolt';
       bolt.innerHTML = boltSVG;
+      
       const isXAxis = Math.random() < 0.5;
+      
       if (isXAxis) {
+        // Top or bottom edge
         const isTop = Math.random() < 0.5;
         bolt.style.left = Math.random() * 100 + '%';
         bolt.style.top = isTop ? '0' : 'auto';
         bolt.style.bottom = isTop ? 'auto' : '0';
       } else {
+        // Left or right edge
         const isLeft = Math.random() < 0.5;
         bolt.style.top = Math.random() * 100 + '%';
         bolt.style.left = isLeft ? '0' : 'auto';
         bolt.style.right = isLeft ? 'auto' : '0';
       }
+      
       document.body.appendChild(bolt);
-      setTimeout(() => bolt.remove(), 300);
+      
+      setTimeout(() => {
+        bolt.remove();
+      }, 300);
     }
 
     function scheduleBolts() {
       createBolt();
-      setTimeout(scheduleBolts, 2000 + Math.random() * 5000);
+      const nextDelay = 2000 + Math.random() * 5000; // Random delay between 2-7 seconds
+      setTimeout(scheduleBolts, nextDelay);
     }
 
     scheduleBolts();
-
-    function createEnergyBolt() {
-      const bolt = document.createElement('div');
-      bolt.className = 'energy-bolt';
-      const container = document.querySelector('.container');
-      const containerRect = container.getBoundingClientRect();
-      let left;
-
-      do {
-        left = Math.random() * window.innerWidth;
-      } while (
-        left > containerRect.left - 100 &&
-        left < containerRect.right + 100
-      );
-
-      bolt.style.left = left + 'px';
-      document.body.appendChild(bolt);
-      setTimeout(() => bolt.remove(), 16000);
-    }
-
-    function scheduleEnergyBolts() {
-      createEnergyBolt();
-      setTimeout(scheduleEnergyBolts, 10000);
-    }
-
-    scheduleEnergyBolts();
   </script>
+
 </body>
 </html>
