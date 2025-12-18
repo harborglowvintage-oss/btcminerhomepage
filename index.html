@@ -33,7 +33,7 @@
       position: relative;
     }
 
-    /* ===== MATRIX GRID (WITH TEMPORAL INSTABILITY) ===== */
+    /* ===== MATRIX GRID ===== */
     body::before {
       content: "";
       position: fixed;
@@ -44,15 +44,11 @@
         repeating-linear-gradient(0deg, rgba(0,224,196,.15) 0 1px, transparent 1px 160px),
         repeating-linear-gradient(90deg, rgba(0,224,196,.15) 0 1px, transparent 1px 160px),
         radial-gradient(circle at 50% 50%, rgba(57,255,158,.25) 0%, transparent 45%);
+      opacity: 0.28;
       pointer-events: none;
       z-index: 0;
-
-      opacity: 0.26;
+      animation: gridRotate 140s linear infinite;
       filter: drop-shadow(0 0 28px rgba(57,255,158,.45));
-
-      animation:
-        gridRotate 140s linear infinite,
-        gridBreath 18s ease-in-out infinite;
     }
 
     @keyframes gridRotate {
@@ -60,15 +56,7 @@
       to   { transform: rotate(1deg); }
     }
 
-    /* Subtle brightness + opacity drift (analog feel) */
-    @keyframes gridBreath {
-      0%   { opacity: 0.24; filter: drop-shadow(0 0 22px rgba(57,255,158,.35)); }
-      35%  { opacity: 0.28; filter: drop-shadow(0 0 32px rgba(57,255,158,.55)); }
-      60%  { opacity: 0.26; filter: drop-shadow(0 0 26px rgba(57,255,158,.45)); }
-      100% { opacity: 0.25; filter: drop-shadow(0 0 24px rgba(57,255,158,.38)); }
-    }
-
-    /* ===== SCANLINES (MICRO FLICKER) ===== */
+    /* ===== SCANLINES ===== */
     body::after {
       content: "";
       position: fixed;
@@ -80,15 +68,6 @@
       );
       pointer-events: none;
       z-index: 1;
-      animation: scanFlicker 7.5s steps(1) infinite;
-    }
-
-    @keyframes scanFlicker {
-      0%   { opacity: 0.92; }
-      22%  { opacity: 0.88; }
-      47%  { opacity: 0.95; }
-      71%  { opacity: 0.90; }
-      100% { opacity: 0.93; }
     }
 
     /* ===== HORIZONTAL DATA SWEEPS ===== */
@@ -136,8 +115,90 @@
       transform-origin: top center;
     }
 
-    /* (Everything below unchanged) */
+    .logo-box {
+      padding: 60px;
+      border-radius: 24px;
+      border: 2px solid var(--teal);
+      background: linear-gradient(135deg, rgba(0,28,34,.45), rgba(8,10,12,.65));
+      box-shadow:
+        0 0 70px rgba(0,224,196,.35),
+        inset 0 0 40px rgba(0,224,196,.1);
+      margin-bottom: 40px;
+      text-align: center;
+    }
 
+    img.logo {
+      width: 420px;
+      max-width: 90vw;
+      filter:
+        drop-shadow(0 0 32px rgba(0,224,196,.6))
+        drop-shadow(0 0 55px rgba(57,255,158,.35));
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 4.2rem);
+      letter-spacing: .14em;
+      color: #eafffb;
+      text-shadow:
+        0 0 14px var(--teal),
+        0 0 40px var(--cyan);
+      margin-bottom: 14px;
+    }
+
+    .tagline {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
+      letter-spacing: .18em;
+      margin-bottom: 26px;
+      color: var(--teal);
+    }
+
+    /* ===== BADGES ===== */
+    .badge {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.35rem;
+      color: var(--teal);
+      background: rgba(0,224,196,.12);
+      border: 1px solid rgba(0,224,196,.3);
+      padding: 12px 30px;
+      border-radius: 22px;
+      margin-bottom: 18px;
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 8px var(--teal);
+      box-shadow: 0 0 18px rgba(0,224,196,.25);
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery {
+      width: 100%;
+      max-width: 1500px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 36px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 4 / 3;
+      border-radius: 18px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(8,10,12,.85), rgba(20,15,30,.6));
+      box-shadow:
+        0 10px 50px rgba(0,0,0,.75),
+        inset 0 0 30px rgba(0,224,196,.08);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    footer {
+      margin-top: 90px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: .75rem;
+      color: rgba(138,43,226,.4);
+    }
   </style>
 </head>
 
@@ -162,7 +223,7 @@
       <div class="gallery-item"><img src="homepage.png" alt="Homepage"></div>
       <div class="gallery-item"><img src="dashone.png" alt="Dashboard One"></div>
       <div class="gallery-item"><img src="dashtwo.png" alt="Dashboard Two"></div>
-      <div class="gallery-item"><img src="fire.png" alt="Fire"></div>
+      <div class="gallery-item"><img src="fire.png" alt="fire"></div>
       <div class="gallery-item"><img src="advanced.png" alt="Advanced View"></div>
     </div>
 
