@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
   <title>BTCMiner GPT — Coming Soon</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Highlander+Marker+Script&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -36,11 +37,10 @@
       padding: 60px 16px;
       position: relative;
       backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
       transform: translateZ(0);
-      will-change: transform;
     }
 
+    /* CRT Overlay */
     .crt-overlay {
       content: "";
       position: fixed;
@@ -53,6 +53,7 @@
       mix-blend-mode: screen;
     }
 
+    /* Enhanced MATRIX Grid */
     body::before {
       content: "";
       position: fixed;
@@ -60,20 +61,16 @@
       z-index: 0;
       pointer-events: none;
       animation: gridRotate 140s linear infinite;
-      opacity: 0.32;
-      filter: drop-shadow(0 0 28px rgba(57,255,158,.45));
+      opacity: 0.34;
+      filter: drop-shadow(0 0 34px rgba(57,255,158,.5));
       background-image:
-        /* Base grid */
-        repeating-linear-gradient(0deg, rgba(57,255,158,.22) 0 1px, transparent 1px 60px),
-        repeating-linear-gradient(90deg, rgba(57,255,158,.22) 0 1px, transparent 1px 60px),
-        /* Sub-grid (tighter mesh) */
-        repeating-linear-gradient(0deg, rgba(0,224,196,.08) 0 1px, transparent 1px 30px),
-        repeating-linear-gradient(90deg, rgba(0,224,196,.08) 0 1px, transparent 1px 30px),
-        /* Diagonal overlays */
-        repeating-linear-gradient(45deg, rgba(0,212,255,0.05) 0 1px, transparent 1px 40px),
-        repeating-linear-gradient(-45deg, rgba(0,212,255,0.05) 0 1px, transparent 1px 40px),
-        /* Radial glow center */
-        radial-gradient(circle at 50% 50%, rgba(57,255,158,.18) 0%, transparent 55%);
+        repeating-linear-gradient(0deg, rgba(57,255,158,.22) 0 1px, transparent 1px 50px),
+        repeating-linear-gradient(90deg, rgba(57,255,158,.22) 0 1px, transparent 1px 50px),
+        repeating-linear-gradient(0deg, rgba(0,224,196,.1) 0 1px, transparent 1px 25px),
+        repeating-linear-gradient(90deg, rgba(0,224,196,.1) 0 1px, transparent 1px 25px),
+        repeating-linear-gradient(45deg, rgba(0,212,255,0.06) 0 1px, transparent 1px 30px),
+        repeating-linear-gradient(-45deg, rgba(0,212,255,0.06) 0 1px, transparent 1px 30px),
+        radial-gradient(circle at 50% 50%, rgba(57,255,158,.18) 0%, transparent 60%);
     }
 
     @keyframes gridRotate {
@@ -81,6 +78,7 @@
       to   { transform: rotate(1deg); }
     }
 
+    /* FX Sweep */
     .fx-sweep {
       position: fixed;
       inset: 0;
@@ -112,7 +110,6 @@
       z-index: 3;
       opacity: 0;
       animation: boltFlash 0.3s ease-in-out;
-      will-change: opacity;
     }
 
     @keyframes boltFlash {
@@ -152,11 +149,13 @@
       filter: drop-shadow(0 0 32px rgba(0,224,196,.6)) drop-shadow(0 0 55px rgba(57,255,158,.35));
     }
 
+    /* Updated font for Coming Soon */
     h1 {
-      font-size: clamp(2.5rem, 7vw, 4.2rem);
-      letter-spacing: .14em;
+      font-family: 'Highlander Marker Script', cursive;
+      font-size: clamp(2.8rem, 7vw, 4.5rem);
+      letter-spacing: .1em;
       color: #eafffb;
-      text-shadow: 0 0 14px var(--teal), 0 0 40px var(--cyan);
+      text-shadow: 0 0 18px var(--teal), 0 0 40px var(--cyan);
     }
 
     .tagline {
