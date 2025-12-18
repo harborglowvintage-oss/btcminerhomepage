@@ -102,6 +102,69 @@
       }
     }
 
+    /* ===== BOLTS LAYER (NEW, ISOLATED) ===== */
+    .fx-bolts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 3;
+      background:
+        /* vertical bolt */
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(255,60,60,.95) 6%,
+          rgba(0,224,196,.85) 12%,
+          rgba(57,255,158,.55) 22%,
+          transparent 40%
+        ),
+        /* horizontal bolt */
+        linear-gradient(
+          to right,
+          transparent 0%,
+          rgba(255,60,60,.95) 6%,
+          rgba(0,224,196,.85) 12%,
+          rgba(57,255,158,.55) 22%,
+          transparent 40%
+        ),
+        /* secondary vertical */
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(255,60,60,.85) 8%,
+          rgba(0,212,255,.6) 18%,
+          transparent 38%
+        );
+      background-size:
+        3px 55%,
+        55% 3px,
+        2px 45%;
+      background-repeat: no-repeat;
+      background-position:
+        -10% -60%,
+        -60% 30%,
+        120% -40%;
+      filter:
+        drop-shadow(0 0 18px rgba(57,255,158,.6))
+        drop-shadow(0 0 28px rgba(255,60,60,.6));
+      animation: boltsMove 24s linear infinite;
+    }
+
+    @keyframes boltsMove {
+      from {
+        background-position:
+          -10% -60%,
+          -60% 30%,
+          120% -40%;
+      }
+      to {
+        background-position:
+          110% 160%,
+          160% 30%,
+          -20% 140%;
+      }
+    }
+
     /* ===== CONTENT ===== */
     .container {
       position: relative;
@@ -167,7 +230,6 @@
       color: var(--teal);
     }
 
-    /* ===== BADGES ===== */
     .badge {
       font-family: 'Share Tech Mono', monospace;
       font-size: 1.35rem;
@@ -182,7 +244,6 @@
       box-shadow: 0 0 18px rgba(0,224,196,.25);
     }
 
-    /* ===== GALLERY ===== */
     .gallery {
       width: 100%;
       max-width: 1500px;
@@ -219,6 +280,7 @@
 <body>
 
   <div class="fx-sweep"></div>
+  <div class="fx-bolts"></div>
 
   <div class="container">
 
@@ -232,16 +294,13 @@
     <h1>Coming Soon</h1>
     <p class="tagline">⚡ highsignal · 🌪️ movefast · 📏 playlong</p>
 
-    <!-- ✅ Affiliate badge added -->
-    <div class="badge">affiliate · llmadvisor.ai</div>
-
     <div class="badge">contact us · bg@btcminergpt.ai</div>
 
     <div class="gallery">
       <div class="gallery-item"><img src="rig.png" alt="rig"></div>
       <div class="gallery-item"><img src="homepage.png" alt="homepage"></div>
-      <div class="gallery-item"><img src="dashone.png" alt="dashboard One"></div>
-      <div class="gallery-item"><img src="dashtwo.png" alt="dashboard Two"></div>
+      <div class="gallery-item"><img src="dashone.png" alt="dashone"></div>
+      <div class="gallery-item"><img src="dashtwo.png" alt="dashtwo"></div>
       <div class="gallery-item"><img src="fire.png" alt="fire"></div>
       <div class="gallery-item"><img src="advanced.png" alt="advanced"></div>
     </div>
