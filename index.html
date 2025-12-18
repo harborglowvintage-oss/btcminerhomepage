@@ -153,7 +153,7 @@
       color: var(--teal);
     }
 
-    /* ===== BADGE ===== */
+    /* ===== BADGES ===== */
     .badge {
       font-family: 'Share Tech Mono', monospace;
       font-size: 0.9rem;
@@ -162,9 +162,29 @@
       border: 1px solid rgba(0,224,196,.3);
       padding: 8px 20px;
       border-radius: 20px;
-      margin-bottom: 60px;
+      margin-bottom: 18px;
       text-shadow: 0 0 8px var(--teal);
       box-shadow: 0 0 15px rgba(0,224,196,.2);
+    }
+
+    .badge-contact {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.9rem;
+      color: #ffffff;
+      background: linear-gradient(
+        135deg,
+        rgba(0,224,196,0.85),
+        rgba(0,180,165,0.85)
+      );
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 10px 22px;
+      border-radius: 20px;
+      margin-bottom: 60px;
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 6px rgba(255,255,255,0.6);
+      box-shadow:
+        0 0 18px rgba(0,224,196,0.45),
+        inset 0 0 12px rgba(255,255,255,0.12);
     }
 
     /* ===== GALLERY ===== */
@@ -214,13 +234,14 @@
     <h1>Coming Soon</h1>
     <p class="tagline">⚡ highsignal · 🌪️ movefast · 📏 playlong</p>
 
-    <div class="badge">PRIVATE BETA · INVITE ONLY</div>
+    <div class="badge">powered by llmadvisor.ai</div>
+    <div class="badge-contact">contact us· bg@btcminergpt.ai</div>
 
     <div class="gallery">
-      <div class="gallery-item"><img src="rig.png"></div>
-      <div class="gallery-item"><img src="homepage.png"></div>
-      <div class="gallery-item"><img src="dashone.png"></div>
-      <div class="gallery-item"><img src="dashtwo.png"></div>
+      <div class="gallery-item"><img src="rig.png" alt="Mining Rig"></div>
+      <div class="gallery-item"><img src="homepage.png" alt="Homepage"></div>
+      <div class="gallery-item"><img src="dashone.png" alt="Dashboard One"></div>
+      <div class="gallery-item"><img src="dashtwo.png" alt="Dashboard Two"></div>
     </div>
 
     <footer>
