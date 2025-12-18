@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<! DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,8 +6,8 @@
   <title>BTCMiner GPT — Coming Soon</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #000;
+    : root {
+      --bg:  #000;
       --cyan: #00d4ff;
       --mint: #39ff9e;
       --teal: #00e0c4;
@@ -16,12 +16,12 @@
 
     * {
       margin: 0;
-      padding: 0;
+      padding:  0;
       box-sizing: border-box;
     }
 
     body {
-      background: linear-gradient(180deg, #000 0%, #0a0015 40%, #050008 100%);
+      background:  linear-gradient(180deg, #000 0%, #0a0015 40%, #050008 100%);
       color: var(--mint);
       font-family: 'Orbitron', sans-serif;
       display: flex;
@@ -50,20 +50,9 @@
       pointer-events: none;
       z-index: 0;
       opacity: 0.3;
-      animation: gridBreathing 12s ease-in-out infinite, gridRotate 60s linear infinite;
+      animation: gridRotate 60s linear infinite;
       transform-origin: center center;
       filter: drop-shadow(0 0 30px rgba(13, 255, 95, 0.6));
-    }
-
-    @keyframes gridBreathing {
-      0%, 100% { 
-        transform: scale(1) rotateZ(0deg);
-        filter: drop-shadow(0 0 25px rgba(13, 255, 95, 0.5));
-      }
-      50% { 
-        transform: scale(1.04) rotateZ(0.3deg);
-        filter: drop-shadow(0 0 50px rgba(13, 255, 95, 0.8)) drop-shadow(0 0 15px rgba(0, 224, 196, 0.4));
-      }
     }
 
     @keyframes gridRotate {
@@ -71,17 +60,12 @@
       100% { transform: scale(1) rotateZ(1deg); }
     }
 
-    @keyframes borderPulse {
-      0%, 100% { box-shadow: 0 0 60px rgba(0, 224, 196, 0.25), 0 0 120px rgba(0, 212, 255, 0.12), inset 0 0 40px rgba(0, 224, 196, 0.08); }
-      50% { box-shadow: 0 0 80px rgba(0, 224, 196, 0.35), 0 0 140px rgba(57, 255, 158, 0.15), inset 0 0 50px rgba(0, 224, 196, 0.12); }
-    }
-
     /* Scanline effect */
     body::after {
       content: "";
       position: fixed;
       inset: 0;
-      background: 
+      background:  
         linear-gradient(90deg, transparent 0%, rgba(0, 224, 196, 0.95) 15%, rgba(0, 224, 196, 0.5) 50%, transparent 100%),
         linear-gradient(90deg, transparent 0%, rgba(0, 224, 196, 0.9) 20%, transparent 60%),
         linear-gradient(90deg, transparent 0%, rgba(0, 224, 196, 0.92) 18%, transparent 70%),
@@ -103,7 +87,7 @@
 
     @keyframes dataFlowH2 {
       0% { background-position: -100% calc(100% - 200px), 0% calc(100% - 140px), -120% calc(100% - 80px), -100% calc(100% - 240px); }
-      100% { background-position: 100% calc(100% - 200px), 100% calc(100% - 140px), 100% calc(100% - 80px), 100% calc(100% - 240px); }
+      100% { background-position:  100% calc(100% - 200px), 100% calc(100% - 140px), 100% calc(100% - 80px), 100% calc(100% - 240px); }
     }
 
     @keyframes dataFlowH3 {
@@ -117,46 +101,7 @@
     }
 
     /* Scanline effect */
-
-    /* Animated grid background */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: 
-        repeating-linear-gradient(0deg, rgba(13, 255, 95, 0.3) 0px, rgba(13, 255, 95, 0.3) 1px, transparent 1px, transparent 60px),
-        repeating-linear-gradient(90deg, rgba(13, 255, 95, 0.3) 0px, rgba(13, 255, 95, 0.3) 1px, transparent 1px, transparent 60px),
-        repeating-linear-gradient(0deg, rgba(0, 224, 196, 0.2) 0px, rgba(0, 224, 196, 0.2) 1px, transparent 1px, transparent 160px),
-        repeating-linear-gradient(90deg, rgba(0, 224, 196, 0.2) 0px, rgba(0, 224, 196, 0.2) 1px, transparent 1px, transparent 160px),
-        radial-gradient(circle at 50% 50%, rgba(13, 255, 95, 0.3) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(13, 255, 95, 0.08) 0%, transparent 60%);
-      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.3;
-      animation: gridBreathing 12s ease-in-out infinite, gridRotate 60s linear infinite;
-      transform-origin: center center;
-      filter: drop-shadow(0 0 30px rgba(13, 255, 95, 0.6));
-    }
-
-    @keyframes gridBreathing {
-      0%, 100% { 
-        transform: scale(1) rotateZ(0deg);
-        filter: drop-shadow(0 0 25px rgba(13, 255, 95, 0.5));
-      }
-      50% { 
-        transform: scale(1.04) rotateZ(0.3deg);
-        filter: drop-shadow(0 0 50px rgba(13, 255, 95, 0.8)) drop-shadow(0 0 15px rgba(0, 224, 196, 0.4));
-      }
-    }
-
-    @keyframes gridRotate {
-      0% { transform: scale(1) rotateZ(0deg); }
-      100% { transform: scale(1) rotateZ(1deg); }
-    }
-
-    /* Scanline effect */
-    .container::after {
+    . container:: after {
       content: "";
       position: fixed;
       inset: 0;
@@ -177,7 +122,7 @@
         linear-gradient(180deg, transparent 0%, rgba(0, 224, 196, 0.8) 26%, transparent 64%);
       background-size: 2px 40%, 3px 35%, 2px 38%, 3px 42%;
       background-position: 5% -100%, 15% -80%, 85% -120%, 95% -100%;
-      background-repeat: no-repeat;
+      background-repeat:  no-repeat;
       background-attachment: fixed;
       pointer-events: none;
       z-index: 1;
@@ -205,7 +150,7 @@
       100% { background-position: 5% -100%, 15% -80%, 85% -120%, 95% 120%; }
     }
 
-    .container {
+    . container {
       position: relative;
       z-index: 10;
       display: flex;
@@ -218,8 +163,8 @@
     .logo-box {
       position: relative;
       padding: 40px;
-      border: 2px solid var(--teal);
-      border-radius: 24px;
+      border:  2px solid var(--teal);
+      border-radius:  24px;
       margin-bottom: 50px;
       background: linear-gradient(135deg, rgba(0, 28, 34, 0.4), rgba(8, 10, 12, 0.6));
       box-shadow: 
@@ -227,15 +172,9 @@
         0 0 120px rgba(0, 212, 255, 0.12),
         inset 0 0 40px rgba(0, 224, 196, 0.08);
       backdrop-filter: blur(8px);
-      animation: borderPulse 4s ease-in-out infinite;
     }
 
-    @keyframes borderPulse {
-      0%, 100% { box-shadow: 0 0 60px rgba(0, 224, 196, 0.25), 0 0 120px rgba(0, 212, 255, 0.12), inset 0 0 40px rgba(0, 224, 196, 0.08); }
-      50% { box-shadow: 0 0 80px rgba(0, 224, 196, 0.35), 0 0 140px rgba(57, 255, 158, 0.15), inset 0 0 50px rgba(0, 224, 196, 0.12); }
-    }
-
-    .logo-box::before {
+    .logo-box:: before {
       content: "";
       position: absolute;
       top: -40px;
@@ -245,29 +184,18 @@
       height: 280px;
       background: radial-gradient(circle, rgba(0, 224, 196, 0.15) 0%, transparent 70%);
       filter: blur(50px);
-      animation: glow 5s ease-in-out infinite;
+      opacity: 0.3;
       z-index: -1;
     }
 
-    @keyframes glow {
-      0%, 100% { opacity: 0.3; transform: translateX(-50%) scale(1); }
-      50% { opacity: 0.6; transform: translateX(-50%) scale(1.1); }
-    }
-
-    img.logo {
+    img. logo {
       width: 320px;
-      max-width: 85vw;
+      max-width:  85vw;
       filter: drop-shadow(0 0 32px rgba(0, 224, 196, 0.6)) drop-shadow(0 0 50px rgba(57, 255, 158, 0.3));
-      animation: logoBob 3s ease-in-out infinite;
-    }
-
-    @keyframes logoBob {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
     }
 
     h1 {
-      font-size: clamp(2.2rem, 7vw, 3.5rem);
+      font-size: clamp(2.2rem, 7vw, 3. 5rem);
       font-weight: 900;
       color: #eafffb;
       letter-spacing: 0.12em;
@@ -276,12 +204,6 @@
         0 0 30px var(--cyan),
         0 0 60px rgba(57, 255, 158, 0.4);
       margin-bottom: 16px;
-      animation: titleGlow 3s ease-in-out infinite;
-    }
-
-    @keyframes titleGlow {
-      0%, 100% { text-shadow: 0 0 12px var(--teal), 0 0 30px var(--cyan), 0 0 60px rgba(57, 255, 158, 0.4); }
-      50% { text-shadow: 0 0 16px var(--teal), 0 0 40px var(--mint), 0 0 80px rgba(57, 255, 158, 0.6); }
     }
 
     p.tagline {
@@ -292,17 +214,11 @@
       letter-spacing: 0.16em;
       text-shadow: 0 0 10px rgba(0, 224, 196, 0.8), 0 0 20px rgba(0, 212, 255, 0.4);
       margin-bottom: 60px;
-      animation: taglineFloat 4s ease-in-out infinite;
     }
 
-    @keyframes taglineFloat {
-      0%, 100% { transform: translateY(0); opacity: 0.95; }
-      50% { transform: translateY(-4px); opacity: 1; }
-    }
-
-    .gallery {
+    . gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(456px, 1fr));
+      grid-template-columns:  repeat(auto-fit, minmax(456px, 1fr));
       gap: 28px;
       width: 100%;
       max-width: 1500px;
@@ -313,7 +229,7 @@
       border-radius: 16px;
       overflow: hidden;
       aspect-ratio: 4 / 3;
-      border: 1.5px solid rgba(0, 224, 196, 0.3);
+      border: 1. 5px solid rgba(0, 224, 196, 0.3);
       background: linear-gradient(135deg, rgba(8, 10, 12, 0.8), rgba(20, 15, 30, 0.6));
       box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7), inset 0 0 30px rgba(0, 224, 196, 0.05);
       transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -351,7 +267,7 @@
       transition: opacity 0.4s ease;
     }
 
-    .gallery-item:hover::after {
+    .gallery-item:hover:: after {
       opacity: 1;
     }
 
@@ -364,7 +280,7 @@
       letter-spacing: 0.08em;
     }
 
-    .copyright p {
+    . copyright p {
       margin: 0;
     }
 
@@ -375,14 +291,14 @@
     }
 
     .contact-cta p {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-size:  clamp(1rem, 2.5vw, 1.3rem);
       color: var(--teal);
       margin-bottom: 12px;
-      letter-spacing: 0.12em;
+      letter-spacing:  0.12em;
     }
 
     .contact-cta a {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-size:  clamp(1rem, 2.5vw, 1.3rem);
       color: var(--mint);
       text-decoration: none;
       font-weight: 700;
@@ -420,7 +336,7 @@
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width:  480px) {
       body {
         padding: 40px 16px;
       }
@@ -433,7 +349,7 @@
         width: 180px;
       }
 
-      .gallery {
+      . gallery {
         grid-template-columns: 1fr;
         gap: 16px;
       }
@@ -447,7 +363,9 @@
       <img src="logo.png" alt="BTCMiner GPT Logo" class="logo" />
     </div>
 
-    <p style="font-family: 'Orbitron', sans-serif; font-size: 16px; color: #fff; margin-bottom: 30px; letter-spacing: 1px; background: rgba(0, 224, 196, 0.3); padding: 12px 24px; border-radius: 8px; box-shadow: 0 0 20px rgba(0, 224, 196, 0.6), inset 0 0 10px rgba(0, 224, 196, 0.3);">powered by llmadvisor.ai</p>
+    <p style="font-family: 'Orbitron', sans-serif; font-size: 16px; color:  #fff; margin-bottom: 30px; letter-spacing: 1px; background: rgba(0, 224, 196, 0.3); padding: 12px 24px; border-radius: 8px; box-shadow: 0 0 20px rgba(0, 224, 196, 0.4);">
+      🚀 AI-powered Bitcoin mining analytics & optimization
+    </p>
 
     <h1>Coming Soon</h1>
     <p class="tagline">⚡ highsignal · 🌪️ movefast · 📏 playlong</p>
