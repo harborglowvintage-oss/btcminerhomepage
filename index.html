@@ -146,20 +146,19 @@
       filter: drop-shadow(0 0 32px rgba(0,224,196,.6)) drop-shadow(0 0 55px rgba(57,255,158,.35));
     }
 
-h1 {
-  font-family: 'Press Start 2P', monospace;
-  font-size: clamp(2rem, 5.5vw, 3.5rem);
-  letter-spacing: .1em;
-  color: #eafffb;
-  text-shadow:
-    0 0 1px #ffa500,
-    0 0 2px #ffa500,
-    0 0 4px #ffa500,
-    0 0 18px var(--teal),
-    0 0 40px var(--cyan);
-  -webkit-text-stroke: 0.7px #ffa500; /* orange stroke around text */
-}
-
+    h1 {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(2rem, 5.5vw, 3.5rem);
+      letter-spacing: .1em;
+      color: #eafffb;
+      text-shadow:
+        0 0 1px #ffa500,
+        0 0 2px #ffa500,
+        0 0 4px #ffa500,
+        0 0 18px var(--teal),
+        0 0 40px var(--cyan);
+      -webkit-text-stroke: 0.7px #ffa500;
+    }
 
     .tagline {
       font-family: 'Share Tech Mono', monospace;
@@ -216,10 +215,10 @@ h1 {
     }
 
     .gemini-widget {
-      position: fixed;
-      bottom: 40px;
-      right: 40px;
-      z-index: 999;
+      margin: 40px auto 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background: rgba(0, 224, 196, 0.15);
       border: 1px solid rgba(0, 224, 196, 0.3);
       padding: 12px;
@@ -227,6 +226,7 @@ h1 {
       box-shadow: 0 0 22px rgba(0,224,196,.4);
       backdrop-filter: blur(4px);
       transition: transform 0.3s ease;
+      max-width: fit-content;
     }
 
     .gemini-widget:hover {
@@ -253,12 +253,6 @@ h1 {
 
       .gallery-item {
         height: 220px;
-      }
-
-      .gemini-widget {
-        bottom: 20px;
-        right: 20px;
-        padding: 8px;
       }
 
       .gemini-widget img {
@@ -293,14 +287,13 @@ h1 {
     </div>
 
     <footer>© 2025 BTCMiner GPT. All rights reserved.</footer>
-  </div>
 
-  <a href="https://creditcard.exchange.gemini.com/credit-card/apply?referral_code=44qnv2qrx"
-     target="_blank"
-     class="gemini-widget"
-     title="Apply for Gemini Credit Card">
-    <img src="gemini.png" alt="Gemini Credit Card Application Link">
-  </a>
+    <div class="gemini-widget">
+      <a href="https://creditcard.exchange.gemini.com/credit-card/apply?referral_code=44qnv2qrx" target="_blank" title="Apply for Gemini Credit Card">
+        <img src="gemini.png" alt="Gemini Credit Card Application Link">
+      </a>
+    </div>
+  </div>
 
   <script>
     const boltSVG = `
@@ -341,4 +334,3 @@ h1 {
   </script>
 </body>
 </html>
-
