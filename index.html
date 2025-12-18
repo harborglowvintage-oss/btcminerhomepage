@@ -33,7 +33,20 @@
       position: relative;
     }
 
-    /* ===== MATRIX GRID ===== */
+    /* CRT SCANLINE & GLOW EFFECT */
+    .crt-overlay {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at center, rgba(57,255,158,0.05) 0%, transparent 80%),
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.06) 0px, rgba(0,0,0,0.06) 1px, transparent 1px, transparent 3px);
+      mix-blend-mode: screen;
+    }
+
+    /* MATRIX GRID */
     body::before {
       content: "";
       position: fixed;
@@ -56,21 +69,7 @@
       to   { transform: rotate(1deg); }
     }
 
-    /* ===== SCANLINES ===== */
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        rgba(0,0,0,.08) 0 1px,
-        transparent 1px 3px
-      );
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    /* ===== HORIZONTAL DATA SWEEPS ===== */
+    /* FX SWEEP */
     .fx-sweep {
       position: fixed;
       inset: 0;
@@ -102,7 +101,7 @@
       }
     }
 
-    /* ===== BOLTS ===== */
+    /* BOLTS */
     .bolt {
       position: fixed;
       pointer-events: none;
@@ -120,7 +119,7 @@
       filter: drop-shadow(0 0 8px var(--teal)) drop-shadow(0 0 15px var(--cyan));
     }
 
-    /* ===== CONTENT ===== */
+    /* CONTAINER */
     .container {
       position: relative;
       z-index: 10;
@@ -138,9 +137,7 @@
       border-radius: 24px;
       border: 2px solid var(--teal);
       background: linear-gradient(135deg, rgba(0,28,34,.45), rgba(8,10,12,.65));
-      box-shadow:
-        0 0 70px rgba(0,224,196,.35),
-        inset 0 0 40px rgba(0,224,196,.1);
+      box-shadow: 0 0 70px rgba(0,224,196,.35), inset 0 0 40px rgba(0,224,196,.1);
       margin-bottom: 40px;
       text-align: center;
     }
@@ -148,18 +145,14 @@
     img.logo {
       width: 420px;
       max-width: 90vw;
-      filter:
-        drop-shadow(0 0 32px rgba(0,224,196,.6))
-        drop-shadow(0 0 55px rgba(57,255,158,.35));
+      filter: drop-shadow(0 0 32px rgba(0,224,196,.6)) drop-shadow(0 0 55px rgba(57,255,158,.35));
     }
 
     h1 {
       font-size: clamp(3rem, 8vw, 4.2rem);
       letter-spacing: .14em;
       color: #eafffb;
-      text-shadow:
-        0 0 14px var(--teal),
-        0 0 40px var(--cyan);
+      text-shadow: 0 0 14px var(--teal), 0 0 40px var(--cyan);
       margin-bottom: 14px;
     }
 
@@ -171,7 +164,6 @@
       color: var(--teal);
     }
 
-    /* ===== BADGES ===== */
     .badge {
       font-family: 'Share Tech Mono', monospace;
       font-size: 1.35rem;
@@ -186,7 +178,6 @@
       box-shadow: 0 0 18px rgba(0,224,196,.25);
     }
 
-    /* ===== GALLERY ===== */
     .gallery {
       width: 100%;
       max-width: 1500px;
@@ -200,9 +191,7 @@
       border-radius: 18px;
       overflow: hidden;
       background: linear-gradient(135deg, rgba(8,10,12,.85), rgba(20,15,30,.6));
-      box-shadow:
-        0 10px 50px rgba(0,0,0,.75),
-        inset 0 0 30px rgba(0,224,196,.08);
+      box-shadow: 0 10px 50px rgba(0,0,0,.75), inset 0 0 30px rgba(0,224,196,.08);
     }
 
     .gallery-item img {
@@ -215,13 +204,55 @@
       margin-top: 90px;
       font-family: 'Share Tech Mono', monospace;
       font-size: .75rem;
-      color: rgba(138,43,226,.4);
+      color: rgba(57,255,158,.35);
+      text-shadow: 0 0 6px rgba(0,224,196,.4);
+    }
+
+    .gemini-widget {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      z-index: 999;
+      background: rgba(0, 224, 196, 0.15);
+      border: 1px solid rgba(0, 224, 196, 0.3);
+      padding: 12px;
+      border-radius: 16px;
+      box-shadow: 0 0 22px rgba(0,224,196,.4);
+      backdrop-filter: blur(4px);
+      transition: transform 0.3s ease;
+    }
+
+    .gemini-widget:hover {
+      transform: scale(1.05);
+    }
+
+    .gemini-widget img {
+      height: 64px;
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 0 8px #00e0c4) drop-shadow(0 0 16px #39ff9e);
+    }
+
+    @media (max-width: 600px) {
+      .gemini-widget {
+        bottom: 20px;
+        right: 20px;
+        padding: 8px;
+      }
+
+      .gemini-widget img {
+        height: 48px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- CRT Overlay -->
+  <div class="crt-overlay"></div>
+
+  <!-- Sweep Effect -->
   <div class="fx-sweep"></div>
 
   <div class="container">
@@ -236,7 +267,7 @@
     <div class="badge">powered by llmadvisor.ai</div>
     <div class="badge">contact us · bg@btcminergpt.ai</div>
 
-   <div class="gallery">
+    <div class="gallery">
       <div class="gallery-item"><img src="rig.png" alt="custom mining dashboard"></div>
       <div class="gallery-item"><img src="homepage.png" alt="bitcoin gpu rig"></div>
       <div class="gallery-item"><img src="dashone.png" alt="btc home mining"></div>
@@ -250,7 +281,7 @@
     </footer>
   </div>
 
-
+  <!-- Gemini CTA -->
   <a href="https://creditcard.exchange.gemini.com/credit-card/apply?referral_code=44qnv2qrx"
      target="_blank"
      class="gemini-widget"
@@ -269,33 +300,28 @@
       const bolt = document.createElement('div');
       bolt.className = 'bolt';
       bolt.innerHTML = boltSVG;
-      
+
       const isXAxis = Math.random() < 0.5;
-      
+
       if (isXAxis) {
-        // Top or bottom edge
         const isTop = Math.random() < 0.5;
         bolt.style.left = Math.random() * 100 + '%';
         bolt.style.top = isTop ? '0' : 'auto';
         bolt.style.bottom = isTop ? 'auto' : '0';
       } else {
-        // Left or right edge
         const isLeft = Math.random() < 0.5;
         bolt.style.top = Math.random() * 100 + '%';
         bolt.style.left = isLeft ? '0' : 'auto';
         bolt.style.right = isLeft ? 'auto' : '0';
       }
-      
+
       document.body.appendChild(bolt);
-      
-      setTimeout(() => {
-        bolt.remove();
-      }, 300);
+      setTimeout(() => bolt.remove(), 300);
     }
 
     function scheduleBolts() {
       createBolt();
-      const nextDelay = 2000 + Math.random() * 5000; // Random delay between 2-7 seconds
+      const nextDelay = 2000 + Math.random() * 5000;
       setTimeout(scheduleBolts, nextDelay);
     }
 
