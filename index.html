@@ -33,8 +33,7 @@
       position: relative;
     }
 
-    /* ================= MATRIX GRID ================= */
-
+    /* ===== MATRIX GRID ===== */
     body::before {
       content: "";
       position: fixed;
@@ -57,8 +56,7 @@
       to   { transform: rotate(1deg); }
     }
 
-    /* ================= SCANLINES ================= */
-
+    /* ===== SCANLINES ===== */
     body::after {
       content: "";
       position: fixed;
@@ -72,8 +70,7 @@
       z-index: 1;
     }
 
-    /* ================= HORIZONTAL DATA SWEEPS ================= */
-
+    /* ===== DATA SWEEPS ===== */
     .fx-sweep {
       position: fixed;
       inset: 0;
@@ -105,8 +102,7 @@
       }
     }
 
-    /* ================= CONTENT ================= */
-
+    /* ===== CONTENT ===== */
     .container {
       position: relative;
       z-index: 10;
@@ -127,7 +123,7 @@
       box-shadow:
         0 0 70px rgba(0,224,196,.35),
         inset 0 0 40px rgba(0,224,196,.1);
-      margin-bottom: 60px;
+      margin-bottom: 40px;
       text-align: center;
     }
 
@@ -140,7 +136,7 @@
     }
 
     .affiliate-note {
-      margin-top: 22px;
+      margin-top: 18px;
       font-family: 'Share Tech Mono', monospace;
       font-size: .9rem;
       letter-spacing: .08em;
@@ -160,19 +156,33 @@
       text-shadow:
         0 0 14px var(--teal),
         0 0 40px var(--cyan);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .tagline {
       font-family: 'Share Tech Mono', monospace;
       font-size: clamp(1.4rem, 4vw, 1.9rem);
       letter-spacing: .18em;
-      margin-bottom: 80px;
+      margin-bottom: 26px;
       color: var(--teal);
     }
 
-    /* ================= GALLERY ================= */
+    /* ===== BADGES ===== */
+    .badge {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.35rem;
+      color: var(--teal);
+      background: rgba(0,224,196,.12);
+      border: 1px solid rgba(0,224,196,.3);
+      padding: 12px 30px;
+      border-radius: 22px;
+      margin-bottom: 18px;
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 8px var(--teal);
+      box-shadow: 0 0 18px rgba(0,224,196,.25);
+    }
 
+    /* ===== GALLERY ===== */
     .gallery {
       width: 100%;
       max-width: 1500px;
@@ -189,20 +199,12 @@
       box-shadow:
         0 10px 50px rgba(0,0,0,.75),
         inset 0 0 30px rgba(0,224,196,.08);
-      transition: transform .35s ease, box-shadow .35s ease;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-14px) scale(1.04);
-      box-shadow:
-        0 24px 70px rgba(0,224,196,.4);
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: contrast(1.1) saturate(1.15);
     }
 
     footer {
@@ -211,32 +213,41 @@
       font-size: .75rem;
       color: rgba(138,43,226,.4);
     }
-
-    @media (max-width: 768px) {
-      img.logo { width: 260px; }
-      .gallery { grid-template-columns: 1fr; }
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- FX LAYER -->
   <div class="fx-sweep"></div>
 
   <div class="container">
 
     <div class="logo-box">
       <img src="logo.png" class="logo" alt="BTCMiner GPT Logo">
-      <p class="affiliate-note">
-        A partner project of <a href="https://llmadvisor.ai" target="_blank">LLMAdvisor.ai</a>
-      </p>
+      <div class="affiliate-note">
+        powered by <a href="https://llmadvisor.ai" target="_blank">llmadvisor.ai</a>
+      </div>
     </div>
 
     <h1>Coming Soon</h1>
-    <p class="tagline">highsignal · movefast · playlong</p>
+    <p class="tagline">⚡ highsignal · 🌪️ movefast · 📏 playlong</p>
+
+    <div class="badge">contact us · bg@btcminergpt.ai</div>
 
     <div class="gallery">
-      <div class="gallery-item"><img src="rig.png"></div>
-      <div class="gallery-item"><img src="homepage.png"></div>
-      <div class="gallery-item"><img src="dashone.png"></div
+      <div class="gallery-item"><img src="rig.png" alt="rig"></div>
+      <div class="gallery-item"><img src="homepage.png" alt="homepage"></div>
+      <div class="gallery-item"><img src="dashone.png" alt="dashboard One"></div>
+      <div class="gallery-item"><img src="dashtwo.png" alt="dashboard Two"></div>
+      <div class="gallery-item"><img src="fire.png" alt="fire"></div>
+      <div class="gallery-item"><img src="advanced.png" alt="advanced"></div>
+    </div>
+
+    <footer>
+      © 2025 BTCMiner GPT. All rights reserved.
+    </footer>
+
+  </div>
+
+</body>
+</html>
