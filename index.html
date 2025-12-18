@@ -38,9 +38,9 @@
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
       transform: translateZ(0);
+      will-change: transform;
     }
 
-    /* CRT OVERLAY */
     .crt-overlay {
       content: "";
       position: fixed;
@@ -51,10 +51,8 @@
         radial-gradient(circle at center, rgba(57,255,158,0.05) 0%, transparent 80%),
         repeating-linear-gradient(0deg, rgba(0,0,0,0.06) 0px, rgba(0,0,0,0.06) 1px, transparent 1px, transparent 3px);
       mix-blend-mode: screen;
-      -webkit-mix-blend-mode: screen;
     }
 
-    /* MATRIX GRID */
     body::before {
       content: "";
       position: fixed;
@@ -70,7 +68,6 @@
       z-index: 0;
       animation: gridRotate 140s linear infinite;
       filter: drop-shadow(0 0 28px rgba(57,255,158,.45));
-      -webkit-filter: drop-shadow(0 0 28px rgba(57,255,158,.45));
     }
 
     @keyframes gridRotate {
@@ -78,7 +75,6 @@
       to   { transform: rotate(1deg); }
     }
 
-    /* FX SWEEP */
     .fx-sweep {
       position: fixed;
       inset: 0;
@@ -93,7 +89,6 @@
       background-repeat: no-repeat;
       animation: sweep 12s linear infinite;
       filter: drop-shadow(0 0 8px rgba(0,224,196,.6));
-      -webkit-filter: drop-shadow(0 0 8px rgba(0,224,196,.6));
     }
 
     @keyframes sweep {
@@ -105,15 +100,13 @@
       }
     }
 
-    /* BOLTS */
     .bolt {
       position: fixed;
       pointer-events: none;
       z-index: 3;
       opacity: 0;
       animation: boltFlash 0.3s ease-in-out;
-      will-change: opacity, transform;
-      contain: layout paint;
+      will-change: opacity;
     }
 
     @keyframes boltFlash {
@@ -125,7 +118,6 @@
       filter: drop-shadow(0 0 8px var(--teal)) drop-shadow(0 0 15px var(--cyan));
     }
 
-    /* CONTAINER */
     .container {
       position: relative;
       z-index: 10;
@@ -152,7 +144,6 @@
       max-width: 70vw;
       height: auto;
       filter: drop-shadow(0 0 32px rgba(0,224,196,.6)) drop-shadow(0 0 55px rgba(57,255,158,.35));
-      -webkit-filter: drop-shadow(0 0 32px rgba(0,224,196,.6)) drop-shadow(0 0 55px rgba(57,255,158,.35));
     }
 
     h1 {
@@ -184,18 +175,17 @@
       box-shadow: 0 0 18px rgba(0,224,196,.25);
     }
 
-    /* GALLERY */
     .gallery {
       width: 100%;
       max-width: 1500px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 60px;
     }
 
     .gallery-item {
-      aspect-ratio: 4 / 3;
+      height: 320px;
       border-radius: 18px;
       overflow: hidden;
       background: linear-gradient(135deg, rgba(8,10,12,.85), rgba(20,15,30,.6));
@@ -217,7 +207,6 @@
       text-align: center;
     }
 
-    /* GEMINI WIDGET */
     .gemini-widget {
       position: fixed;
       bottom: 40px;
@@ -228,7 +217,6 @@
       padding: 12px;
       border-radius: 16px;
       box-shadow: 0 0 22px rgba(0,224,196,.4);
-      -webkit-backdrop-filter: blur(4px);
       backdrop-filter: blur(4px);
       transition: transform 0.3s ease;
     }
@@ -242,10 +230,23 @@
       width: auto;
       display: block;
       filter: drop-shadow(0 0 8px #00e0c4) drop-shadow(0 0 16px #39ff9e);
-      -webkit-filter: drop-shadow(0 0 8px #00e0c4) drop-shadow(0 0 16px #39ff9e);
+    }
+
+    @media (max-width: 960px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item {
+        height: 220px;
+      }
+
       .gemini-widget {
         bottom: 20px;
         right: 20px;
@@ -260,7 +261,6 @@
 </head>
 
 <body>
-
   <div class="crt-overlay"></div>
   <div class="fx-sweep"></div>
 
