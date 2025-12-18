@@ -151,6 +151,8 @@
       font-size: clamp(2rem, 5.5vw, 3.5rem);
       letter-spacing: .1em;
       color: #eafffb;
+      text-align: center;
+      word-break: break-word;
       text-shadow:
         0 0 1px #ffa500,
         0 0 2px #ffa500,
@@ -166,6 +168,7 @@
       letter-spacing: .18em;
       margin: 20px 0 30px;
       color: var(--teal);
+      text-align: center;
     }
 
     .badge {
@@ -240,13 +243,15 @@
       filter: drop-shadow(0 0 8px #00e0c4) drop-shadow(0 0 16px #39ff9e);
     }
 
-    @media (max-width: 960px) {
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
     @media (max-width: 600px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .tagline {
+        font-size: 1rem;
+      }
+
       .gallery {
         grid-template-columns: 1fr;
       }
