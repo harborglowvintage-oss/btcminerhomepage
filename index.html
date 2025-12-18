@@ -28,7 +28,7 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      padding: 80px 24px;
+      padding: 60px 24px;
       overflow-x: hidden;
       position: relative;
     }
@@ -70,7 +70,7 @@
       z-index: 1;
     }
 
-    /* ===== DATA SWEEPS ===== */
+    /* ===== HORIZONTAL DATA SWEEPS ===== */
     .fx-sweep {
       position: fixed;
       inset: 0;
@@ -102,67 +102,22 @@
       }
     }
 
-    /* ===== BOLTS LAYER (NEW, ISOLATED) ===== */
-    .fx-bolts {
+    /* ===== BOLTS ===== */
+    .bolt {
       position: fixed;
-      inset: 0;
       pointer-events: none;
       z-index: 3;
-      background:
-        /* vertical bolt */
-        linear-gradient(
-          to bottom,
-          transparent 0%,
-          rgba(255,60,60,.95) 6%,
-          rgba(0,224,196,.85) 12%,
-          rgba(57,255,158,.55) 22%,
-          transparent 40%
-        ),
-        /* horizontal bolt */
-        linear-gradient(
-          to right,
-          transparent 0%,
-          rgba(255,60,60,.95) 6%,
-          rgba(0,224,196,.85) 12%,
-          rgba(57,255,158,.55) 22%,
-          transparent 40%
-        ),
-        /* secondary vertical */
-        linear-gradient(
-          to bottom,
-          transparent 0%,
-          rgba(255,60,60,.85) 8%,
-          rgba(0,212,255,.6) 18%,
-          transparent 38%
-        );
-      background-size:
-        3px 55%,
-        55% 3px,
-        2px 45%;
-      background-repeat: no-repeat;
-      background-position:
-        -10% -60%,
-        -60% 30%,
-        120% -40%;
-      filter:
-        drop-shadow(0 0 18px rgba(57,255,158,.6))
-        drop-shadow(0 0 28px rgba(255,60,60,.6));
-      animation: boltsMove 24s linear infinite;
+      opacity: 0;
+      animation: boltFlash 0.3s ease-in-out;
     }
 
-    @keyframes boltsMove {
-      from {
-        background-position:
-          -10% -60%,
-          -60% 30%,
-          120% -40%;
-      }
-      to {
-        background-position:
-          110% 160%,
-          160% 30%,
-          -20% 140%;
-      }
+    @keyframes boltFlash {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .bolt svg {
+      filter: drop-shadow(0 0 8px var(--teal)) drop-shadow(0 0 15px var(--cyan));
     }
 
     /* ===== CONTENT ===== */
@@ -198,20 +153,6 @@
         drop-shadow(0 0 55px rgba(57,255,158,.35));
     }
 
-    .affiliate-note {
-      margin-top: 18px;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: .9rem;
-      letter-spacing: .08em;
-      color: rgba(57,255,158,.7);
-    }
-
-    .affiliate-note a {
-      color: var(--mint);
-      text-decoration: none;
-      border-bottom: 1px dashed var(--mint);
-    }
-
     h1 {
       font-size: clamp(3rem, 8vw, 4.2rem);
       letter-spacing: .14em;
@@ -230,6 +171,7 @@
       color: var(--teal);
     }
 
+    /* ===== BADGES ===== */
     .badge {
       font-family: 'Share Tech Mono', monospace;
       font-size: 1.35rem;
@@ -244,6 +186,7 @@
       box-shadow: 0 0 18px rgba(0,224,196,.25);
     }
 
+    /* ===== GALLERY ===== */
     .gallery {
       width: 100%;
       max-width: 1500px;
@@ -280,29 +223,26 @@
 <body>
 
   <div class="fx-sweep"></div>
-  <div class="fx-bolts"></div>
 
   <div class="container">
 
     <div class="logo-box">
       <img src="logo.png" class="logo" alt="BTCMiner GPT Logo">
-      <div class="affiliate-note">
-        powered by <a href="https://llmadvisor.ai" target="_blank">llmadvisor.ai</a>
-      </div>
     </div>
 
     <h1>Coming Soon</h1>
     <p class="tagline">⚡ highsignal · 🌪️ movefast · 📏 playlong</p>
 
+    <div class="badge">powered by llmadvisor.ai</div>
     <div class="badge">contact us · bg@btcminergpt.ai</div>
 
     <div class="gallery">
-      <div class="gallery-item"><img src="rig.png" alt="rig"></div>
-      <div class="gallery-item"><img src="homepage.png" alt="homepage"></div>
-      <div class="gallery-item"><img src="dashone.png" alt="dashone"></div>
-      <div class="gallery-item"><img src="dashtwo.png" alt="dashtwo"></div>
+      <div class="gallery-item"><img src="rig.png" alt="Mining Rig"></div>
+      <div class="gallery-item"><img src="homepage.png" alt="Homepage"></div>
+      <div class="gallery-item"><img src="dashone.png" alt="Dashboard One"></div>
+      <div class="gallery-item"><img src="dashtwo.png" alt="Dashboard Two"></div>
       <div class="gallery-item"><img src="fire.png" alt="fire"></div>
-      <div class="gallery-item"><img src="advanced.png" alt="advanced"></div>
+      <div class="gallery-item"><img src="advanced.png" alt="Advanced View"></div>
     </div>
 
     <footer>
@@ -310,6 +250,50 @@
     </footer>
 
   </div>
+
+  <script>
+    const boltSVG = `
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#00e0c4" stroke="#39ff9e" stroke-width="1.5"/>
+      </svg>
+    `;
+
+    function createBolt() {
+      const bolt = document.createElement('div');
+      bolt.className = 'bolt';
+      bolt.innerHTML = boltSVG;
+      
+      const isXAxis = Math.random() < 0.5;
+      
+      if (isXAxis) {
+        // Top or bottom edge
+        const isTop = Math.random() < 0.5;
+        bolt.style.left = Math.random() * 100 + '%';
+        bolt.style.top = isTop ? '0' : 'auto';
+        bolt.style.bottom = isTop ? 'auto' : '0';
+      } else {
+        // Left or right edge
+        const isLeft = Math.random() < 0.5;
+        bolt.style.top = Math.random() * 100 + '%';
+        bolt.style.left = isLeft ? '0' : 'auto';
+        bolt.style.right = isLeft ? 'auto' : '0';
+      }
+      
+      document.body.appendChild(bolt);
+      
+      setTimeout(() => {
+        bolt.remove();
+      }, 300);
+    }
+
+    function scheduleBolts() {
+      createBolt();
+      const nextDelay = 2000 + Math.random() * 5000; // Random delay between 2-7 seconds
+      setTimeout(scheduleBolts, nextDelay);
+    }
+
+    scheduleBolts();
+  </script>
 
 </body>
 </html>
