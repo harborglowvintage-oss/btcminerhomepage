@@ -206,12 +206,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border: 3px solid #ffa500;
-      box-shadow:
-        0 0 12px rgba(0,224,196,0.4),
-        0 0 24px rgba(0,224,196,0.3),
-        0 0 36px rgba(0,224,196,0.2);
-      border-radius: 12px;
     }
 
     footer {
@@ -224,10 +218,10 @@
     }
 
     .gemini-widget {
-      position: fixed;
-      bottom: 40px;
-      right: 40px;
-      z-index: 999;
+      margin: 40px auto 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background: rgba(0, 224, 196, 0.15);
       border: 1px solid rgba(0, 224, 196, 0.3);
       padding: 12px;
@@ -235,6 +229,7 @@
       box-shadow: 0 0 22px rgba(0,224,196,.4);
       backdrop-filter: blur(4px);
       transition: transform 0.3s ease;
+      max-width: fit-content;
     }
 
     .gemini-widget:hover {
@@ -248,25 +243,21 @@
       filter: drop-shadow(0 0 8px #00e0c4) drop-shadow(0 0 16px #39ff9e);
     }
 
-    @media (max-width: 960px) {
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
     @media (max-width: 600px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .tagline {
+        font-size: 1rem;
+      }
+
       .gallery {
         grid-template-columns: 1fr;
       }
 
       .gallery-item {
         height: 220px;
-      }
-
-      .gemini-widget {
-        bottom: 20px;
-        right: 20px;
-        padding: 8px;
       }
 
       .gemini-widget img {
@@ -292,23 +283,25 @@
     <div class="badge">accepting partnership agreements · contact · bg@btcminergpt.ai</div>
 
     <div class="gallery">
-      <div class="gallery-item"><img src="rig.png" alt="custom mining dashboard"></div>
+      <div class="gallery-item"><img src="rig.png" alt="custom btc dashboard"></div>
       <div class="gallery-item"><img src="homepage.png" alt="bitcoin gpu rig"></div>
       <div class="gallery-item"><img src="dashone.png" alt="btc home mining"></div>
       <div class="gallery-item"><img src="dashtwo.png" alt="home mining dashboards"></div>
-      <div class="gallery-item"><img src="fire.png" alt="btc consulting"></div>
+      <div class="gallery-item"><img src="fire.png" alt="btc mining consulting"></div>
       <div class="gallery-item"><img src="advanced.png" alt="ai partnership programs"></div>
+            <div class="gallery-item"><img src="swarmgate.png" alt="home btc mining"></div>
+      <div class="gallery-item"><img src="hashv.png" alt="gemini rewards card sign up"></div>
+      <div class="gallery-item"><img src="aiorb.png" alt="gemini credit card application link"></div>
     </div>
 
     <footer>© 2025 BTCMiner GPT. All rights reserved.</footer>
-  </div>
 
-  <a href="https://creditcard.exchange.gemini.com/credit-card/apply?referral_code=44qnv2qrx"
-     target="_blank"
-     class="gemini-widget"
-     title="Apply for Gemini Credit Card">
-    <img src="gemini.png" alt="Gemini Credit Card Application Link">
-  </a>
+    <div class="gemini-widget">
+      <a href="https://creditcard.exchange.gemini.com/credit-card/apply?referral_code=44qnv2qrx" target="_blank" title="Apply for Gemini Credit Card">
+        <img src="gemini.png" alt="Gemini Credit Card Application Link">
+      </a>
+    </div>
+  </div>
 
   <script>
     const boltSVG = `
