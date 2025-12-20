@@ -1747,6 +1747,7 @@ const NEWS_SOURCES = [
 
 let currentArticles = [];
 let lastNewsUpdate = null;
+let rotationIndex = 0;
 
 async function fetchCryptoNews() {
   let allArticles = [];
@@ -1822,6 +1823,19 @@ async function fetchCryptoNews() {
 
   // No articles available from APIs
   console.log('No articles available from APIs');
+}
+
+function rotateArticles() {
+  if (!currentArticles || currentArticles.length < 2) return;
+
+  rotationIndex = (rotationIndex + 1) % currentArticles.length;
+
+  const rotated = [
+    currentArticles[rotationIndex],
+    ...currentArticles.filter((_, i) => i !== rotationIndex)
+  ].slice(0, 3);
+
+  renderNewsArticles(rotated);
 }
 
 function getArticleIcon(title) {
@@ -1924,6 +1938,8 @@ window.addEventListener('load', () => {
   setInterval(fetchCryptoNews, 1000 * 60 * 15);
   // Update timestamp every minute (reduced from every second)
   setInterval(updateNewsTimestamp, 1000 * 60);
+  // Rotate visible articles every 12 seconds
+  setInterval(rotateArticles, 12000);
 });
 </script>
 
