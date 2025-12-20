@@ -254,43 +254,6 @@
       letter-spacing: 0.06em;
     }
 
-.globe-widget {
-  margin: 60px auto 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.globe-container {
-  background: rgba(0, 224, 196, 0.12);
-  border: 2px solid rgba(0, 224, 196, 0.35);
-  padding: 20px 24px;
-  border-radius: 18px;
-  box-shadow: 0 0 25px rgba(57,255,158,0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 300px;
-}
-
-.globe-image {
-  width: 96px;
-  height: 96px;
-  image-rendering: pixelated;
-  filter: drop-shadow(0 0 12px #00e0c4) drop-shadow(0 0 22px #39ff9e);
-}
-
-.globe-label {
-  margin-top: 12px;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.7rem;
-  color: #00e0c4;
-  text-shadow: 0 0 6px #00e0c4;
-  text-align: center;
-}
-
-    
     /* ===== MAGNETAR TRACKER STYLES ===== */
     .magnetar-container {
       position: relative;
@@ -451,6 +414,7 @@
     0 0 12px #ffa500,
     0 0 18px #ffa500;
   background: linear-gradient(to bottom, #ffffff 0%, #eaeaea 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 3px #ffa500);
@@ -600,6 +564,360 @@
       color: rgba(57,255,158,0.4);
       margin-top: 5px;
     }
+
+    /* ===== FIBONACCI REPORT STYLES ===== */
+    
+    /* Fibonacci Background - Natural Spiral */
+    .fib-background {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+      background: linear-gradient(135deg, #0f172a 95%, #06b6d4 90%);
+    }
+
+    .fib-background::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(6,182,212,0.08) 0%,
+        rgba(15,23,42,0.95) 100%
+      );
+      z-index: 10;
+    }
+
+    .fib-layer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400%;
+      height: 400%;
+      transform-origin: center;
+    }
+
+    .fib-far {
+      opacity: 0.15;
+      filter: blur(8px);
+      animation: spiralFar 180s linear infinite;
+    }
+
+    .fib-mid {
+      opacity: 0.25;
+      filter: blur(3px);
+      animation: spiralMid 120s linear infinite reverse;
+    }
+
+    .fib-near {
+      opacity: 0.35;
+      filter: blur(1px);
+      animation: spiralNear 80s linear infinite;
+    }
+
+    @keyframes spiralFar {
+      from { transform: translate(-50%, -50%) rotate(0deg) scale(1.3); }
+      to   { transform: translate(-50%, -50%) rotate(360deg) scale(1.3); }
+    }
+
+    @keyframes spiralMid {
+      from { transform: translate(-50%, -50%) rotate(0deg) scale(0.9); }
+      to   { transform: translate(-50%, -50%) rotate(360deg) scale(0.9); }
+    }
+
+    @keyframes spiralNear {
+      from { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+      to   { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+    }
+
+    .fib-spiral {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .fib-spiral svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+    }
+
+    .fib-numbers {
+      position: absolute;
+      inset: 0;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(0,224,196,0.35);
+      pointer-events: none;
+      letter-spacing: 0.2em;
+    }
+
+    .fib-num {
+      position: absolute;
+      animation: fibFade 12s ease-in-out infinite;
+      text-shadow: 0 0 4px rgba(0,224,196,0.6);
+    }
+
+    .fib-num:nth-child(1) { top: 23.6%; left: 10%; animation-delay: 0s; }
+    .fib-num:nth-child(2) { top: 38.2%; left: 80%; animation-delay: 2s; }
+    .fib-num:nth-child(3) { top: 61.8%; left: 15%; animation-delay: 4s; }
+    .fib-num:nth-child(4) { top: 15%; left: 70%; animation-delay: 6s; }
+    .fib-num:nth-child(5) { top: 85%; left: 61.8%; animation-delay: 8s; }
+
+    @keyframes fibFade {
+      0%,100% { opacity: 0.15; }
+      50% { opacity: 0.55; }
+    }
+
+    .fib-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(0,224,196,0.05) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0,224,196,0.05) 1px, transparent 1px);
+      background-size: 61.8% 61.8%, 38.2% 38.2%;
+      animation: gridPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes gridPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+
+    .fib-golden-sweep {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent 40%,
+        rgba(255,215,128,0.08) 50%,
+        transparent 60%
+      );
+      opacity: 0;
+      animation: goldenSweep 45s ease-in-out infinite;
+      z-index: 9;
+    }
+
+    @keyframes goldenSweep {
+      0%, 94%, 100% { opacity: 0; transform: translateX(-100%); }
+      95%, 98% { opacity: 0.6; transform: translateX(100%); }
+    }
+
+    .fib-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #06b6d4;
+      position: relative;
+      z-index: 10;
+    }
+
+    .fib-header::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 30%;
+      height: 2px;
+      background: linear-gradient(90deg, #00e0c4, transparent);
+      animation: scanline 3s linear infinite;
+      z-index: 10;
+    }
+
+    @keyframes scanline {
+      from { left: 0; }
+      to { left: 70%; }
+    }
+
+    .fib-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(0.7rem, 2vw, 0.85rem);
+      color: #06b6d4;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 2px #06b6d4,
+        0 0 8px #06b6d4,
+        0 0 16px #06b6d4;
+      line-height: 1.4;
+    }
+
+    .fib-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      color: #4ade80;
+    }
+
+    .live-indicator {
+      width: 8px;
+      height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+      box-shadow: 0 0 12px #4ade80;
+    }
+
+    .fib-news-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .fib-article {
+      display: flex;
+      gap: 15px;
+      padding: 16px;
+      background: rgba(6,182,212,0.08);
+      border: 1px solid #06b6d4;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fib-article::before {
+      content: '[';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.2rem;
+      color: rgba(0,224,196,0.4);
+    }
+
+    .fib-article::after {
+      content: ']';
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.2rem;
+      color: rgba(0,224,196,0.4);
+    }
+
+    .fib-article:hover {
+      background: rgba(6,182,212,0.18);
+      border-color: #06b6d4;
+      transform: translateX(5px);
+      box-shadow: 
+        0 0 20px #06b6d4,
+        inset 0 0 15px rgba(6,182,212,0.1);
+    }
+
+    .fib-article:hover::before,
+    .fib-article:hover::after {
+      color: rgba(0,224,196,0.8);
+      text-shadow: 0 0 8px #00e0c4;
+    }
+
+    .fib-thumbnail {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #0f172a 80%, #06b6d4 20%);
+      border: 2px solid #06b6d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      filter: drop-shadow(0 0 8px #06b6d4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fib-thumbnail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0,224,196,0.1) 0px,
+        rgba(0,224,196,0.1) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      animation: scan 2s linear infinite;
+    }
+
+    @keyframes scan {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(100%); }
+    }
+
+    .fib-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .fib-source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      color: #00e0c4;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .fib-article-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+      line-height: 1.5;
+      color: #39ff9e;
+      font-weight: bold;
+    }
+
+    .fib-metadata {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(57,255,158,0.5);
+    }
+
+    .fib-time {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .fib-article {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .fib-thumbnail {
+        width: 100%;
+        height: 60px;
+      }
+
+      .fib-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+
+      .fib-title {
+        font-size: 0.65rem;
+      }
+    }
+    /* ===== END FIBONACCI REPORT STYLES ===== */
+
     /* ===== END MAGNETAR TRACKER STYLES ===== */
 
     .gallery {
@@ -974,6 +1292,163 @@
     </div>
     <!-- END MAGNETAR TRACKER -->
 
+<!-- FIBONACCI REPORT -->
+<div class="magnetar-container">
+  <!-- Fibonacci Background - Natural Spiral -->
+  <div class="fib-background">
+    <!-- Far Layer - Largest spiral -->
+    <div class="fib-layer fib-far">
+      <div class="fib-spiral">
+        <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+          <!-- Geometrically correct Fibonacci spiral - tighter and more compact -->
+          <!-- Using Fibonacci squares: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 -->
+          
+          <!-- Quarter circle arc 1: radius 1 (scaled to 8px) -->
+          <path d="M 400 392 A 8 8 0 0 1 408 400" fill="none" stroke="rgba(0,255,200,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="392" r="6" fill="rgba(0,255,200,0.9)" filter="drop-shadow(0 0 5px rgba(0,255,200,0.8))"/>
+          <text x="398" y="390" font-size="8" fill="rgba(0,255,200,1)" font-weight="bold">1</text>
+          
+          <!-- Quarter circle arc 2: radius 1 (scaled to 8px) -->
+          <path d="M 408 400 A 8 8 0 0 1 400 408" fill="none" stroke="rgba(0,255,200,0.7)" stroke-width="2"/>
+          <circle cx="408" cy="400" r="6" fill="rgba(0,255,200,0.9)" filter="drop-shadow(0 0 5px rgba(0,255,200,0.8))"/>
+          <text x="410" y="402" font-size="8" fill="rgba(0,255,200,1)" font-weight="bold">1</text>
+          
+          <!-- Quarter circle arc 3: radius 2 (scaled to 16px) -->
+          <path d="M 400 408 A 16 16 0 0 1 384 400" fill="none" stroke="rgba(57,255,158,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="424" r="7" fill="rgba(57,255,158,0.9)" filter="drop-shadow(0 0 5px rgba(57,255,158,0.8))"/>
+          <text x="398" y="428" font-size="8" fill="rgba(57,255,158,1)" font-weight="bold">2</text>
+          
+          <!-- Quarter circle arc 4: radius 3 (scaled to 24px) -->
+          <path d="M 384 400 A 24 24 0 0 1 400 376" fill="none" stroke="rgba(57,255,158,0.7)" stroke-width="2"/>
+          <circle cx="368" cy="400" r="8" fill="rgba(57,255,158,0.9)" filter="drop-shadow(0 0 5px rgba(57,255,158,0.8))"/>
+          <text x="365" y="404" font-size="8" fill="rgba(57,255,158,1)" font-weight="bold">3</text>
+          
+          <!-- Quarter circle arc 5: radius 5 (scaled to 40px) -->
+          <path d="M 400 376 A 40 40 0 0 1 440 400" fill="none" stroke="rgba(0,212,255,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="336" r="9" fill="rgba(0,212,255,0.9)" filter="drop-shadow(0 0 6px rgba(0,212,255,0.8))"/>
+          <text x="398" y="341" font-size="9" fill="rgba(0,212,255,1)" font-weight="bold">5</text>
+          
+          <!-- Quarter circle arc 6: radius 8 (scaled to 64px) -->
+          <path d="M 440 400 A 64 64 0 0 1 400 464" fill="none" stroke="rgba(0,212,255,0.7)" stroke-width="2"/>
+          <circle cx="464" cy="400" r="10" fill="rgba(0,212,255,0.9)" filter="drop-shadow(0 0 6px rgba(0,212,255,0.8))"/>
+          <text x="468" y="404" font-size="9" fill="rgba(0,212,255,1)" font-weight="bold">8</text>
+          
+          <!-- Quarter circle arc 7: radius 13 (scaled to 104px) -->
+          <path d="M 400 464 A 104 104 0 0 1 296 400" fill="none" stroke="rgba(255,165,0,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="568" r="11" fill="rgba(255,165,0,0.85)" filter="drop-shadow(0 0 7px rgba(255,165,0,0.7))"/>
+          <text x="398" y="573" font-size="10" fill="rgba(255,200,0,1)" font-weight="bold">13</text>
+          
+          <!-- Quarter circle arc 8: radius 21 (scaled to 168px) -->
+          <path d="M 296 400 A 168 168 0 0 1 400 232" fill="none" stroke="rgba(255,165,0,0.7)" stroke-width="2"/>
+          <circle cx="232" cy="400" r="12" fill="rgba(255,165,0,0.85)" filter="drop-shadow(0 0 7px rgba(255,165,0,0.7))"/>
+          <text x="228" y="405" font-size="10" fill="rgba(255,200,0,1)" font-weight="bold">21</text>
+          
+          <!-- Quarter circle arc 9: radius 34 (scaled to 272px) -->
+          <path d="M 400 232 A 272 272 0 0 1 672 400" fill="none" stroke="rgba(255,105,180,0.6)" stroke-width="1.5"/>
+          <circle cx="400" cy="-40" r="13" fill="rgba(255,105,180,0.8)" filter="drop-shadow(0 0 8px rgba(255,105,180,0.6))"/>
+          <text x="398" y="-32" font-size="11" fill="rgba(255,150,200,1)" font-weight="bold">34</text>
+          
+          <!-- Center point -->
+          <circle cx="400" cy="400" r="4" fill="rgba(0,224,196,0.8)"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Mid Layer - Medium spiral -->
+    <div class="fib-layer fib-mid">
+      <div class="fib-spiral">
+        <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+          <!-- Concentric golden ratio circles -->
+          <circle cx="400" cy="400" r="89" fill="none" stroke="rgba(58,255,158,0.35)" stroke-width="1.5"/>
+          <circle cx="400" cy="400" r="144" fill="none" stroke="rgba(57,255,158,0.3)" stroke-width="1.5"/>
+          <circle cx="400" cy="400" r="233" fill="none" stroke="rgba(59,255,158,0.25)" stroke-width="1"/>
+          <circle cx="400" cy="400" r="377" fill="none" stroke="rgba(57,255,159,0.2)" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Near Layer - Smallest/sharpest spiral -->
+    <div class="fib-layer fib-near">
+      <div class="fib-spiral">
+        <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+          <!-- Geometrically correct Fibonacci spiral - tighter, offset for depth -->
+          <!-- Using Fibonacci sequence starting from 2: 2, 3, 5, 8, 13, 21, 34, 55 -->
+          
+          <!-- Quarter circle arc 1: radius 2 (scaled to 16px) - offset start -->
+          <path d="M 400 384 A 16 16 0 0 1 416 400" fill="none" stroke="rgba(57,255,158,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="384" r="6" fill="rgba(57,255,158,0.9)" filter="drop-shadow(0 0 5px rgba(57,255,158,0.8))"/>
+          <text x="398" y="380" font-size="8" fill="rgba(57,255,158,1)" font-weight="bold">2</text>
+          
+          <!-- Quarter circle arc 2: radius 3 (scaled to 24px) -->
+          <path d="M 416 400 A 24 24 0 0 1 400 424" fill="none" stroke="rgba(57,255,158,0.7)" stroke-width="2"/>
+          <circle cx="416" cy="400" r="7" fill="rgba(57,255,158,0.9)" filter="drop-shadow(0 0 5px rgba(57,255,158,0.8))"/>
+          <text x="419" y="402" font-size="8" fill="rgba(57,255,158,1)" font-weight="bold">3</text>
+          
+          <!-- Quarter circle arc 3: radius 5 (scaled to 40px) -->
+          <path d="M 400 424 A 40 40 0 0 1 360 400" fill="none" stroke="rgba(0,255,200,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="440" r="8" fill="rgba(0,255,200,0.9)" filter="drop-shadow(0 0 5px rgba(0,255,200,0.8))"/>
+          <text x="398" y="445" font-size="8" fill="rgba(0,255,200,1)" font-weight="bold">5</text>
+          
+          <!-- Quarter circle arc 4: radius 8 (scaled to 64px) -->
+          <path d="M 360 400 A 64 64 0 0 1 400 336" fill="none" stroke="rgba(0,212,255,0.7)" stroke-width="2"/>
+          <circle cx="336" cy="400" r="9" fill="rgba(0,212,255,0.9)" filter="drop-shadow(0 0 6px rgba(0,212,255,0.8))"/>
+          <text x="332" y="404" font-size="9" fill="rgba(0,212,255,1)" font-weight="bold">8</text>
+          
+          <!-- Quarter circle arc 5: radius 13 (scaled to 104px) -->
+          <path d="M 400 336 A 104 104 0 0 1 464 400" fill="none" stroke="rgba(0,212,255,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="232" r="10" fill="rgba(0,212,255,0.9)" filter="drop-shadow(0 0 6px rgba(0,212,255,0.8))"/>
+          <text x="398" y="237" font-size="9" fill="rgba(0,212,255,1)" font-weight="bold">13</text>
+          
+          <!-- Quarter circle arc 6: radius 21 (scaled to 168px) -->
+          <path d="M 464 400 A 168 168 0 0 1 400 568" fill="none" stroke="rgba(255,165,0,0.7)" stroke-width="2"/>
+          <circle cx="568" cy="400" r="11" fill="rgba(255,165,0,0.85)" filter="drop-shadow(0 0 7px rgba(255,165,0,0.7))"/>
+          <text x="572" y="404" font-size="10" fill="rgba(255,200,0,1)" font-weight="bold">21</text>
+          
+          <!-- Quarter circle arc 7: radius 34 (scaled to 272px) -->
+          <path d="M 400 568 A 272 272 0 0 1 232 400" fill="none" stroke="rgba(255,165,0,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="672" r="12" fill="rgba(255,165,0,0.85)" filter="drop-shadow(0 0 7px rgba(255,165,0,0.7))"/>
+          <text x="398" y="677" font-size="10" fill="rgba(255,200,0,1)" font-weight="bold">34</text>
+          
+          <!-- Quarter circle arc 8: radius 55 (scaled to 440px) -->
+          <path d="M 232 400 A 440 440 0 0 1 400 168" fill="none" stroke="rgba(255,105,180,0.6)" stroke-width="1.5"/>
+          <circle cx="-40" cy="400" r="13" fill="rgba(255,105,180,0.8)" filter="drop-shadow(0 0 8px rgba(255,105,180,0.6))"/>
+          <text x="-44" y="404" font-size="11" fill="rgba(255,150,200,1)" font-weight="bold">55</text>
+          
+          <!-- Center point -->
+          <circle cx="400" cy="400" r="4" fill="rgba(0,212,255,0.8)"/>
+        </svg>
+      </div>
+    </div>
+    
+    <!-- Golden Ratio Numbers -->
+    <div class="fib-numbers">
+      <div class="fib-num">0.236</div>
+      <div class="fib-num">0.382</div>
+      <div class="fib-num">0.618</div>
+      <div class="fib-num">1.618</div>
+      <div class="fib-num">φ</div>
+    </div>
+
+    <!-- Golden Sweep -->
+    <div class="fib-golden-sweep"></div>
+  </div>
+
+  <div class="content">
+    <div class="fib-header">
+      <div class="fib-title">THE FIBONACCI REPORT | CRYPTO MARKET INTELLIGENCE</div>
+      <div class="fib-status">
+        <div class="live-indicator"></div>
+        <span id="newsUpdateTime">LIVE</span>
+      </div>
+    </div>
+
+    <div id="newsFeed">
+      <div class="loading">⚡ Syncing intelligence feeds...</div>
+    </div>
+  </div>
+</div>
+<!-- END FIBONACCI REPORT -->
+
     <div class="gallery">
       <div class="gallery-item"><img src="rig.png" alt="custom btc dashboard"></div>
       <div class="gallery-item"><img src="homepage.png" alt="bitcoin rewards hyperlink"></div>
@@ -1257,6 +1732,200 @@
       if (updateInterval) clearInterval(updateInterval);
     });
   </script>
+
+<script>
+/* ===== FIBONACCI REPORT (MULTI-SOURCE NEWS) ===== */
+
+// Multiple free news sources
+const NEWS_SOURCES = [
+  {
+    name: 'CryptoCompare',
+    url: 'https://min-api.cryptocompare.com/data/v2/news/?lang=EN',
+    parser: (data) => data.Data || []
+  }
+];
+
+let currentArticles = [];
+let lastNewsUpdate = null;
+
+async function fetchCryptoNews() {
+  let allArticles = [];
+  
+  // Try to fetch from ALL sources and combine results
+  for (let i = 0; i < NEWS_SOURCES.length; i++) {
+    const source = NEWS_SOURCES[i];
+    
+    try {
+      console.log(`Fetching news from ${source.name}...`);
+      
+      const response = await fetch(source.url, {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const data = await response.json();
+      const articles = source.parser(data);
+
+      if (articles && articles.length > 0) {
+        // Tag articles with their source and add icons
+        const taggedArticles = articles.slice(0, 10).map(article => ({
+          ...article,
+          sourceAPI: source.name,
+          icon: getArticleIcon(article.title)
+        }));
+        allArticles = allArticles.concat(taggedArticles);
+      }
+    } catch (err) {
+      console.error(`Error fetching from ${source.name}:`, err);
+    }
+  }
+
+  // If we got articles from multiple sources, select one from each source
+  if (allArticles.length >= 3) {
+    const selectedArticles = [];
+    const sourceNames = [...new Set(allArticles.map(a => a.sourceAPI))];
+    
+    // Get one article from each source (up to 3)
+    for (let i = 0; i < Math.min(3, sourceNames.length); i++) {
+      const sourceName = sourceNames[i];
+      const sourceArticles = allArticles.filter(a => a.sourceAPI === sourceName);
+      if (sourceArticles.length > 0) {
+        const randomIndex = Math.floor(Math.random() * sourceArticles.length);
+        selectedArticles.push(sourceArticles[randomIndex]);
+      }
+    }
+    
+    // If we need more articles to reach 3, fill from any source
+    const maxAttempts = allArticles.length; // Prevent infinite loops
+    let attempts = 0;
+    while (selectedArticles.length < 3 && attempts < maxAttempts) {
+      const availableArticles = allArticles.filter(a =>
+        !selectedArticles.some(s => s.url === a.url)
+      );
+      if (availableArticles.length === 0) break;
+
+      const randomIndex = Math.floor(Math.random() * availableArticles.length);
+      selectedArticles.push(availableArticles[randomIndex]);
+      attempts++;
+    }
+
+    if (selectedArticles.length > 0) {
+      currentArticles = selectedArticles;
+      lastNewsUpdate = Date.now();
+      renderNewsArticles(selectedArticles);
+      updateNewsTimestamp();
+      return;
+    }
+  }
+
+  // No articles available from APIs
+  console.log('No articles available from APIs');
+}
+
+function getArticleIcon(title) {
+  const titleLower = title.toLowerCase();
+  if (titleLower.includes('bitcoin') || titleLower.includes('btc')) return '₿';
+  if (titleLower.includes('ethereum') || titleLower.includes('eth')) return '⟠';
+  if (titleLower.includes('defi') || titleLower.includes('yield')) return '🔥';
+  if (titleLower.includes('surge') || titleLower.includes('rally') || titleLower.includes('gain')) return '📈';
+  if (titleLower.includes('mining') || titleLower.includes('miner')) return '⛏️';
+  if (titleLower.includes('regulation') || titleLower.includes('sec')) return '⚖️';
+  if (titleLower.includes('nft')) return '🎨';
+  if (titleLower.includes('bank') || titleLower.includes('institutional')) return '🏦';
+  if (titleLower.includes('energy') || titleLower.includes('green')) return '🌱';
+  if (titleLower.includes('network') || titleLower.includes('lightning')) return '⚡';
+  return '📰';
+}
+
+function getTimeAgo(timestamp) {
+  const seconds = Math.floor((Date.now() / 1000) - timestamp);
+  if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+  if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
+  return `${Math.floor(seconds / 86400)}d ago`;
+}
+
+function truncateText(text, maxLength) {
+  if (!text) return '';
+  if (text.length <= maxLength) return text;
+  return text.substring(0, maxLength).trim() + '...';
+}
+
+function renderNewsArticles(articles) {
+  const container = document.getElementById('newsFeed');
+  if (!container) {
+    console.error('News feed container not found');
+    return;
+  }
+
+  if (!Array.isArray(articles) || articles.length === 0) {
+    container.innerHTML = '<div class="loading">⚡ No articles available...</div>';
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="fib-news-grid">
+      ${articles.map(article => {
+        // Ensure all required properties exist
+        const safeArticle = {
+          url: article.url || '#',
+          icon: article.icon || '📰',
+          source: article.source_info?.name || article.source || 'Unknown',
+          title: article.title || 'Untitled Article',
+          published_on: article.published_on || Date.now() / 1000
+        };
+
+        return `
+        <a href="${safeArticle.url}" target="_blank" rel="noopener noreferrer" class="fib-article">
+          <div class="fib-thumbnail">
+            ${safeArticle.icon}
+          </div>
+          <div class="fib-content">
+            <div class="fib-source-badge">
+              📡 ${safeArticle.source}
+            </div>
+            <div class="fib-article-title">
+              ${truncateText(safeArticle.title, 80)}
+            </div>
+            <div class="fib-metadata">
+              <div class="fib-time">
+                🕐 ${getTimeAgo(safeArticle.published_on)}
+              </div>
+              <div style="opacity: 0.6;">|</div>
+              <div style="font-size: 0.65rem; opacity: 0.7;">
+                Multi-Source Feed
+              </div>
+            </div>
+          </div>
+        </a>
+      `}).join('')}
+    </div>
+  `;
+}
+
+function updateNewsTimestamp() {
+  const el = document.getElementById('newsUpdateTime');
+  if (!el) return;
+  
+  if (!lastNewsUpdate) {
+    el.textContent = 'SYNCING...';
+    return;
+  }
+  
+  const now = new Date();
+  el.textContent = `LIVE • ${now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`;
+}
+
+// Initialize on page load
+window.addEventListener('load', () => {
+  fetchCryptoNews();
+  // Refresh news every 15 minutes, rotating through sources
+  setInterval(fetchCryptoNews, 1000 * 60 * 15);
+  // Update timestamp every minute (reduced from every second)
+  setInterval(updateNewsTimestamp, 1000 * 60);
+});
+</script>
+
 </body>
 </html>
-
