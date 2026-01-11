@@ -1,0 +1,399 @@
+<! DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BTCMiner GPT — Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    : root {
+      --bg:  #000;
+      --cyan: #00d4ff;
+      --mint: #39ff9e;
+      --teal: #00e0c4;
+      --purple: #6b2be2;
+    }
+
+    * {
+      margin: 0;
+      padding:  0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:  linear-gradient(180deg, #000 0%, #0a0015 40%, #050008 100%);
+      color: var(--mint);
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 60px 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Animated grid background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: 
+        repeating-linear-gradient(0deg, rgba(13, 255, 95, 0.3) 0px, rgba(13, 255, 95, 0.3) 1px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(90deg, rgba(13, 255, 95, 0.3) 0px, rgba(13, 255, 95, 0.3) 1px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(0deg, rgba(0, 224, 196, 0.2) 0px, rgba(0, 224, 196, 0.2) 1px, transparent 1px, transparent 160px),
+        repeating-linear-gradient(90deg, rgba(0, 224, 196, 0.2) 0px, rgba(0, 224, 196, 0.2) 1px, transparent 1px, transparent 160px),
+        radial-gradient(circle at 50% 50%, rgba(13, 255, 95, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(13, 255, 95, 0.08) 0%, transparent 60%);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.3;
+      animation: gridRotate 60s linear infinite;
+      transform-origin: center center;
+      filter: drop-shadow(0 0 30px rgba(13, 255, 95, 0.6));
+    }
+
+    @keyframes gridRotate {
+      0% { transform: scale(1) rotateZ(0deg); }
+      100% { transform: scale(1) rotateZ(1deg); }
+    }
+
+    /* Scanline effect */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:  
+        linear-gradient(90deg, transparent 0%, rgba(0, 224, 196, 0.95) 15%, rgba(0, 224, 196, 0.5) 50%, transparent 100%),
+        linear-gradient(90deg, transparent 0%, rgba(0, 224, 196, 0.9) 20%, transparent 60%),
+        linear-gradient(90deg, transparent 0%, rgba(0, 224, 196, 0.92) 18%, transparent 70%),
+        linear-gradient(90deg, transparent 0%, rgba(0, 224, 196, 0.94) 22%, transparent 65%);
+      background-size: 40% 6px, 35% 5px, 38% 6px, 42% 5px;
+      background-position: -100% calc(100% - 200px), -80% calc(100% - 140px), -120% calc(100% - 80px), -100% calc(100% - 240px);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      pointer-events: none;
+      z-index: 1;
+      animation: dataFlowH1 10s linear infinite, dataFlowH2 14s linear infinite, dataFlowH3 12s linear infinite, dataFlowH4 16s linear infinite;
+      filter: drop-shadow(0 0 15px rgba(0, 224, 196, 0.8)) drop-shadow(0 0 8px rgba(0, 224, 196, 1)) drop-shadow(0 0 3px rgba(57, 255, 158, 0.6));
+    }
+
+    @keyframes dataFlowH1 {
+      0% { background-position: -100% calc(100% - 200px), -80% calc(100% - 140px), -120% calc(100% - 80px), -100% calc(100% - 240px); }
+      100% { background-position: 100% calc(100% - 200px), 100% calc(100% - 140px), 100% calc(100% - 80px), 100% calc(100% - 240px); }
+    }
+
+    @keyframes dataFlowH2 {
+      0% { background-position: -100% calc(100% - 200px), 0% calc(100% - 140px), -120% calc(100% - 80px), -100% calc(100% - 240px); }
+      100% { background-position:  100% calc(100% - 200px), 100% calc(100% - 140px), 100% calc(100% - 80px), 100% calc(100% - 240px); }
+    }
+
+    @keyframes dataFlowH3 {
+      0% { background-position: -100% calc(100% - 200px), -80% calc(100% - 140px), 0% calc(100% - 80px), -100% calc(100% - 240px); }
+      100% { background-position: 100% calc(100% - 200px), 100% calc(100% - 140px), 100% calc(100% - 80px), 100% calc(100% - 240px); }
+    }
+
+    @keyframes dataFlowH4 {
+      0% { background-position: -100% calc(100% - 200px), -80% calc(100% - 140px), -120% calc(100% - 80px), 0% calc(100% - 240px); }
+      100% { background-position: 100% calc(100% - 200px), 100% calc(100% - 140px), 100% calc(100% - 80px), 100% calc(100% - 240px); }
+    }
+
+    /* Scanline effect */
+    . container:: after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, rgba(0,0,0,0.08) 0 1px, transparent 1px 3px);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Vertical data streams - locked columns, only move top to bottom */
+    .container::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: 
+        linear-gradient(180deg, transparent 0%, rgba(0, 224, 196, 0.8) 25%, transparent 60%),
+        linear-gradient(180deg, transparent 0%, rgba(0, 224, 196, 0.7) 30%, transparent 65%),
+        linear-gradient(180deg, transparent 0%, rgba(0, 224, 196, 0.75) 28%, transparent 62%),
+        linear-gradient(180deg, transparent 0%, rgba(0, 224, 196, 0.8) 26%, transparent 64%);
+      background-size: 2px 40%, 3px 35%, 2px 38%, 3px 42%;
+      background-position: 5% -100%, 15% -80%, 85% -120%, 95% -100%;
+      background-repeat:  no-repeat;
+      background-attachment: fixed;
+      pointer-events: none;
+      z-index: 1;
+      animation: dataFlowV1 12s linear infinite, dataFlowV2 16s linear infinite, dataFlowV3 14s linear infinite, dataFlowV4 18s linear infinite;
+      filter: drop-shadow(0 0 8px rgba(0, 224, 196, 0.6)) drop-shadow(0 0 3px rgba(0, 224, 196, 0.8));
+    }
+
+    @keyframes dataFlowV1 {
+      0% { background-position: 5% -100%, 15% -80%, 85% -120%, 95% -100%; }
+      100% { background-position: 5% 120%, 15% -80%, 85% -120%, 95% -100%; }
+    }
+
+    @keyframes dataFlowV2 {
+      0% { background-position: 5% -100%, 15% -80%, 85% -120%, 95% -100%; }
+      100% { background-position: 5% -100%, 15% 120%, 85% -120%, 95% -100%; }
+    }
+
+    @keyframes dataFlowV3 {
+      0% { background-position: 5% -100%, 15% -80%, 85% -120%, 95% -100%; }
+      100% { background-position: 5% -100%, 15% -80%, 85% 120%, 95% -100%; }
+    }
+
+    @keyframes dataFlowV4 {
+      0% { background-position: 5% -100%, 15% -80%, 85% -120%, 95% -100%; }
+      100% { background-position: 5% -100%, 15% -80%, 85% -120%, 95% 120%; }
+    }
+
+    . container {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .logo-box {
+      position: relative;
+      padding: 40px;
+      border:  2px solid var(--teal);
+      border-radius:  24px;
+      margin-bottom: 50px;
+      background: linear-gradient(135deg, rgba(0, 28, 34, 0.4), rgba(8, 10, 12, 0.6));
+      box-shadow: 
+        0 0 60px rgba(0, 224, 196, 0.25),
+        0 0 120px rgba(0, 212, 255, 0.12),
+        inset 0 0 40px rgba(0, 224, 196, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo-box:: before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(0, 224, 196, 0.15) 0%, transparent 70%);
+      filter: blur(50px);
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    img. logo {
+      width: 320px;
+      max-width:  85vw;
+      filter: drop-shadow(0 0 32px rgba(0, 224, 196, 0.6)) drop-shadow(0 0 50px rgba(57, 255, 158, 0.3));
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 7vw, 3. 5rem);
+      font-weight: 900;
+      color: #eafffb;
+      letter-spacing: 0.12em;
+      text-shadow: 
+        0 0 12px var(--teal),
+        0 0 30px var(--cyan),
+        0 0 60px rgba(57, 255, 158, 0.4);
+      margin-bottom: 16px;
+    }
+
+    p.tagline {
+      font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+      font-weight: 700;
+      color: var(--teal);
+      font-family: 'Share Tech Mono', monospace;
+      letter-spacing: 0.16em;
+      text-shadow: 0 0 10px rgba(0, 224, 196, 0.8), 0 0 20px rgba(0, 212, 255, 0.4);
+      margin-bottom: 60px;
+    }
+
+    . gallery {
+      display: grid;
+      grid-template-columns:  repeat(auto-fit, minmax(456px, 1fr));
+      gap: 28px;
+      width: 100%;
+      max-width: 1500px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      border: 1. 5px solid rgba(0, 224, 196, 0.3);
+      background: linear-gradient(135deg, rgba(8, 10, 12, 0.8), rgba(20, 15, 30, 0.6));
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7), inset 0 0 30px rgba(0, 224, 196, 0.05);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-12px) scale(1.03);
+      border-color: rgba(0, 224, 196, 0.6);
+      box-shadow: 
+        0 20px 60px rgba(0, 224, 196, 0.3),
+        0 0 50px rgba(57, 255, 158, 0.2),
+        inset 0 0 40px rgba(0, 224, 196, 0.1);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      filter: contrast(1.1) saturate(1.15) brightness(0.95);
+      transition: filter 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      filter: contrast(1.2) saturate(1.25) brightness(1.05);
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 224, 196, 0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .gallery-item:hover:: after {
+      opacity: 1;
+    }
+
+    .copyright {
+      margin-top: 80px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      color: rgba(138, 43, 226, 0.4);
+      text-align: center;
+      letter-spacing: 0.08em;
+    }
+
+    . copyright p {
+      margin: 0;
+    }
+
+    .contact-cta {
+      margin-top: 60px;
+      text-align: center;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .contact-cta p {
+      font-size:  clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--teal);
+      margin-bottom: 12px;
+      letter-spacing:  0.12em;
+    }
+
+    .contact-cta a {
+      font-size:  clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--mint);
+      text-decoration: none;
+      font-weight: 700;
+      text-shadow: 0 0 12px rgba(57, 255, 158, 0.8);
+      border-bottom: 2px solid var(--mint);
+      transition: all 0.3s ease;
+    }
+
+    .contact-cta a:hover {
+      color: var(--cyan);
+      text-shadow: 0 0 20px rgba(57, 255, 158, 1), 0 0 40px rgba(0, 212, 255, 0.6);
+      border-bottom-color: var(--cyan);
+    }
+
+    @media (max-width: 768px) {
+      .logo-box {
+        padding: 30px;
+        margin-bottom: 40px;
+      }
+
+      img.logo {
+        width: 240px;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+      }
+
+      p.tagline {
+        margin-bottom: 50px;
+      }
+
+      .gallery {
+        gap: 20px;
+      }
+    }
+
+    @media (max-width:  480px) {
+      body {
+        padding: 40px 16px;
+      }
+
+      .logo-box {
+        padding: 24px;
+      }
+
+      img.logo {
+        width: 180px;
+      }
+
+      . gallery {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo-box">
+      <img src="logo.png" alt="BTCMiner GPT Logo" class="logo" />
+    </div>
+
+    <p style="font-family: 'Orbitron', sans-serif; font-size: 16px; color:  #fff; margin-bottom: 30px; letter-spacing: 1px; background: rgba(0, 224, 196, 0.3); padding: 12px 24px; border-radius: 8px; box-shadow: 0 0 20px rgba(0, 224, 196, 0.4);">
+      🚀 AI-powered Bitcoin mining analytics & optimization
+    </p>
+
+    <h1>Coming Soon</h1>
+    <p class="tagline">⚡ highsignal · 🌪️ movefast · 📏 playlong</p>
+
+    <div class="gallery">
+      <figure class="gallery-item">
+        <img src="rig.png" alt="Mining Rig">
+      </figure>
+      <figure class="gallery-item">
+        <img src="homepage.png" alt="Homepage">
+      </figure>
+      <figure class="gallery-item">
+        <img src="dashone.png" alt="Dashboard One">
+      </figure>
+      <figure class="gallery-item">
+        <img src="dashtwo.png" alt="Dashboard Two">
+      </figure>
+    </div>
+
+    <div class="contact-cta">
+      <p>Want to learn more?</p>
+      <a href="mailto:bg@btcminergpt.ai">Email us @ bg@btcminergpt.ai</a>
+    </div>
+
+    <footer class="copyright">
+      <p>&copy; 2025 BTCMiner GPT. All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
