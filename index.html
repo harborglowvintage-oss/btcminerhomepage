@@ -1,0 +1,3790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <title>btcminergpt.ai | Home Bitcoin Mining Intelligence & R&D Platform</title>
+
+  <!-- DNS Prefetch & Preconnect for Performance -->
+  <link rel="preconnect" href="https://mempool.space" crossorigin />
+  <link rel="preconnect" href="https://api.coingecko.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="AI-powered intelligence platform for home Bitcoin miners. Live BTC price tracking, efficiency analysis, hardware R&D, and optimization insights. Featuring original research including 'The Entropy Arbitrage' white paper. Powered by llmadvisor.ai." />
+  <meta name="keywords" content="home bitcoin mining, residential bitcoin miner, BTC mining efficiency, bitcoin mining R&D, ASIC optimization, mining profitability calculator, live BTC price tracker, J/TH efficiency, home miner ROI, llmadvisor.ai, bitcoin mining intelligence, mining hardware analysis, system-level efficiency, thermal optimization mining, bitcoin mining white paper, entropy arbitrage research" />
+  <meta name="author" content="btcminergpt.ai" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href="https://www.btcminergpt.ai/" />
+  <meta name="theme-color" content="#00e0c4" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="btcminergpt.ai | Home Bitcoin Mining Intelligence" />
+  <meta property="og:description" content="AI-powered platform for home miners. Live BTC tracking, efficiency analysis, R&D insights, and optimization tools. Make smarter mining decisions." />
+  <meta property="og:url" content="https://www.btcminergpt.ai/" />
+  <meta property="og:site_name" content="btcminergpt.ai" />
+  <meta property="og:image" content="https://www.btcminergpt.ai/logo.png" />
+  <meta property="og:image:alt" content="btcminergpt.ai Logo - Home Bitcoin Mining Intelligence" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="btcminergpt.ai | Home Bitcoin Mining Intelligence" />
+  <meta name="twitter:description" content="Home mining intelligence platform. Live BTC tracking, efficiency tools & original research. Read our Entropy Arbitrage white paper. Powered by llmadvisor.ai" />
+  <meta name="twitter:image" content="https://www.btcminergpt.ai/logo.png" />
+  <meta name="twitter:image:alt" content="btcminergpt.ai - Home Bitcoin Mining Intelligence Platform" />
+
+  <!-- Structured Data - WebSite & Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "btcminergpt.ai",
+    "url": "https://www.btcminergpt.ai",
+    "description": "AI-powered intelligence platform for home Bitcoin miners. Live BTC price tracking, efficiency analysis, hardware R&D, and optimization insights.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "btcminergpt.ai",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.btcminergpt.ai/logo.png"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "llmadvisor.ai",
+        "url": "https://llmadvisor.ai"
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.btcminergpt.ai/?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "about": [
+      {"@type": "Thing", "name": "Home Bitcoin Mining"},
+      {"@type": "Thing", "name": "Mining Efficiency Analysis"},
+      {"@type": "Thing", "name": "Bitcoin Price Tracking"},
+      {"@type": "Thing", "name": "ASIC Hardware Optimization"}
+    ]
+  }
+  </script>
+
+  <!-- SoftwareApplication Schema for the Platform -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "btcminergpt.ai",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "Home Bitcoin mining intelligence platform with live BTC tracking, efficiency analysis, and AI-powered optimization insights.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "llmadvisor.ai",
+      "url": "https://llmadvisor.ai"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema for Google "People Also Ask" -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Zombie Miner?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Zombie Miner is a machine that is mathematically insolvent due to its high J/TH ratio compared to current network difficulty and electricity costs. Typically older-generation units dumped by industrial farms onto the retail market. If your hardware efficiency does not beat the network average, you aren't mining—you're paying someone else's electricity bill."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is my PSU the most overlooked part of my mining ROI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every mining system begins with an AC-to-DC conversion, which is never 100% efficient. Energy lost during this conversion is expressed as parasitic heat, creating a 'thermal tax': fans spin faster consuming more power, and heat increases internal electrical resistance, further degrading efficiency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is a basement often more efficient than an industrial farm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Industrial farms face 'High-Density Heat' where machines are surrounded by other heat-generating units. A residential basement offers a natural thermal sink (12°C–18°C), allowing machines to reach thermal equilibrium faster with significantly lower fan speeds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does my miner's hashrate increase after an hour?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This is the Thermal Equilibrium phase. As the PSU and chips reach stable operating temperature, internal resistance decreases. In optimized environments, we observe a natural 'Alpha'—a hashrate increase of 3–5% with zero additional power draw."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is System-Level Efficiency (SLE)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SLE is a holistic approach that looks beyond the hashing chip, considering how power is converted, how heat is managed, and how the environment supports stable operation. High SLE means your system functions closer to its natural efficiency ceiling with reduced thermal stress."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Entropy Arbitrage in Bitcoin mining?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Entropy Arbitrage is the profit gap found in managing the electron's journey from wall to chip and joule dissipation from chip to air. It's reclaiming 'hidden' hashrate by reducing chaos (heat and resistance) within the system."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does llmadvisor.ai help with Bitcoin mining?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We apply advanced LLM analytical frameworks to thermodynamics, translating complex telemetry into clear answers: Is this running efficiently? Is performance improving? Does it make sense to keep running?"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Silent Technical Debt in mining hardware?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Used hardware often carries Silent Technical Debt—microscopic silicon degradation and dried-out thermal interfaces from years of industrial stress. This efficiency is permanently lost, regardless of how well you cool the machine today."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I mine or just buy Bitcoin directly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This is the 'Mine-or-Buy' Arbitrage. Mining is only strategic if your Total Cost of Production is lower than BTC market price. If your hardware is 'Efficiently Obsolete,' btcminergpt.ai will advise you to stop mining and buy BTC directly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can AI make my ASICs mine faster?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. SHA-256 hashing is hardware-locked. However, AI makes you smarter by optimizing the environment—managing thermal loads to prevent throttling and identifying 'Efficiency Drift' before hardware fails."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "btcminergpt.ai",
+    "url": "https://www.btcminergpt.ai",
+    "logo": "https://www.btcminergpt.ai/logo.png",
+    "description": "AI-powered Bitcoin mining intelligence platform providing System-Level Efficiency analysis and predictive maintenance.",
+    "sameAs": [
+      "https://llmadvisor.ai",
+      "https://amboss.space/c/btcminergptai",
+      "https://lightningnetwork.plus/nodes/023eed64a359928e3a73296aaaa77d63dd250a622bcab43082fc8914c534ee3ae4"
+    ],
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "llmadvisor.ai",
+      "url": "https://llmadvisor.ai"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Partnership Inquiry",
+      "url": "https://www.btcminergpt.ai/#contact-form"
+    }
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BDDBGECVX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8BDDBGECVX');
+  </script>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="/favicon.ico" />
+  
+  <style>
+    :root {
+      --mint: #39ff9e;
+      --teal: #00e0c4;
+      --cyan: #00d4ff;
+      --bg: #000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      background: linear-gradient(180deg, #000 0%, #0a0015 40%, #050008 100%);
+      color: var(--mint);
+      font-family: 'Orbitron', sans-serif;
+      overflow-x: hidden;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      padding: 60px 16px;
+      position: relative;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+
+    .crt-overlay {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at center, rgba(57,255,158,0.05) 0%, transparent 80%),
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.06) 0px, rgba(0,0,0,0.06) 1px, transparent 1px, transparent 3px);
+      mix-blend-mode: screen;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      animation: gridRotate 140s linear infinite;
+      opacity: 0.34;
+      filter: drop-shadow(0 0 34px rgba(57,255,158,.5));
+      background-image:
+        repeating-linear-gradient(0deg, rgba(57,255,158,.22) 0 1px, transparent 1px 50px),
+        repeating-linear-gradient(90deg, rgba(57,255,158,.22) 0 1px, transparent 1px 50px),
+        repeating-linear-gradient(0deg, rgba(0,224,196,.1) 0 1px, transparent 1px 25px),
+        repeating-linear-gradient(90deg, rgba(0,224,196,.1) 0 1px, transparent 1px 25px),
+        repeating-linear-gradient(45deg, rgba(0,212,255,0.06) 0 1px, transparent 1px 30px),
+        repeating-linear-gradient(-45deg, rgba(0,212,255,0.06) 0 1px, transparent 1px 30px),
+        radial-gradient(circle at 50% 50%, rgba(57,255,158,.18) 0%, transparent 60%);
+    }
+
+    @keyframes gridRotate {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(1deg); }
+    }
+
+    .fx-sweep {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      background:
+        linear-gradient(90deg, transparent 0%, rgba(0,224,196,.7) 20%, transparent 60%),
+        linear-gradient(90deg, transparent 0%, rgba(57,255,158,.6) 25%, transparent 65%),
+        linear-gradient(90deg, transparent 0%, rgba(0,212,255,.55) 30%, transparent 70%);
+      background-size: 40% 6px, 45% 5px, 50% 4px;
+      background-position: -120% 30%, -140% 55%, -160% 75%;
+      background-repeat: no-repeat;
+      animation: sweep 12s linear infinite;
+      filter: drop-shadow(0 0 8px rgba(0,224,196,.6));
+    }
+
+    @keyframes sweep {
+      from {
+        background-position: -120% 30%, -140% 55%, -160% 75%;
+      }
+      to {
+        background-position: 160% 30%, 180% 55%, 200% 75%;
+      }
+    }
+
+    .bolt {
+      position: fixed;
+      pointer-events: none;
+      z-index: 3;
+      opacity: 0;
+      animation: boltFlash 0.3s ease-in-out;
+    }
+
+    @keyframes boltFlash {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .bolt svg {
+      filter: drop-shadow(0 0 8px var(--teal)) drop-shadow(0 0 15px var(--cyan));
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 12px;
+    }
+
+    .logo-box {
+      padding: 60px 20px;
+      border-radius: 24px;
+      border: 2px solid var(--teal);
+      background: linear-gradient(135deg, rgba(0,28,34,.45), rgba(8,10,12,.65));
+      box-shadow: 0 0 70px rgba(0,224,196,.35), inset 0 0 40px rgba(0,224,196,.1);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    img.logo {
+      width: 315px;
+      max-width: 70vw;
+      height: auto;
+      filter: drop-shadow(0 0 32px rgba(0,224,196,.6)) drop-shadow(0 0 55px rgba(57,255,158,.35));
+    }
+
+    h1 {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(1.2rem, 4vw, 2.8rem);
+      letter-spacing: .1em;
+      color: #eafffb;
+      text-align: center;
+      word-break: break-word;
+      text-shadow:
+        0 0 1px #ffa500,
+        0 0 2px #ffa500,
+        0 0 4px #ffa500,
+        0 0 18px var(--teal),
+        0 0 40px var(--cyan);
+      -webkit-text-stroke: 0.7px #ffa500;
+    }
+
+    .tagline {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(1.1rem, 4vw, 1.9rem);
+      letter-spacing: .18em;
+      margin: 20px 0 30px;
+      color: var(--teal);
+      text-align: center;
+    }
+
+    .badge {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      padding: 7px 14.4px;
+      border-radius: 14.4px;
+      margin-bottom: 14.4px;
+      color: var(--teal);
+      background: rgba(0,224,196,.12);
+      border: 1px solid rgba(0,224,196,.3);
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 6px var(--teal);
+      box-shadow: 0 0 12px rgba(0,224,196,.25);
+    }
+
+    .badge-secondary {
+      font-size: 0.68rem;
+      padding: 6px 13px;
+      margin-bottom: 12px;
+      color: rgba(0, 224, 196, 0.85);
+      background: rgba(0, 224, 196, 0.1);
+      border: 1px solid rgba(0, 224, 196, 0.35);
+      text-shadow: 0 0 5px rgba(0, 224, 196, 0.6);
+      box-shadow: 0 0 12px rgba(0, 224, 196, 0.25);
+      letter-spacing: 0.06em;
+    }
+
+    /* Contact Form Styles */
+    .partnership-form-wrapper {
+      max-width: 1200px;
+      width: 90%;
+      margin: 30px auto;
+      padding: 30px;
+      background: rgba(0, 28, 34, 0.6);
+      border: 1px solid rgba(0, 224, 196, 0.25);
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 224, 196, 0.15);
+      display: none;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      visibility: hidden;
+    }
+
+    .partnership-form-wrapper.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    /* Responsive form layout */
+    @media (min-width: 768px) {
+      .partnership-form-wrapper {
+        padding: 40px;
+      }
+      
+      .form-row {
+        display: flex;
+        gap: 20px;
+      }
+      
+      .form-row .form-group {
+        flex: 1;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .partnership-form-wrapper {
+        width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+      }
+    }
+
+    .partnership-form-wrapper h3 {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--mint);
+      margin: 0 0 20px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .contact-inquiry-btn {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8rem;
+      padding: 10px 20px;
+      border-radius: 14.4px;
+      margin: 10px 0 14.4px;
+      color: var(--mint);
+      background: linear-gradient(135deg, rgba(0, 224, 196, 0.12), rgba(0, 168, 255, 0.12));
+      border: 1px solid rgba(0, 224, 196, 0.4);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-shadow: 0 0 6px var(--mint);
+      box-shadow: 0 0 15px rgba(0, 224, 196, 0.3);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      animation: contactPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes contactPulse {
+      0%, 100% { box-shadow: 0 0 15px rgba(0, 224, 196, 0.3); }
+      50% { box-shadow: 0 0 25px rgba(0, 224, 196, 0.5), 0 0 40px rgba(0, 168, 255, 0.3); }
+    }
+
+    @keyframes contactPulse {
+      0%, 100% { box-shadow: 0 0 15px rgba(0, 224, 196, 0.3); }
+      50% { box-shadow: 0 0 25px rgba(0, 224, 196, 0.5), 0 0 40px rgba(0, 168, 255, 0.3); }
+    }
+
+    .contact-inquiry-btn:hover {
+      background: linear-gradient(135deg, rgba(0, 224, 196, 0.25), rgba(0, 168, 255, 0.25));
+      box-shadow: 0 0 30px rgba(0, 224, 196, 0.6), 0 0 50px rgba(0, 168, 255, 0.4);
+      transform: scale(1.05);
+      border-color: var(--mint);
+      animation: none;
+    }
+
+    .contact-inquiry-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Button Container for consistent layout */
+    .button-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .button-container .whitepaper-btn,
+    .button-container .contact-inquiry-btn {
+      margin: 10px;
+      display: inline-flex;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(0, 224, 196, 0.8);
+      margin-bottom: 6px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(0, 224, 196, 0.3);
+      border-radius: 4px;
+      color: #fff;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: rgba(0, 224, 196, 0.8);
+      box-shadow: 0 0 10px rgba(0, 224, 196, 0.2);
+      background: rgba(0, 10, 15, 0.8);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: linear-gradient(135deg, rgba(0, 224, 196, 0.2), rgba(57, 255, 158, 0.1));
+      border: 1px solid rgba(0, 224, 196, 0.5);
+      border-radius: 4px;
+      color: var(--mint);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .form-submit-btn:hover {
+      background: linear-gradient(135deg, rgba(0, 224, 196, 0.35), rgba(57, 255, 158, 0.2));
+      border-color: rgba(0, 224, 196, 0.8);
+      box-shadow: 0 0 15px rgba(0, 224, 196, 0.3);
+    }
+
+    .form-submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .form-message {
+      margin-top: 12px;
+      padding: 10px;
+      text-align: center;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .form-message.show {
+      display: block;
+    }
+
+    .form-message.success {
+      background: rgba(57, 255, 158, 0.15);
+      border: 1px solid rgba(57, 255, 158, 0.4);
+      color: var(--mint);
+    }
+
+    .form-message.error {
+      background: rgba(255, 107, 107, 0.15);
+      border: 1px solid rgba(255, 107, 107, 0.4);
+      color: #ff6b6b;
+    }
+
+    .badge-link {
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+      animation: badgePulse 2.5s ease-in-out infinite;
+      position: relative;
+      pointer-events: auto;
+      z-index: 100;
+    }
+
+    @keyframes badgePulse {
+      0%, 100% {
+        box-shadow: 0 0 12px rgba(0,224,196,.25);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(0,224,196,.5), 0 0 35px rgba(57,255,158,.3);
+      }
+    }
+
+    .badge-link:hover {
+      background: rgba(0,224,196,.3);
+      box-shadow: 0 0 25px rgba(0,224,196,.7), 0 0 50px rgba(57,255,158,.5), 0 0 80px rgba(0,212,255,.3);
+      text-shadow: 0 0 12px var(--teal), 0 0 25px var(--mint);
+      transform: scale(1.08);
+      border-color: var(--mint);
+      animation: none;
+    }
+
+    .badge-link:active {
+      transform: scale(0.98);
+      box-shadow: 0 0 40px rgba(57,255,158,.8), 0 0 60px rgba(0,224,196,.6);
+      background: rgba(57,255,158,.25);
+    }
+
+    .node-pubkey-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 10px 0 30px;
+      padding: 12px 16px;
+      background: rgba(0,224,196,.08);
+      border: 1px solid rgba(0,224,196,.25);
+      border-radius: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      opacity: 0.85;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 0 20px rgba(255,165,0,.3), inset 0 0 15px rgba(255,165,0,.05);
+    }
+
+    .node-address-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 10px 0 10px;
+      padding: 12px 16px;
+      background: rgba(0,224,196,.08);
+      border: 1px solid rgba(0,224,196,.25);
+      border-radius: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      opacity: 0.85;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 0 20px rgba(255,165,0,.3), inset 0 0 15px rgba(255,165,0,.05);
+    }
+
+    .node-pubkey-container::before,
+    .node-address-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 8px;
+      background: radial-gradient(ellipse at center, rgba(255,165,0,.15) 0%, transparent 70%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .node-pubkey-container.expanded::before,
+    .node-address-container.expanded::before {
+      opacity: 1;
+      animation: smokeDrift 4s ease-in-out infinite;
+    }
+
+    @keyframes smokeDrift {
+      0% {
+        filter: blur(0px);
+        opacity: 1;
+      }
+      50% {
+        filter: blur(2px);
+        opacity: 0.8;
+      }
+      100% {
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
+    .node-pubkey-container:hover,
+    .node-address-container:hover {
+      opacity: 1;
+      background: rgba(0,224,196,.15);
+      border-color: rgba(0,224,196,.5);
+      box-shadow: 0 0 30px rgba(255,165,0,.4), 0 0 15px rgba(0,224,196,.3), inset 0 0 15px rgba(255,165,0,.08);
+    }
+
+    .node-collapsed {
+      display: inline;
+      opacity: 0;
+      font-size: 0;
+    }
+
+    .node-timer {
+      display: none;
+      opacity: 0.6;
+      font-size: 0.7rem;
+      color: var(--cyan);
+      margin-left: 8px;
+    }
+
+    .node-expanded {
+      display: none;
+      word-break: break-all;
+    }
+
+    .node-address-container.expanded .node-collapsed,
+    .node-pubkey-container.expanded .node-collapsed {
+      display: none;
+    }
+
+    .node-address-container.expanded .node-timer,
+    .node-pubkey-container.expanded .node-timer {
+      display: inline;
+    }
+
+    .node-address-container.expanded .node-expanded,
+    .node-pubkey-container.expanded .node-expanded {
+      display: inline;
+      cursor: pointer;
+    }
+
+    .node-label {
+      color: var(--teal);
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+
+    .node-key {
+      color: var(--mint);
+      background: rgba(0,0,0,.3);
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      word-break: break-all;
+      transition: all 0.2s ease;
+    }
+
+    .node-key:hover {
+      background: rgba(0,224,196,.2);
+      text-shadow: 0 0 10px rgba(0,224,196,.6);
+    }
+
+    /* ===== MAGNETAR TRACKER STYLES ===== */
+    .magnetar-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      padding: 40px 30px;
+      background: linear-gradient(135deg, rgba(0,28,34,.65), rgba(8,10,12,.85));
+      border: 2px solid #00e0c4;
+      border-radius: 24px;
+      box-shadow: 
+        0 0 80px rgba(0,224,196,.45),
+        inset 0 0 60px rgba(0,224,196,.15),
+        0 0 120px rgba(57,255,158,.25);
+      overflow: hidden;
+      margin: 40px auto;
+    }
+
+    .magnetar-core {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      transform: translate(-50%, -50%);
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .core-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid;
+      animation: pulsate 3s ease-in-out infinite;
+    }
+
+    .core-ring:nth-child(1) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-color: rgba(0,224,196,0.6);
+      animation-delay: 0s;
+    }
+
+    .core-ring:nth-child(2) {
+      top: 10%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      border-color: rgba(57,255,158,0.5);
+      animation-delay: 0.5s;
+    }
+
+    .core-ring:nth-child(3) {
+      top: 20%;
+      left: 20%;
+      width: 60%;
+      height: 60%;
+      border-color: rgba(0,212,255,0.4);
+      animation-delay: 1s;
+    }
+
+    @keyframes pulsate {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+      }
+      50% {
+        transform: scale(1.15);
+        opacity: 0.7;
+      }
+    }
+
+    .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: #39ff9e;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 2;
+      box-shadow: 0 0 8px #39ff9e;
+      animation: float linear infinite;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-100vh) translateX(var(--drift));
+        opacity: 0;
+      }
+    }
+
+    .energy-beam {
+      position: absolute;
+      width: 2px;
+      height: 60px;
+      background: linear-gradient(180deg, #00e0c4, transparent);
+      animation: beam 2s linear infinite;
+      pointer-events: none;
+      z-index: 2;
+      filter: blur(1px);
+      box-shadow: 0 0 10px #00e0c4;
+    }
+
+    @keyframes beam {
+      from {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+    }
+
+.tracker-label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+  color: #ffffff;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-shadow:
+    0 0 2px #ffa500,
+    0 0 6px #ffa500,
+    0 0 10px #ffa500,
+    0 0 14px #ffa500,
+    1px 1px 1px rgba(255, 165, 0, 0.6); /* Beveled edge simulation */
+}
+
+.price-display {
+  position: relative;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  text-shadow: 
+    0 0 5px #39ff9e,
+    0 0 15px #00e0c4,
+    0 0 30px rgba(0,224,196,.7),
+    0 0 50px rgba(57,255,158,.4);
+  animation: glow 2s ease-in-out infinite;
+}
+
+
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 
+          0 0 5px #39ff9e,
+          0 0 20px #00e0c4,
+          0 0 40px rgba(0,224,196,.6);
+      }
+      50% {
+        text-shadow: 
+          0 0 10px #39ff9e,
+          0 0 30px #00e0c4,
+          0 0 60px rgba(0,224,196,.8);
+      }
+    }
+
+    .price-change {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      margin-top: 15px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: rgba(0,224,196,0.1);
+      border: 1px solid rgba(0,224,196,0.3);
+    }
+
+    .price-change.positive {
+      color: #39ff9e;
+    }
+
+    .price-change.negative {
+      color: #ff4136;
+    }
+
+    .arrow {
+      font-size: 1.2em;
+      animation: bounce 1s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .stat-box {
+      padding: 15px;
+      background: rgba(0,224,196,0.08);
+      border: 1px solid rgba(0,224,196,0.25);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .stat-box:hover {
+      background: rgba(0,224,196,0.15);
+      border-color: rgba(0,224,196,0.4);
+      transform: translateY(-2px);
+    }
+
+    .stat-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(0.7rem, 2vw, 0.85rem);
+      color: #00e0c4;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .stat-value {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: #39ff9e;
+      font-weight: bold;
+    }
+
+    .update-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(0.75rem, 2vw, 0.9rem);
+      color: rgba(57,255,158,0.5);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #39ff9e;
+      border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+      box-shadow: 0 0 8px #39ff9e;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.3);
+        opacity: 0.6;
+      }
+    }
+
+    .loading {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.2rem;
+      color: #00e0c4;
+      animation: fadeInOut 1.5s ease-in-out infinite;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    .error {
+      font-family: 'Share Tech Mono', monospace;
+      color: #ff4136;
+      font-size: 0.9rem;
+      padding: 15px;
+      background: rgba(255,65,54,0.1);
+      border: 1px solid rgba(255,65,54,0.3);
+      border-radius: 8px;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .api-source {
+      font-size: 0.7rem;
+      color: rgba(57,255,158,0.4);
+      margin-top: 5px;
+    }
+
+    /* ===== FIBONACCI REPORT STYLES ===== */
+    
+    /* Fibonacci Background - Natural Spiral */
+    .fib-background {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+      background: linear-gradient(135deg, #0f172a 95%, #06b6d4 90%);
+    }
+
+    .fib-background::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(6,182,212,0.08) 0%,
+        rgba(15,23,42,0.95) 100%
+      );
+      z-index: 10;
+    }
+
+    .fib-layer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400%;
+      height: 400%;
+      transform-origin: center;
+    }
+
+    .fib-far {
+      opacity: 0.15;
+      filter: blur(8px);
+      animation: spiralFar 180s linear infinite;
+    }
+
+    .fib-mid {
+      opacity: 0.25;
+      filter: blur(3px);
+      animation: spiralMid 120s linear infinite reverse;
+    }
+
+    .fib-near {
+      opacity: 0.35;
+      filter: blur(1px);
+      animation: spiralNear 80s linear infinite;
+    }
+
+    @keyframes spiralFar {
+      from { transform: translate(-50%, -50%) rotate(0deg) scale(1.3); }
+      to   { transform: translate(-50%, -50%) rotate(360deg) scale(1.3); }
+    }
+
+    @keyframes spiralMid {
+      from { transform: translate(-50%, -50%) rotate(0deg) scale(0.9); }
+      to   { transform: translate(-50%, -50%) rotate(360deg) scale(0.9); }
+    }
+
+    @keyframes spiralNear {
+      from { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+      to   { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+    }
+
+    .fib-spiral {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .fib-spiral svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+    }
+
+    .fib-numbers {
+      position: absolute;
+      inset: 0;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(0,224,196,0.35);
+      pointer-events: none;
+      letter-spacing: 0.2em;
+    }
+
+    .fib-num {
+      position: absolute;
+      animation: fibFade 12s ease-in-out infinite;
+      text-shadow: 0 0 4px rgba(0,224,196,0.6);
+    }
+
+    .fib-num:nth-child(1) { top: 23.6%; left: 10%; animation-delay: 0s; }
+    .fib-num:nth-child(2) { top: 38.2%; left: 80%; animation-delay: 2s; }
+    .fib-num:nth-child(3) { top: 61.8%; left: 15%; animation-delay: 4s; }
+    .fib-num:nth-child(4) { top: 15%; left: 70%; animation-delay: 6s; }
+    .fib-num:nth-child(5) { top: 85%; left: 61.8%; animation-delay: 8s; }
+
+    @keyframes fibFade {
+      0%,100% { opacity: 0.15; }
+      50% { opacity: 0.55; }
+    }
+
+    .fib-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(0,224,196,0.05) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0,224,196,0.05) 1px, transparent 1px);
+      background-size: 61.8% 61.8%, 38.2% 38.2%;
+      animation: gridPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes gridPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+
+    .fib-golden-sweep {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent 40%,
+        rgba(255,215,128,0.08) 50%,
+        transparent 60%
+      );
+      opacity: 0;
+      animation: goldenSweep 45s ease-in-out infinite;
+      z-index: 9;
+    }
+
+    @keyframes goldenSweep {
+      0%, 94%, 100% { opacity: 0; transform: translateX(-100%); }
+      95%, 98% { opacity: 0.6; transform: translateX(100%); }
+    }
+
+    .fib-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #06b6d4;
+      position: relative;
+      z-index: 10;
+    }
+
+    .fib-header::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 30%;
+      height: 2px;
+      background: linear-gradient(90deg, #00e0c4, transparent);
+      animation: scanline 3s linear infinite;
+      z-index: 10;
+    }
+
+    @keyframes scanline {
+      from { left: 0; }
+      to { left: 70%; }
+    }
+
+    .fib-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+      color: #ffffff;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 2px #ffa500,
+        0 0 6px #ffa500,
+        0 0 10px #ffa500,
+        0 0 14px #ffa500,
+        1px 1px 1px rgba(255, 165, 0, 0.6);
+      line-height: 1.4;
+    }
+
+    .fib-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      color: #4ade80;
+    }
+
+    .live-indicator {
+      width: 8px;
+      height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+      box-shadow: 0 0 12px #4ade80;
+    }
+
+    .fib-news-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .fib-article {
+      display: flex;
+      gap: 15px;
+      padding: 16px;
+      background: rgba(6,182,212,0.08);
+      border: 1px solid #06b6d4;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fib-article::before {
+      content: '[';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.2rem;
+      color: rgba(0,224,196,0.4);
+    }
+
+    .fib-article::after {
+      content: ']';
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.2rem;
+      color: rgba(0,224,196,0.4);
+    }
+
+    .fib-article:hover {
+      background: rgba(6,182,212,0.18);
+      border-color: #06b6d4;
+      transform: translateX(5px);
+      box-shadow: 
+        0 0 20px #06b6d4,
+        inset 0 0 15px rgba(6,182,212,0.1);
+    }
+
+    .fib-article:hover::before,
+    .fib-article:hover::after {
+      color: rgba(0,224,196,0.8);
+      text-shadow: 0 0 8px #00e0c4;
+    }
+
+    .fib-thumbnail {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #0f172a 80%, #06b6d4 20%);
+      border: 2px solid #06b6d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      filter: drop-shadow(0 0 8px #06b6d4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fib-thumbnail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0,224,196,0.1) 0px,
+        rgba(0,224,196,0.1) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      animation: scan 2s linear infinite;
+    }
+
+    @keyframes scan {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(100%); }
+    }
+
+    .fib-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .fib-source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      color: #00e0c4;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .fib-article-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+      line-height: 1.5;
+      color: #39ff9e;
+      font-weight: bold;
+    }
+
+    .fib-metadata {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(57,255,158,0.5);
+    }
+
+    .fib-time {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .fib-article {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .fib-thumbnail {
+        width: 100%;
+        height: 60px;
+      }
+
+      .fib-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+
+      .fib-title {
+        font-size: 0.65rem;
+      }
+    }
+    /* ===== END FIBONACCI REPORT STYLES ===== */
+
+    /* ===== END MAGNETAR TRACKER STYLES ===== */
+
+    .gallery {
+      width: 100%;
+      max-width: 1500px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 60px;
+      padding: 40px;
+      background: radial-gradient(ellipse at center, rgba(0, 224, 196, 0.15), transparent 70%);
+      border-radius: 24px;
+      box-shadow: 
+        inset 0 0 60px rgba(0, 224, 196, 0.1),
+        0 0 80px rgba(0, 224, 196, 0.2);
+    }
+
+    .gallery-item {
+      height: 320px;
+      border-radius: 18px;
+      overflow: visible;
+      background: linear-gradient(135deg, rgba(8,10,12,.85), rgba(20,15,30,.6));
+      box-shadow: 0 10px 50px rgba(0,0,0,.75), inset 0 0 30px rgba(0,224,196,.08);
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 101%;
+      object-fit: cover;
+      border-radius: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      z-index: 1;
+      background: 
+        radial-gradient(ellipse 70px 50px at 50% -10%, rgba(57, 255, 158, 0.18), transparent 70%),
+        radial-gradient(ellipse 50px 40px at -15% 40%, rgba(0, 224, 196, 0.15), transparent 60%),
+        radial-gradient(ellipse 50px 40px at 115% 40%, rgba(0, 224, 196, 1.15), transparent 60%),
+        radial-gradient(ellipse 60px 45px at 50% 115%, rgba(57, 255, 158, 0.12), transparent 65%);
+      animation: smokeFlow 5s ease-in-out infinite;
+      filter: blur(18px);
+      pointer-events: none;
+    }
+
+    @keyframes smokeFlow {
+      0% {
+        opacity: 0.2;
+        transform: translateY(0px);
+      }
+      25% {
+        opacity: 0.5;
+      }
+      50% {
+        opacity: 0.6;
+        transform: translateY(-15px);
+      }
+      75% {
+        opacity: 0.4;
+      }
+      100% {
+        opacity: 0.15;
+        transform: translateY(-35px);
+      }
+    }
+
+    footer {
+      margin-top: 61px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: .75rem;
+      color: rgba(57,255,158,.35);
+      text-shadow: 1 0 6px rgba(0,224,196,.4);
+      text-align: center;
+    }
+
+    .gemini-widget {
+      margin: 40px auto 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 224, 196, 0.15);
+      border: 1px solid rgba(0, 224, 196, 0.3);
+      padding: 12px;
+      border-radius: 16px;
+      box-shadow: 0 0 22px rgba(0,224,196,.4);
+      backdrop-filter: blur(4px);
+      transition: transform 0.3s ease;
+      max-width: fit-content;
+    }
+
+    .gemini-widget:hover {
+      transform: scale(1.05);
+    }
+
+    .gemini-widget img {
+      height: 64px;
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 0 8px #00e0c4) drop-shadow(0 0 16px #39ff9e);
+    }
+
+    @media (max-width: 600px) {
+      html {
+        background: linear-gradient(180deg, #000 0%, #0a0015 40%, #050008 100%);
+        min-height: 100vh;
+      }
+      
+      body {
+        background: linear-gradient(180deg, #000 0%, #0a0015 40%, #050008 100%);
+        padding: 40px 12px;
+        min-height: 100vh;
+        color: var(--mint);
+      }
+      
+      .container {
+        background: none;
+        color: var(--mint);
+      }
+      
+      .logo-box {
+        padding: 40px 16px;
+        box-shadow: 0 0 30px rgba(0,224,196,.2), inset 0 0 20px rgba(0,224,196,.05);
+      }
+
+      img.logo {
+        width: 80vw;
+        filter: drop-shadow(0 0 12px rgba(0,224,196,.4)) drop-shadow(0 0 20px rgba(57,255,158,.25));
+      }
+
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      .tagline {
+        font-size: 1rem;
+      }
+
+      .magnetar-container {
+        padding: 30px 20px;
+      }
+
+      .magnetar-core {
+        width: 200px;
+        height: 200px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .stat-box {
+        padding: 12px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item {
+        height: 220px;
+      }
+
+      .gemini-widget img {
+        height: 48px;
+      }
+    }
+
+    /* Globe Widget Styles */
+    .globe-widget {
+      background: rgba(0, 224, 196, 0.08);
+      border: 3px solid rgba(0, 224, 196, 0.4);
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 
+        0 0 30px rgba(57, 255, 158, 0.3),
+        inset 0 0 30px rgba(0, 224, 196, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      max-width: 320px;
+      margin: 30px auto;
+    }
+
+    .globe-title {
+      font-size: 0.85rem;
+      color: #00e0c4;
+      text-shadow: 0 0 10px #00e0c4;
+      margin-bottom: 10px;
+      text-align: center;
+      font-family: 'Press Start 2P', monospace;
+    }
+
+    .globe-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+    }
+
+    .globe {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: 
+        radial-gradient(circle at 30% 30%, rgba(0, 224, 196, 0.3), transparent 50%),
+        linear-gradient(135deg, 
+          rgba(0, 224, 196, 0.2) 0%,
+          rgba(57, 255, 158, 0.15) 50%,
+          rgba(0, 224, 196, 0.1) 100%
+        );
+      border: 2px solid rgba(0, 224, 196, 0.6);
+      box-shadow: 
+        0 0 20px rgba(0, 224, 196, 0.5),
+        inset 0 0 20px rgba(0, 224, 196, 0.2);
+      position: relative;
+      overflow: hidden;
+      animation: globe-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes globe-pulse {
+      0%, 100% {
+        box-shadow: 
+          0 0 20px rgba(0, 224, 196, 0.5),
+          inset 0 0 20px rgba(0, 224, 196, 0.2);
+      }
+      50% {
+        box-shadow: 
+          0 0 30px rgba(0, 224, 196, 0.7),
+          inset 0 0 30px rgba(0, 224, 196, 0.3);
+      }
+    }
+
+    .globe-lines {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: globe-rotate 4s linear infinite;
+    }
+
+    @keyframes globe-rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .meridian {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 1px solid rgba(0, 224, 196, 0.25);
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+    }
+
+    .meridian:nth-child(1) { transform: rotateY(0deg); }
+    .meridian:nth-child(2) { transform: rotateY(30deg); }
+    .meridian:nth-child(3) { transform: rotateY(60deg); }
+
+    .parallel {
+      position: absolute;
+      width: 90%;
+      height: 30%;
+      border: 1px solid rgba(0, 224, 196, 0.25);
+      border-radius: 50%;
+      left: 5%;
+    }
+
+    .parallel:nth-child(4) { top: 20%; }
+    .parallel:nth-child(5) { top: 45%; }
+    .parallel:nth-child(6) { top: 70%; }
+
+    .continents {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: globe-rotate 6s linear infinite;
+    }
+
+    .continent {
+      position: absolute;
+      background: rgba(57, 255, 158, 0.4);
+      border-radius: 50%;
+      box-shadow: 0 0 5px rgba(57, 255, 158, 0.6);
+    }
+
+    .continent:nth-child(1) {
+      width: 20px;
+      height: 15px;
+      top: 30%;
+      left: 20%;
+      border-radius: 40% 60% 30% 70%;
+    }
+
+    .continent:nth-child(2) {
+      width: 15px;
+      height: 20px;
+      top: 50%;
+      left: 60%;
+      border-radius: 70% 30% 60% 40%;
+    }
+
+    .continent:nth-child(3) {
+      width: 18px;
+      height: 12px;
+      top: 65%;
+      left: 35%;
+      border-radius: 50% 50% 60% 40%;
+    }
+
+    .globe-location {
+      font-size: 0.7rem;
+      color: #00e0c4;
+      text-shadow: 0 0 8px #00e0c4;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Press Start 2P', monospace;
+    }
+
+    .pin-icon {
+      font-size: 1rem;
+      filter: drop-shadow(0 0 5px #ff3e9e);
+    }
+
+    .glow-effect {
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 80px;
+      background: radial-gradient(ellipse at center, rgba(62, 255, 158, 0.3), transparent 70%);
+      filter: blur(20px);
+      animation: globe-glow 2s ease-in-out infinite;
+    }
+
+    @keyframes globe-glow {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* ===== WHITE PAPER BUTTON & MODAL ===== */
+    .whitepaper-btn {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8rem;
+      padding: 10px 20px;
+      border-radius: 14.4px;
+      margin: 10px 0 14.4px;
+      color: var(--mint);
+      background: rgba(57,255,158,.12);
+      border: 1px solid rgba(57,255,158,.4);
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 6px var(--mint);
+      box-shadow: 0 0 15px rgba(57,255,158,.3);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      animation: wpPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes wpPulse {
+      0%, 100% { box-shadow: 0 0 15px rgba(57,255,158,.3); }
+      50% { box-shadow: 0 0 25px rgba(57,255,158,.5), 0 0 40px rgba(0,224,196,.3); }
+    }
+
+    .whitepaper-btn:hover {
+      background: rgba(57,255,158,.25);
+      box-shadow: 0 0 30px rgba(57,255,158,.6), 0 0 50px rgba(0,224,196,.4);
+      transform: scale(1.05);
+      border-color: var(--mint);
+      animation: none;
+    }
+
+    .whitepaper-btn:active {
+      transform: scale(0.98);
+    }
+
+    .wp-icon {
+      font-size: 1.1em;
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 1000;
+      display: none;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+      overflow-y: auto;
+      backdrop-filter: blur(8px);
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      background: linear-gradient(135deg, rgba(0,28,34,.9), rgba(8,10,12,.95));
+      border: 2px solid var(--teal);
+      border-radius: 20px;
+      box-shadow: 
+        0 0 60px rgba(0,224,196,.4),
+        inset 0 0 40px rgba(0,224,196,.1);
+      padding: 50px 40px;
+      margin: 20px 0;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0,224,196,.15);
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .modal-close:hover {
+      background: rgba(0,224,196,.3);
+      box-shadow: 0 0 20px rgba(0,224,196,.5);
+      transform: scale(1.1);
+    }
+
+    /* White Paper Styles */
+    .wp-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(0,224,196,.3);
+    }
+
+    .wp-title {
+      font-family: 'Orbitron', 'Share Tech Mono', monospace;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      color: #fff;
+      text-shadow: 0 0 10px var(--teal), 0 0 30px rgba(0,224,196,.5);
+      margin-bottom: 15px;
+      letter-spacing: 0.1em;
+    }
+
+    .wp-subtitle {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      color: var(--teal);
+      opacity: 0.9;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .wp-meta {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      color: rgba(0,224,196,.7);
+      line-height: 1.8;
+    }
+
+    .wp-section {
+      margin-bottom: 35px;
+    }
+
+    .wp-section-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--mint);
+      text-shadow: 0 0 8px rgba(57,255,158,.5);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(57,255,158,.2);
+    }
+
+    .wp-text {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+      color: rgba(255,255,255,.85);
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .wp-subsection {
+      margin: 20px 0;
+      padding-left: 15px;
+      border-left: 2px solid rgba(0,224,196,.3);
+    }
+
+    .wp-subsection-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1rem;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .wp-list {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0;
+    }
+
+    .wp-list li {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+      color: rgba(255,255,255,.8);
+      line-height: 1.7;
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .wp-list li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+    }
+
+    .wp-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+    }
+
+    .wp-table th {
+      background: rgba(0,224,196,.15);
+      color: var(--mint);
+      text-align: left;
+      padding: 12px 15px;
+      border: 1px solid rgba(0,224,196,.3);
+      text-shadow: 0 0 5px rgba(57,255,158,.5);
+    }
+
+    .wp-table td {
+      padding: 10px 15px;
+      border: 1px solid rgba(0,224,196,.2);
+      color: rgba(255,255,255,.8);
+    }
+
+    .wp-table tr:nth-child(even) {
+      background: rgba(0,224,196,.05);
+    }
+
+    .wp-highlight {
+      color: var(--mint);
+      font-weight: bold;
+    }
+
+    /* ===== FAQ ACCORDION STYLES ===== */
+    .faq-toggle-btn {
+      position: relative;
+      z-index: 10;
+      margin: 40px auto 20px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, rgba(0,224,196,.15), rgba(57,255,158,.1));
+      border: 1px solid rgba(0,224,196,.4);
+      border-radius: 8px;
+      color: var(--teal);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 0.1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .faq-toggle-btn:hover {
+      background: linear-gradient(135deg, rgba(0,224,196,.25), rgba(57,255,158,.15));
+      border-color: rgba(0,224,196,.6);
+      box-shadow: 0 0 15px rgba(0,224,196,.2);
+    }
+
+    .faq-toggle-icon {
+      font-size: 1rem;
+      transition: transform 0.4s ease;
+    }
+
+    .faq-toggle-btn.active .faq-toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-section {
+      position: relative;
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      padding: 20px;
+      border-top: 1px solid rgba(0,224,196,.2);
+      clear: both;
+      float: none;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.4s ease, padding 0.5s ease;
+      pointer-events: none;
+    }
+
+    .faq-section.active {
+      max-height: 3000px;
+      opacity: 1;
+      pointer-events: auto;
+      padding: 20px;
+    }
+
+    .faq-header {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.85rem;
+      color: rgba(0,224,196,.6);
+      text-align: center;
+      margin-bottom: 20px;
+      letter-spacing: 0.1em;
+    }
+
+    .faq-category {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--mint);
+      margin: 20px 0 10px;
+      padding-left: 5px;
+      border-left: 2px solid var(--mint);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .faq-container {
+      width: 100%;
+    }
+
+    .faq-item {
+      margin-bottom: 6px;
+      border: 1px solid rgba(0,224,196,.15);
+      border-radius: 6px;
+      overflow: hidden;
+      background: rgba(0,28,34,.25);
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(0,224,196,.35);
+    }
+
+    .faq-item.open {
+      border-color: rgba(0,224,196,.5);
+      box-shadow: 0 0 10px rgba(0,224,196,.15);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 10px 12px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: rgba(0,224,196,.75);
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+      color: var(--teal);
+    }
+
+    .faq-icon {
+      font-size: 1rem;
+      color: rgba(57,255,158,.5);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 12px 12px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.68rem;
+      color: rgba(255,255,255,.65);
+      line-height: 1.55;
+    }
+
+    .faq-answer strong {
+      color: var(--mint);
+    }
+
+    @media (max-width: 768px) {
+      .modal-overlay {
+        padding: 20px 10px;
+      }
+      .modal-content {
+        padding: 35px 20px;
+        border-radius: 16px;
+      }
+      .modal-close {
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.3rem;
+      }
+      .wp-header {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+      }
+      .wp-section {
+        margin-bottom: 25px;
+      }
+      .wp-subsection {
+        padding-left: 10px;
+      }
+      .whitepaper-btn {
+        font-size: 0.7rem;
+        padding: 8px 14px;
+        text-align: center;
+        max-width: 90%;
+      }
+      .faq-section {
+        width: 100%;
+        max-width: 100%;
+        margin: 40px 0 30px;
+        padding: 15px 10px;
+      }
+      .faq-header {
+        font-size: 0.8rem;
+      }
+      .faq-question {
+        font-size: 0.7rem;
+        padding: 10px;
+      }
+      .faq-answer p {
+        font-size: 0.65rem;
+        padding: 0 10px 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .modal-content {
+        padding: 30px 15px;
+      }
+      .wp-table {
+        font-size: 0.65rem;
+        display: block;
+        overflow-x: auto;
+      }
+      .wp-table th, .wp-table td {
+        padding: 6px 8px;
+        white-space: nowrap;
+      }
+      .wp-list li {
+        padding-left: 15px;
+        margin-bottom: 10px;
+      }
+      .whitepaper-btn {
+        font-size: 0.65rem;
+        padding: 8px 12px;
+        gap: 5px;
+      }
+      .wp-icon {
+        font-size: 1em;
+      }
+      .faq-section {
+        width: 100%;
+        max-width: 100%;
+        margin: 30px 0 20px;
+        padding: 10px 5px;
+      }
+      .faq-header {
+        font-size: 0.75rem;
+        margin-bottom: 15px;
+      }
+      .faq-category {
+        font-size: 0.65rem;
+        margin: 15px 0 8px;
+      }
+      .faq-question {
+        font-size: 0.68rem;
+        padding: 9px;
+      }
+      .faq-answer p {
+        font-size: 0.62rem;
+        padding: 0 9px 9px;
+        line-height: 1.5;
+      }
+      .faq-icon {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .modal-content {
+        padding: 25px 12px;
+      }
+      .wp-title {
+        font-size: 1.2rem;
+      }
+      .wp-subtitle {
+        font-size: 0.75rem;
+      }
+      .wp-meta {
+        font-size: 0.65rem;
+      }
+      .wp-section-title {
+        font-size: 0.95rem;
+      }
+      .wp-text {
+        font-size: 0.8rem;
+      }
+      .whitepaper-btn {
+        font-size: 0.6rem;
+        padding: 7px 10px;
+        letter-spacing: 0.05em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="crt-overlay"></div>
+  <div class="fx-sweep"></div>
+
+  <div class="container">
+    <div class="logo-box">
+      <img src="logo.png" class="logo" alt="BTCMiner GPT Logo">
+    </div>
+
+    <h1>btcminergpt.ai</h1>
+    <p class="tagline">⚡ highsignal · 🌪️ movefast · 📏 playlong</p>
+
+    <a href="https://www.llmadvisor.ai/" target="_blank" rel="noopener noreferrer" class="badge badge-link" onclick="window.open(this.href, '_blank'); return false;">powered by llmadvisor.ai</a>
+    <a href="https://amboss.space/c/btcminergptai" target="_blank" rel="noopener noreferrer" class="badge badge-link" onclick="window.open(this.href, '_blank'); return false;">🔗 amboss: node page</a>
+    <a href="https://lightningnetwork.plus/nodes/023eed64a359928e3a73296aaaa77d63dd250a622bcab43082fc8914c534ee3ae4" target="_blank" rel="noopener noreferrer" class="badge badge-link" onclick="window.open(this.href, '_blank'); return false;">⚡ lightning network+: swap</a>
+    
+    <div class="node-address-container" onclick="toggleNodeInfo('tor-address')">
+      <span class="node-label">🧅 tor address:</span>
+      <span class="node-collapsed" id="tor-address-collapsed"></span>
+      <span class="node-timer" id="tor-address-timer"></span>
+      <code class="node-key node-expanded" id="tor-address-full" onclick="event.stopPropagation(); copyToClipboard('023eed64a359928e3a73296aaaa77d63dd250a622bcab43082fc8914c534ee3ae4@hgf2tws3p6worwfunhmwbcqc6wfhkgbzkupbm5iqqjz3n7us3ifxyayd.onion:9735')">023eed64a359928e3a73296aaaa77d63dd250a622bcab43082fc8914c534ee3ae4@hgf2tws3p6worwfunhmwbcqc6wfhkgbzkupbm5iqqjz3n7us3ifxyayd.onion:9735</code>
+    </div>
+
+    <div class="node-pubkey-container" onclick="toggleNodeInfo('node-pubkey')">
+      <span class="node-label">🔐 node pubkey:</span>
+      <span class="node-collapsed" id="node-pubkey-collapsed"></span>
+      <span class="node-timer" id="node-pubkey-timer"></span>
+      <code class="node-key node-expanded" id="node-pubkey-full" onclick="event.stopPropagation(); copyToClipboard('023eed64a359928e3a73296aaaa77d63dd250a622bcab43082fc8914c534ee3ae4')">023eed64a359928e3a73296aaaa77d63dd250a622bcab43082fc8914c534ee3ae4</code>
+    </div>
+    
+    <div class="button-container">
+      <button class="whitepaper-btn" onclick="openWhitepaper()"><span class="wp-icon">📄</span> WHITE PAPER: THE ENTROPY ARBITRAGE</button>
+      <button class="contact-inquiry-btn" onclick="openContactForm()">📧 Contact Inquiry</button>
+    </div>
+    
+    
+    <!-- MAGNETAR BTC PRICE TRACKER -->
+    <div class="magnetar-container">
+      <!-- Magnetar Core Animation -->
+      <div class="magnetar-core">
+        <div class="core-ring"></div>
+        <div class="core-ring"></div>
+        <div class="core-ring"></div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="content">
+        <div class="tracker-label">magnetar ₿ signal 🛰️ feed</div>
+        
+        <div id="priceContainer">
+          <div class="loading">⚡ Initializing quantum connection...</div>
+        </div>
+
+        <div id="statsContainer"></div>
+
+        <div class="update-indicator">
+          <div class="pulse-dot"></div>
+          <span id="updateTime">Syncing with network...</span>
+        </div>
+      </div>
+    </div>
+    <!-- END MAGNETAR TRACKER -->
+
+<!-- FIBONACCI REPORT -->
+<div class="magnetar-container">
+  <!-- Fibonacci Background - Natural Spiral -->
+  <div class="fib-background">
+    <!-- Far Layer - Largest spiral -->
+    <div class="fib-layer fib-far">
+      <div class="fib-spiral">
+        <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+          <!-- Geometrically correct Fibonacci spiral - tighter and more compact -->
+          <!-- Using Fibonacci squares: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 -->
+          
+          <!-- Quarter circle arc 1: radius 1 (scaled to 8px) -->
+          <path d="M 400 392 A 8 8 0 0 1 408 400" fill="none" stroke="rgba(0,255,200,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="392" r="6" fill="rgba(0,255,200,0.9)" filter="drop-shadow(0 0 5px rgba(0,255,200,0.8))"/>
+          <text x="398" y="390" font-size="8" fill="rgba(0,255,200,1)" font-weight="bold">1</text>
+          
+          <!-- Quarter circle arc 2: radius 1 (scaled to 8px) -->
+          <path d="M 408 400 A 8 8 0 0 1 400 408" fill="none" stroke="rgba(0,255,200,0.7)" stroke-width="2"/>
+          <circle cx="408" cy="400" r="6" fill="rgba(0,255,200,0.9)" filter="drop-shadow(0 0 5px rgba(0,255,200,0.8))"/>
+          <text x="410" y="402" font-size="8" fill="rgba(0,255,200,1)" font-weight="bold">1</text>
+          
+          <!-- Quarter circle arc 3: radius 2 (scaled to 16px) -->
+          <path d="M 400 408 A 16 16 0 0 1 384 400" fill="none" stroke="rgba(57,255,158,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="424" r="7" fill="rgba(57,255,158,0.9)" filter="drop-shadow(0 0 5px rgba(57,255,158,0.8))"/>
+          <text x="398" y="428" font-size="8" fill="rgba(57,255,158,1)" font-weight="bold">2</text>
+          
+          <!-- Quarter circle arc 4: radius 3 (scaled to 24px) -->
+          <path d="M 384 400 A 24 24 0 0 1 400 376" fill="none" stroke="rgba(57,255,158,0.7)" stroke-width="2"/>
+          <circle cx="368" cy="400" r="8" fill="rgba(57,255,158,0.9)" filter="drop-shadow(0 0 5px rgba(57,255,158,0.8))"/>
+          <text x="365" y="404" font-size="8" fill="rgba(57,255,158,1)" font-weight="bold">3</text>
+          
+          <!-- Quarter circle arc 5: radius 5 (scaled to 40px) -->
+          <path d="M 400 376 A 40 40 0 0 1 440 400" fill="none" stroke="rgba(0,212,255,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="336" r="9" fill="rgba(0,212,255,0.9)" filter="drop-shadow(0 0 6px rgba(0,212,255,0.8))"/>
+          <text x="398" y="341" font-size="9" fill="rgba(0,212,255,1)" font-weight="bold">5</text>
+          
+          <!-- Quarter circle arc 6: radius 8 (scaled to 64px) -->
+          <path d="M 440 400 A 64 64 0 0 1 400 464" fill="none" stroke="rgba(0,212,255,0.7)" stroke-width="2"/>
+          <circle cx="464" cy="400" r="10" fill="rgba(0,212,255,0.9)" filter="drop-shadow(0 0 6px rgba(0,212,255,0.8))"/>
+          <text x="468" y="404" font-size="9" fill="rgba(0,212,255,1)" font-weight="bold">8</text>
+          
+          <!-- Quarter circle arc 7: radius 13 (scaled to 104px) -->
+          <path d="M 400 464 A 104 104 0 0 1 296 400" fill="none" stroke="rgba(255,165,0,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="568" r="11" fill="rgba(255,165,0,0.85)" filter="drop-shadow(0 0 7px rgba(255,165,0,0.7))"/>
+          <text x="398" y="573" font-size="10" fill="rgba(255,200,0,1)" font-weight="bold">13</text>
+          
+          <!-- Quarter circle arc 8: radius 21 (scaled to 168px) -->
+          <path d="M 296 400 A 168 168 0 0 1 400 232" fill="none" stroke="rgba(255,165,0,0.7)" stroke-width="2"/>
+          <circle cx="232" cy="400" r="12" fill="rgba(255,165,0,0.85)" filter="drop-shadow(0 0 7px rgba(255,165,0,0.7))"/>
+          <text x="228" y="405" font-size="10" fill="rgba(255,200,0,1)" font-weight="bold">21</text>
+          
+          <!-- Quarter circle arc 9: radius 34 (scaled to 272px) -->
+          <path d="M 400 232 A 272 272 0 0 1 672 400" fill="none" stroke="rgba(255,105,180,0.6)" stroke-width="1.5"/>
+          <circle cx="400" cy="-40" r="13" fill="rgba(255,105,180,0.8)" filter="drop-shadow(0 0 8px rgba(255,105,180,0.6))"/>
+          <text x="398" y="-32" font-size="11" fill="rgba(255,150,200,1)" font-weight="bold">34</text>
+          
+          <!-- Center point -->
+          <circle cx="400" cy="400" r="4" fill="rgba(0,224,196,0.8)"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Mid Layer - Medium spiral -->
+    <div class="fib-layer fib-mid">
+      <div class="fib-spiral">
+        <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+          <!-- Concentric golden ratio circles -->
+          <circle cx="400" cy="400" r="89" fill="none" stroke="rgba(58,255,158,0.35)" stroke-width="1.5"/>
+          <circle cx="400" cy="400" r="144" fill="none" stroke="rgba(57,255,158,0.3)" stroke-width="1.5"/>
+          <circle cx="400" cy="400" r="233" fill="none" stroke="rgba(59,255,158,0.25)" stroke-width="1"/>
+          <circle cx="400" cy="400" r="377" fill="none" stroke="rgba(57,255,159,0.2)" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Near Layer - Smallest/sharpest spiral -->
+    <div class="fib-layer fib-near">
+      <div class="fib-spiral">
+        <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+          <!-- Geometrically correct Fibonacci spiral - tighter, offset for depth -->
+          <!-- Using Fibonacci sequence starting from 2: 2, 3, 5, 8, 13, 21, 34, 55 -->
+          
+          <!-- Quarter circle arc 1: radius 2 (scaled to 16px) - offset start -->
+          <path d="M 400 384 A 16 16 0 0 1 416 400" fill="none" stroke="rgba(57,255,158,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="384" r="6" fill="rgba(57,255,158,0.9)" filter="drop-shadow(0 0 5px rgba(57,255,158,0.8))"/>
+          <text x="398" y="380" font-size="8" fill="rgba(57,255,158,1)" font-weight="bold">2</text>
+          
+          <!-- Quarter circle arc 2: radius 3 (scaled to 24px) -->
+          <path d="M 416 400 A 24 24 0 0 1 400 424" fill="none" stroke="rgba(57,255,158,0.7)" stroke-width="2"/>
+          <circle cx="416" cy="400" r="7" fill="rgba(57,255,158,0.9)" filter="drop-shadow(0 0 5px rgba(57,255,158,0.8))"/>
+          <text x="419" y="402" font-size="8" fill="rgba(57,255,158,1)" font-weight="bold">3</text>
+          
+          <!-- Quarter circle arc 3: radius 5 (scaled to 40px) -->
+          <path d="M 400 424 A 40 40 0 0 1 360 400" fill="none" stroke="rgba(0,255,200,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="440" r="8" fill="rgba(0,255,200,0.9)" filter="drop-shadow(0 0 5px rgba(0,255,200,0.8))"/>
+          <text x="398" y="445" font-size="8" fill="rgba(0,255,200,1)" font-weight="bold">5</text>
+          
+          <!-- Quarter circle arc 4: radius 8 (scaled to 64px) -->
+          <path d="M 360 400 A 64 64 0 0 1 400 336" fill="none" stroke="rgba(0,212,255,0.7)" stroke-width="2"/>
+          <circle cx="336" cy="400" r="9" fill="rgba(0,212,255,0.9)" filter="drop-shadow(0 0 6px rgba(0,212,255,0.8))"/>
+          <text x="332" y="404" font-size="9" fill="rgba(0,212,255,1)" font-weight="bold">8</text>
+          
+          <!-- Quarter circle arc 5: radius 13 (scaled to 104px) -->
+          <path d="M 400 336 A 104 104 0 0 1 464 400" fill="none" stroke="rgba(0,212,255,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="232" r="10" fill="rgba(0,212,255,0.9)" filter="drop-shadow(0 0 6px rgba(0,212,255,0.8))"/>
+          <text x="398" y="237" font-size="9" fill="rgba(0,212,255,1)" font-weight="bold">13</text>
+          
+          <!-- Quarter circle arc 6: radius 21 (scaled to 168px) -->
+          <path d="M 464 400 A 168 168 0 0 1 400 568" fill="none" stroke="rgba(255,165,0,0.7)" stroke-width="2"/>
+          <circle cx="568" cy="400" r="11" fill="rgba(255,165,0,0.85)" filter="drop-shadow(0 0 7px rgba(255,165,0,0.7))"/>
+          <text x="572" y="404" font-size="10" fill="rgba(255,200,0,1)" font-weight="bold">21</text>
+          
+          <!-- Quarter circle arc 7: radius 34 (scaled to 272px) -->
+          <path d="M 400 568 A 272 272 0 0 1 232 400" fill="none" stroke="rgba(255,165,0,0.7)" stroke-width="2"/>
+          <circle cx="400" cy="672" r="12" fill="rgba(255,165,0,0.85)" filter="drop-shadow(0 0 7px rgba(255,165,0,0.7))"/>
+          <text x="398" y="677" font-size="10" fill="rgba(255,200,0,1)" font-weight="bold">34</text>
+          
+          <!-- Quarter circle arc 8: radius 55 (scaled to 440px) -->
+          <path d="M 232 400 A 440 440 0 0 1 400 168" fill="none" stroke="rgba(255,105,180,0.6)" stroke-width="1.5"/>
+          <circle cx="-40" cy="400" r="13" fill="rgba(255,105,180,0.8)" filter="drop-shadow(0 0 8px rgba(255,105,180,0.6))"/>
+          <text x="-44" y="404" font-size="11" fill="rgba(255,150,200,1)" font-weight="bold">55</text>
+          
+          <!-- Center point -->
+          <circle cx="400" cy="400" r="4" fill="rgba(0,212,255,0.8)"/>
+        </svg>
+      </div>
+    </div>
+    
+    <!-- Golden Ratio Numbers -->
+    <div class="fib-numbers">
+      <div class="fib-num">0.236</div>
+      <div class="fib-num">0.382</div>
+      <div class="fib-num">0.618</div>
+      <div class="fib-num">1.618</div>
+      <div class="fib-num">φ</div>
+    </div>
+
+    <!-- Golden Sweep -->
+    <div class="fib-golden-sweep"></div>
+  </div>
+
+  <div class="content">
+    <div class="fib-header">
+      <div class="fib-title">THE FIBONACCI REPORT | CRYPTO MARKET INTELLIGENCE</div>
+      <div class="fib-status">
+        <div class="live-indicator"></div>
+        <span id="newsUpdateTime">LIVE</span>
+      </div>
+    </div>
+
+    <div id="newsFeed">
+      <div class="loading">⚡ Syncing intelligence feeds...</div>
+    </div>
+  </div>
+</div>
+<!-- END FIBONACCI REPORT -->
+
+    <div class="gallery">
+      <div class="gallery-item"><img src="rig.png" alt="custom btc dashboard"></div>
+      <div class="gallery-item"><img src="homepage.png" alt="bitcoin rewards hyperlink"></div>
+      <div class="gallery-item"><img src="dashone.png" alt="btc home mining"></div>
+      <div class="gallery-item"><img src="dashtwo.png" alt="home mining dashboards"></div>
+      <div class="gallery-item"><img src="fire.png" alt="btc mining consulting"></div>
+      <div class="gallery-item"><img src="advanced.png" alt="ai partnership programs"></div>
+      <div class="gallery-item"><img src="swarmgate.png" alt="home btc mining"></div>
+      <div class="gallery-item"><img src="hashv.png" alt="gemini rewards card sign up"></div>
+      <div class="gallery-item"><img src="aiorb.png" alt="gemini credit card application link"></div>
+    </div>
+
+<!-- VINTAGE GLOBE LOCATION WIDGET -->
+<div class="globe-widget">
+  <div class="globe-title">Current<br>Location</div>
+  
+  <div class="globe-container">
+    <div class="globe">
+      <div class="globe-lines">
+        <div class="meridian"></div>
+        <div class="meridian"></div>
+        <div class="meridian"></div>
+        <div class="parallel"></div>
+        <div class="parallel"></div>
+        <div class="parallel"></div>
+      </div>
+      <div class="continents">
+        <div class="continent"></div>
+        <div class="continent"></div>
+        <div class="continent"></div>
+      </div>
+    </div>
+    <div class="glow-effect"></div>
+  </div>
+
+  <div class="globe-location">
+    <span class="pin-icon">📍</span>
+    <span>Boston, MA</span>
+  </div>
+</div>
+    
+    <div class="gemini-widget">
+      <a href="https://creditcard.exchange.gemini.com/credit-card/apply?referral_code=44qnv2qrx" target="_blank" title="Apply for Gemini Credit Card">
+        <img src="gemini.png" alt="Gemini Credit Card Application Link">
+      </a>
+    </div>
+
+    <footer>© 2025 BTCMiner GPT. All rights reserved.</footer>
+
+    <!-- FAQ SECTION -->
+    <button class="faq-toggle-btn" onclick="toggleFaqPanel()">
+      <span>❓ FAQ</span>
+      <span class="faq-toggle-icon">▼</span>
+    </button>
+    <div class="faq-section">
+      <div class="faq-header">Frequently Asked Questions</div>
+      <div class="faq-container">
+        <!-- Category I: Hardware & Environment -->
+        <div class="faq-category">I. Hardware & Environment</div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What is a "Zombie Miner"?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A <strong>Zombie Miner</strong> is a machine that is mathematically insolvent due to its high J/TH ratio compared to current network difficulty and electricity costs. Typically older-generation units dumped by industrial farms onto the retail market as "affordable" entries. If your hardware efficiency does not beat the network average, you aren't mining—you're just paying someone else's electricity bill.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What environmental controls are required?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Precision environmental control is non-negotiable. ASICs demand stable inlet temperatures (15-25°C ideal), dust-free airflow, and verified power delivery. Inadequate thermal management = throttling = loss of hashrate. Industrial farms have calculated every CFM—home operations must match that rigor or accept degraded efficiency.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Why is "immersion cooling" not a universal solution?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Immersion cooling is a capital-intensive solution that trades air-cooled simplicity for higher complexity and maintenance overhead. It requires specialized dielectric fluids, tank infrastructure, and filtration systems. For small-scale operations, the ROI timeline extends significantly. It's a strategic choice—not a plug-and-play upgrade.</p>
+          </div>
+        </div>
+
+        <!-- Category II: Performance & Economics -->
+        <div class="faq-category">II. Performance & Economics</div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What is "The Entropy Arbitrage"?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p><strong>The Entropy Arbitrage</strong> refers to the strategy of extracting value from the inefficiency gap between retail electricity rates and the computational work performed. It's not just about hashing—it's about timing: when to run full throttle, when to throttle down, and when to redirect compute resources to higher-value tasks. The arbitrage exists in the margin between your cost of power and the network's valuation of proof-of-work at any given moment.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>How do I calculate true profitability?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>True profitability = (Hashrate × Block Reward × BTC Price / Network Difficulty) - (Power Consumption × Electricity Cost × Runtime). Factor in pool fees, hardware depreciation, and opportunity cost. Most "profitability calculators" use static assumptions and ignore difficulty adjustments, mempool dynamics, and variance in block discovery. Build your own model or remain blind to real economics.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Is solo mining viable at small scale?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Solo mining at sub-exahash scale is a lottery ticket, not a business model. The probability of finding a block is astronomically low unless you control significant hashrate. Pool mining smooths variance and provides predictable returns. Solo mining is for those who understand the statistical distribution and are comfortable with potentially zero returns for extended periods.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What is "hashrate cannibalization"?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Hashrate cannibalization occurs when adding more machines to your operation does not yield proportional revenue increase due to diminishing returns from increased local power draw, thermal load, or network difficulty adjustments. Adding capacity without optimizing existing infrastructure often results in net negative ROI. Scale intelligently or don't scale at all.</p>
+          </div>
+        </div>
+
+        <!-- Category III: Intelligence & Strategy -->
+        <div class="faq-category">III. Intelligence & Strategy</div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What is "multi-agent compute arbitrage"?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Multi-agent compute arbitrage is the practice of dynamically allocating computational resources across multiple revenue-generating tasks based on real-time profitability signals. When mining becomes unprofitable, the same hardware can be redirected to AI inference, rendering, or other compute-intensive workloads. This requires orchestration, monitoring, and automated decision-making—hence the "multi-agent" architecture.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>How does btcminergpt.ai integrate LLM intelligence?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>btcminergpt.ai uses large language models to parse mempool activity, analyze fee markets, interpret network signals, and provide decision-support recommendations. LLMs process unstructured data (forum discussions, research papers, social sentiment) alongside structured on-chain data to generate actionable insights. It's augmented intelligence for mining operators—automating the research loop.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What partnerships or integrations are available?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>btcminergpt.ai collaborates with <a href="https://llmadvisor.ai" target="_blank" rel="noopener noreferrer">llmadvisor.ai</a> for LLM-driven strategy consultation. We integrate with leading mining pools, hardware vendors, and energy management platforms. Partnership inquiries welcome for data-sharing arrangements, co-developed analytics tools, or enterprise deployments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END FAQ SECTION -->
+  </div>
+
+  <script>
+    const boltSVG = `
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#00e0c4" stroke="#39ff9e" stroke-width="1.5"/>
+      </svg>
+    `;
+
+    function createBolt() {
+      const bolt = document.createElement('div');
+      bolt.className = 'bolt';
+      bolt.innerHTML = boltSVG;
+
+      const isXAxis = Math.random() < 0.5;
+      if (isXAxis) {
+        const isTop = Math.random() < 0.5;
+        bolt.style.left = Math.random() * 100 + '%';
+        bolt.style.top = isTop ? '0' : 'auto';
+        bolt.style.bottom = isTop ? 'auto' : '0';
+      } else {
+        const isLeft = Math.random() < 0.5;
+        bolt.style.top = Math.random() * 100 + '%';
+        bolt.style.left = isLeft ? '0' : 'auto';
+        bolt.style.right = isLeft ? 'auto' : '0';
+      }
+
+      document.body.appendChild(bolt);
+      setTimeout(() => bolt.remove(), 300);
+    }
+
+    function scheduleBolts() {
+      createBolt();
+      const nextDelay = 2000 + Math.random() * 5000;
+      setTimeout(scheduleBolts, nextDelay);
+    }
+
+    scheduleBolts();
+
+    // ===== MAGNETAR BTC TRACKER - PURE MEMPOOL.SPACE =====
+    
+    // All data sourced from mempool.space API - fast, reliable, Bitcoin-focused
+    // Rate limits apply: https://mempool.space/docs/api (free tier sufficient for normal use)
+    const PRICE_API = 'https://mempool.space/api/v1/prices';
+    const HISTORY_API = 'https://mempool.space/api/v1/historical-price';
+    let updateInterval;
+    let particleInterval;
+    let beamInterval;
+    let isFetching = false;
+    let lastSuccessfulData = null;
+    let retryCount = 0;
+    let isInitialized = false; // Prevent double initialization
+    const MAX_RETRIES = 5;
+    const FETCH_TIMEOUT = 10000; // 10 seconds
+
+    // Calculate circulating BTC supply from current block height
+    // Using Bitcoin's known halving schedule
+    function calculateCirculatingSupply(blockHeight) {
+      let supply = 0;
+      let currentReward = 50; // Initial block reward
+      let startBlock = 0;
+      const halveInterval = 210000;
+      
+      while (startBlock < blockHeight && currentReward > 0) {
+        const endBlock = Math.min(startBlock + halveInterval, blockHeight);
+        const blocksInPeriod = endBlock - startBlock;
+        supply += blocksInPeriod * currentReward;
+        
+        startBlock = endBlock;
+        currentReward = currentReward / 2;
+      }
+      
+      return supply;
+    }
+
+    // Fetch BTC price and 24h data from mempool.space only
+    async function fetchBTCPrice() {
+      // Prevent multiple simultaneous requests
+      if (isFetching) {
+        console.log('Already fetching, skipping duplicate request');
+        return;
+      }
+
+      try {
+        isFetching = true;
+        console.log('Fetching BTC price from mempool.space... (attempt ' + (retryCount + 1) + ')');
+        
+        // Fetch current price (fast, reliable)
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 5000);
+        
+        const response = await fetch(PRICE_API, {
+          method: 'GET',
+          headers: { 'Accept': 'application/json' },
+          signal: controller.signal
+        });
+        
+        clearTimeout(timeout);
+        
+        if (!response.ok) {
+          throw new Error(`Mempool.space ${response.status}`);
+        }
+        
+        const priceData = await response.json();
+        
+        if (!priceData.USD || typeof priceData.USD !== 'number' || priceData.USD <= 0) {
+          throw new Error('Invalid price data');
+        }
+        
+        // Display price IMMEDIATELY
+        const quickData = {
+          PRICE: priceData.USD,
+          CHANGEPCT24HOUR: lastSuccessfulData?.CHANGEPCT24HOUR || 0,
+          MKTCAP: lastSuccessfulData?.MKTCAP || 0,
+          TOTALVOLUME24HTO: lastSuccessfulData?.TOTALVOLUME24HTO || 0,
+          HIGH24HOUR: lastSuccessfulData?.HIGH24HOUR || 0,
+          LOW24HOUR: lastSuccessfulData?.LOW24HOUR || 0
+        };
+        
+        displayPrice(quickData);
+        updateStats(quickData);
+        updateTimestamp();
+        retryCount = 0;
+        isFetching = false;
+        console.log('✅ Current price: $' + priceData.USD.toLocaleString());
+        
+        // Fetch 24h history AND block data in background (non-blocking)
+        console.log('Starting 24h history and block data fetch from mempool.space...');
+        const now = Math.floor(Date.now() / 1000);
+        const yesterday = now - 86400; // 24 hours ago
+        
+        // Fetch both history and blocks in parallel
+        Promise.all([
+          fetch(`${HISTORY_API}?currency=USD&start=${yesterday}&end=${now}`, {
+            method: 'GET',
+            headers: { 'Accept': 'application/json' }
+          }),
+          fetch('https://mempool.space/api/blocks', {
+            method: 'GET',
+            headers: { 'Accept': 'application/json' }
+          }),
+          fetch('https://mempool.space/api/v1/mining/blocks/fees/24h', {
+            method: 'GET',
+            headers: { 'Accept': 'application/json' }
+          })
+        ])
+        .then(responses => Promise.all(responses.map(r => r.ok ? r.json() : null)))
+        .then(([historyData, blocksData, feesData]) => {
+          if (!historyData || !historyData.prices || !Array.isArray(historyData.prices) || historyData.prices.length === 0) {
+            console.warn('Invalid or empty history data from mempool');
+            return;
+          }
+          
+          console.log('History data received, entries:', historyData.prices.length);
+          
+          // Get current block height for market cap calculation
+          let blockHeight = lastSuccessfulData?.BLOCK_HEIGHT || 934159;
+          if (blocksData && blocksData[0] && blocksData[0].height) {
+            blockHeight = blocksData[0].height;
+            console.log('Current block height:', blockHeight);
+          }
+          
+          // Calculate circulating supply from block height
+          const circulatingSupply = calculateCirculatingSupply(blockHeight);
+          console.log('Circulating BTC supply:', circulatingSupply.toFixed(2));
+          
+          // Filter only last 24h of data (mempool returns more than requested)
+          const last24h = historyData.prices.filter(p => p.time >= yesterday);
+          
+          if (last24h.length === 0) {
+            console.warn('No data points in last 24h');
+            return;
+          }
+          
+          console.log('Filtered to last 24h:', last24h.length, 'entries');
+          
+          // Calculate 24h high/low from filtered data
+          let high24h = last24h[0].USD;
+          let low24h = last24h[0].USD;
+          
+          last24h.forEach(point => {
+            if (point.USD > high24h) high24h = point.USD;
+            if (point.USD < low24h) low24h = point.USD;
+          });
+          
+          // Calculate 24h change percentage (oldest in 24h range vs current)
+          const oldest24h = last24h[last24h.length - 1];
+          const change24h = ((priceData.USD - oldest24h.USD) / oldest24h.USD) * 100;
+          
+          // Calculate market cap
+          const marketCap = priceData.USD * circulatingSupply;
+          
+          // Calculate 24h volume from fees
+          let estimatedVolume = 0;
+          if (feesData && Array.isArray(feesData) && feesData.length > 0) {
+            const totalOutputValue = feesData.reduce((sum, block) => {
+              return sum + (block.avgFees || 0);
+            }, 0) * 50;
+            const volume24hBTC = totalOutputValue / 100000000;
+            estimatedVolume = volume24hBTC * priceData.USD;
+            console.log('24h volume:', (estimatedVolume / 1e9).toFixed(2) + ' B');
+          }
+          
+          const fullData = {
+            PRICE: priceData.USD,
+            CHANGEPCT24HOUR: change24h,
+            MKTCAP: marketCap,
+            TOTALVOLUME24HTO: estimatedVolume,
+            HIGH24HOUR: high24h,
+            LOW24HOUR: low24h,
+            BLOCK_HEIGHT: blockHeight
+          };
+          
+          console.log('24h data calculated:', {
+            current: priceData.USD,
+            high24h: high24h,
+            low24h: low24h,
+            change24h: change24h.toFixed(2) + '%',
+            circulatingSupply: circulatingSupply.toFixed(2),
+            marketCap: (marketCap / 1e9).toFixed(2) + ' B'
+          });
+          
+          lastSuccessfulData = fullData;
+          displayPrice(fullData);
+          updateStats(fullData);
+          console.log('✅ All data updated from mempool.space');
+        })
+        .catch(err => {
+          console.error('Mempool data error:', err.message);
+        });
+        
+      } catch (error) {
+        console.error('Error fetching BTC price:', error.message);
+        isFetching = false;
+        
+        // Use cached data if available
+        if (lastSuccessfulData) {
+          console.log('Using cached data');
+          displayPrice(lastSuccessfulData);
+          updateStats(lastSuccessfulData);
+        } else {
+          const container = document.getElementById('priceContainer');
+          if (container) {
+            const attemptText = retryCount < MAX_RETRIES ? `Attempt ${retryCount + 1}/${MAX_RETRIES}` : 'Retrying...';
+            container.innerHTML = `
+              <div class="loading">
+                ⚡ Loading BTC price...<br>
+                <small style="opacity: 0.7;">${attemptText}</small>
+              </div>
+            `;
+          }
+        }
+        
+        // Retry with exponential backoff
+        if (retryCount < MAX_RETRIES) {
+          retryCount++;
+          const retryDelay = 3000 * retryCount;
+          console.log(`Retrying in ${retryDelay}ms`);
+          setTimeout(() => {
+            fetchBTCPrice();
+          }, retryDelay);
+        } else {
+          console.error('Max retries reached');
+          displayError('API temporarily unavailable. Will retry automatically.');
+          setTimeout(() => {
+            retryCount = 0;
+            fetchBTCPrice();
+          }, 30000);
+        }
+      }
+    }
+    function createParticles() {
+      const container = document.querySelector('.magnetar-container');
+      if (!container) return;
+      
+      for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          particle.style.left = Math.random() * 100 + '%';
+          particle.style.bottom = '-10px';
+          particle.style.setProperty('--drift', (Math.random() - 0.5) * 200 + 'px');
+          particle.style.animationDuration = (5 + Math.random() * 5) + 's';
+          particle.style.animationDelay = (Math.random() * 2) + 's';
+          container.appendChild(particle);
+
+          setTimeout(() => particle.remove(), 12000);
+        }, i * 500);
+      }
+    }
+
+    // Create energy beams
+    function createBeams() {
+      const container = document.querySelector('.magnetar-container');
+      if (!container) return;
+      
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+          const beam = document.createElement('div');
+          beam.className = 'energy-beam';
+          beam.style.left = (20 + Math.random() * 60) + '%';
+          beam.style.animationDuration = (2 + Math.random() * 2) + 's';
+          beam.style.animationDelay = (Math.random() * 2) + 's';
+          container.appendChild(beam);
+
+          setTimeout(() => beam.remove(), 6000);
+        }, i * 800);
+      }
+    }
+
+    function displayPrice(data) {
+      const price = data.PRICE;
+      const change24h = data.CHANGEPCT24HOUR;
+      
+      const isPositive = change24h >= 0;
+      const arrow = isPositive ? '▲' : '▼';
+      const changeClass = isPositive ? 'positive' : 'negative';
+      
+      const priceHTML = `
+        <div class="price-display">$${price.toLocaleString('en-US', {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        })}</div>
+        <div class="price-change ${changeClass}">
+          <span class="arrow">${arrow}</span>
+          <span>${Math.abs(change24h).toFixed(2)}%</span>
+          <span style="opacity: 0.6; font-size: 0.85em;">24h</span>
+        </div>
+        <div class="api-source">source: Mempool.space</div>
+      `;
+      
+      const container = document.getElementById('priceContainer');
+      if (container) container.innerHTML = priceHTML;
+    }
+
+    function updateStats(data) {
+      const marketCap = data.MKTCAP;
+      const volume24h = data.TOTALVOLUME24HTO;
+      const high24h = data.HIGH24HOUR;
+      const low24h = data.LOW24HOUR;
+      
+      const statsHTML = `
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-label">Market Cap</div>
+            <div class="stat-value">${marketCap > 0 ? '$' + formatNumber(marketCap) : 'N/A'}</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">24h Volume</div>
+            <div class="stat-value">${volume24h > 0 ? '$' + formatNumber(volume24h) : 'N/A'}</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">24h High</div>
+            <div class="stat-value">${high24h > 0 ? '$' + formatNumber(high24h) : 'N/A'}</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">24h Low</div>
+            <div class="stat-value">${low24h > 0 ? '$' + formatNumber(low24h) : 'N/A'}</div>
+          </div>
+        </div>
+      `;
+      
+      const container = document.getElementById('statsContainer');
+      if (container) container.innerHTML = statsHTML;
+    }
+
+    function formatNumber(num) {
+      if (num >= 1e12) return (num / 1e12).toFixed(2) + 'T';
+      if (num >= 1e9) return (num / 1e9).toFixed(2) + 'B';
+      if (num >= 1e6) return (num / 1e6).toFixed(2) + 'M';
+      if (num >= 1e3) return (num / 1e3).toFixed(2) + 'K';
+      return num.toLocaleString('en-US', { maximumFractionDigits: 2 });
+    }
+
+    function updateTimestamp() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('en-US', { 
+        hour: '2-digit', 
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      const timeEl = document.getElementById('updateTime');
+      if (timeEl) timeEl.textContent = `Last sync: ${timeString}`;
+    }
+
+    function displayError(errorMsg) {
+      const container = document.getElementById('priceContainer');
+      if (container) {
+        container.innerHTML = `
+          <div class="error">
+            ⚠️ Connection issue detected<br>
+            <small>${errorMsg}</small><br>
+            <small>Attempting reconnection...</small>
+          </div>
+        `;
+      }
+    }
+
+    // Initialize BTC tracker
+    function initTracker() {
+      // Prevent double initialization
+      if (isInitialized) {
+        console.log('Magnetar already initialized, skipping...');
+        return;
+      }
+      
+      isInitialized = true;
+      console.log('=== Magnetar BTC Tracker Initializing ===');
+      
+      // Clear any existing intervals
+      if (updateInterval) clearInterval(updateInterval);
+      if (particleInterval) clearInterval(particleInterval);
+      if (beamInterval) clearInterval(beamInterval);
+      
+      // Wait 1 second before first API call to avoid immediate rate limiting
+      setTimeout(() => {
+        console.log('Starting initial BTC price fetch...');
+        fetchBTCPrice();
+      }, 1000);
+      
+      createParticles();
+      createBeams();
+      
+      // Update price every 30 seconds
+      updateInterval = setInterval(() => {
+        console.log('30s interval: Fetching BTC price...');
+        fetchBTCPrice();
+      }, 30000);
+      
+      // Recreate particles and beams periodically
+      particleInterval = setInterval(createParticles, 10000);
+      beamInterval = setInterval(createBeams, 8000);
+    }
+
+    // Start when page loads
+    window.addEventListener('load', () => {
+      initTracker();
+    });
+
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', () => {
+      console.log('Cleaning up intervals...');
+      if (updateInterval) clearInterval(updateInterval);
+      if (particleInterval) clearInterval(particleInterval);
+      if (beamInterval) clearInterval(beamInterval);
+      isInitialized = false;
+    });
+    
+    // Pause/resume updates when tab is hidden/visible
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        console.log('Tab hidden, pausing updates...');
+        if (updateInterval) clearInterval(updateInterval);
+      } else {
+        console.log('Tab visible, resuming updates...');
+        // Fetch immediately on becoming visible
+        if (!isFetching) {
+          fetchBTCPrice();
+        }
+        // Restart interval
+        if (updateInterval) clearInterval(updateInterval);
+        updateInterval = setInterval(() => {
+          console.log('30s interval: Fetching BTC price...');
+          fetchBTCPrice();
+        }, 30000);
+      }
+    });
+  </script>
+
+<script>
+/* ===== FIBONACCI REPORT (MULTI-SOURCE NEWS) ===== */
+
+// Multiple free news sources
+const NEWS_SOURCES = [
+  {
+    name: 'CryptoCompare',
+    url: 'https://min-api.cryptocompare.com/data/v2/news/?lang=EN&sortOrder=latest',
+    parser: (data) => {
+      if (!data || !data.Data) return [];
+      return data.Data.map(item => ({
+        url: item.url,
+        title: item.title,
+        source: item.source || item.source_info?.name || 'News',
+        published_on: item.published_on || Date.now() / 1000,
+        icon: '📰'
+      }));
+    }
+  }
+];
+
+let currentArticles = [];
+let lastNewsUpdate = null;
+let rotationIndex = 0;
+
+async function fetchCryptoNews() {
+  console.log('=== Fetching Crypto News ===');
+  let allArticles = [];
+  
+  for (let i = 0; i < NEWS_SOURCES.length; i++) {
+    const source = NEWS_SOURCES[i];
+    
+    try {
+      console.log(`Fetching news from ${source.name}...`);
+      
+      const response = await fetch(source.url, {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' }
+      });
+
+      console.log(`Response status from ${source.name}: ${response.status}`);
+      
+      if (!response.ok) {
+        console.error(`HTTP error from ${source.name}: ${response.status}`);
+        continue;
+      }
+
+      const data = await response.json();
+      const articles = source.parser(data);
+      console.log(`Parsed ${articles.length} articles from ${source.name}`);
+
+      if (articles && articles.length > 0) {
+        // Tag articles with their source and add icons
+        const taggedArticles = articles.slice(0, 10).map(article => ({
+          ...article,
+          sourceAPI: source.name,
+          icon: getArticleIcon(article.title)
+        }));
+        allArticles = allArticles.concat(taggedArticles);
+      }
+    } catch (err) {
+      console.error(`Error fetching from ${source.name}:`, err);
+    }
+  }
+
+  // If we got articles from multiple sources, select one from each source
+  if (allArticles.length >= 3) {
+    const selectedArticles = [];
+    const sourceNames = [...new Set(allArticles.map(a => a.sourceAPI))];
+    
+    // Get one article from each source (up to 3)
+    for (let i = 0; i < Math.min(3, sourceNames.length); i++) {
+      const sourceName = sourceNames[i];
+      const sourceArticles = allArticles.filter(a => a.sourceAPI === sourceName);
+      if (sourceArticles.length > 0) {
+        const randomIndex = Math.floor(Math.random() * sourceArticles.length);
+        selectedArticles.push(sourceArticles[randomIndex]);
+      }
+    }
+    
+    // If we need more articles to reach 3, fill from any source
+    const maxAttempts = allArticles.length; // Prevent infinite loops
+    let attempts = 0;
+    while (selectedArticles.length < 3 && attempts < maxAttempts) {
+      const availableArticles = allArticles.filter(a =>
+        !selectedArticles.some(s => s.url === a.url)
+      );
+      if (availableArticles.length === 0) break;
+
+      const randomIndex = Math.floor(Math.random() * availableArticles.length);
+      selectedArticles.push(availableArticles[randomIndex]);
+      attempts++;
+    }
+
+    if (selectedArticles.length > 0) {
+      currentArticles = selectedArticles;
+      lastNewsUpdate = Date.now();
+      renderNewsArticles(selectedArticles);
+      updateNewsTimestamp();
+      return;
+    }
+  }
+
+  // No articles available from APIs - use fallback
+  console.warn('No articles available from APIs - using placeholder');
+  const fallbackArticles = [
+    {
+      url: 'https://www.coindesk.com',
+      icon: '₿',
+      source: 'CoinDesk',
+      title: 'Bitcoin Network Hashrate Reaches 900 EH/s',
+      published_on: Date.now() / 1000,
+      sourceAPI: 'Placeholder'
+    },
+    {
+      url: 'https://www.theblockcrypto.com',
+      icon: '⛏️',
+      source: 'The Block',
+      title: 'Mining Efficiency Becomes Critical as Network Matures',
+      published_on: Date.now() / 1000 - 3600,
+      sourceAPI: 'Placeholder'
+    },
+    {
+      url: 'https://cointelegraph.com',
+      icon: '📈',
+      source: 'Cointelegraph',
+      title: 'Institutional Adoption Drives Bitcoin Mining Profitability',
+      published_on: Date.now() / 1000 - 7200,
+      sourceAPI: 'Placeholder'
+    }
+  ];
+  currentArticles = fallbackArticles;
+  lastNewsUpdate = Date.now();
+  renderNewsArticles(fallbackArticles);
+  updateNewsTimestamp();
+}
+
+function rotateArticles() {
+  if (!currentArticles || currentArticles.length < 2) return;
+
+  rotationIndex = (rotationIndex + 1) % currentArticles.length;
+
+  const rotated = [
+    currentArticles[rotationIndex],
+    ...currentArticles.filter((_, i) => i !== rotationIndex)
+  ].slice(0, 3);
+
+  renderNewsArticles(rotated);
+}
+
+function getArticleIcon(title) {
+  const titleLower = title.toLowerCase();
+  if (titleLower.includes('bitcoin') || titleLower.includes('btc')) return '₿';
+  if (titleLower.includes('ethereum') || titleLower.includes('eth')) return '⟠';
+  if (titleLower.includes('defi') || titleLower.includes('yield')) return '🔥';
+  if (titleLower.includes('surge') || titleLower.includes('rally') || titleLower.includes('gain')) return '📈';
+  if (titleLower.includes('mining') || titleLower.includes('miner')) return '⛏️';
+  if (titleLower.includes('regulation') || titleLower.includes('sec')) return '⚖️';
+  if (titleLower.includes('nft')) return '🎨';
+  if (titleLower.includes('bank') || titleLower.includes('institutional')) return '🏦';
+  if (titleLower.includes('energy') || titleLower.includes('green')) return '🌱';
+  if (titleLower.includes('network') || titleLower.includes('lightning')) return '⚡';
+  return '📰';
+}
+
+function getTimeAgo(timestamp) {
+  const seconds = Math.floor((Date.now() / 1000) - timestamp);
+  if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+  if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
+  return `${Math.floor(seconds / 86400)}d ago`;
+}
+
+function truncateText(text, maxLength) {
+  if (!text) return '';
+  if (text.length <= maxLength) return text;
+  return text.substring(0, maxLength).trim() + '...';
+}
+
+function renderNewsArticles(articles) {
+  const container = document.getElementById('newsFeed');
+  if (!container) {
+    console.error('News feed container not found');
+    return;
+  }
+
+  if (!Array.isArray(articles) || articles.length === 0) {
+    console.error('No articles to render');
+    return;
+  }
+
+  console.log(`Rendering ${articles.length} news articles`);
+  
+  container.innerHTML = `
+    <div class="fib-news-grid">
+      ${articles.map(article => {
+        // Ensure all required properties exist
+        const safeArticle = {
+          url: article.url || '#',
+          icon: article.icon || '📰',
+          source: article.source || 'Unknown',
+          title: article.title || 'Untitled Article',
+          published_on: article.published_on || Date.now() / 1000
+        };
+
+        return `
+        <a href="${safeArticle.url}" target="_blank" rel="noopener noreferrer" class="fib-article">
+          <div class="fib-thumbnail">
+            ${safeArticle.icon}
+          </div>
+          <div class="fib-content">
+            <div class="fib-source-badge">
+              📡 ${safeArticle.source}
+            </div>
+            <div class="fib-article-title">
+              ${truncateText(safeArticle.title, 80)}
+            </div>
+            <div class="fib-metadata">
+              <div class="fib-time">
+                🕐 ${getTimeAgo(safeArticle.published_on)}
+              </div>
+              <div style="opacity: 0.6;">|</div>
+              <div style="font-size: 0.65rem; opacity: 0.7;">
+                Multi-Source Feed
+              </div>
+            </div>
+          </div>
+        </a>
+      `}).join('')}
+    </div>
+  `;
+}
+
+function updateNewsTimestamp() {
+  const el = document.getElementById('newsUpdateTime');
+  if (!el) return;
+  
+  if (!lastNewsUpdate) {
+    el.textContent = 'SYNCING...';
+    return;
+  }
+  
+  const now = new Date();
+  el.textContent = `LIVE • ${now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`;
+}
+
+// Initialize on page load
+window.addEventListener('load', () => {
+  fetchCryptoNews();
+  // Refresh news every 15 minutes, rotating through sources
+  setInterval(fetchCryptoNews, 1000 * 60 * 15);
+  // Update timestamp every minute (reduced from every second)
+  setInterval(updateNewsTimestamp, 1000 * 60);
+  // Rotate visible articles every 12 seconds
+  setInterval(rotateArticles, 12000);
+});
+</script>
+
+<script>
+// FAQ Panel Toggle
+function toggleFaqPanel() {
+  const btn = document.querySelector('.faq-toggle-btn');
+  const section = document.querySelector('.faq-section');
+  btn.classList.toggle('active');
+  section.classList.toggle('active');
+}
+
+// FAQ Item Toggle
+function toggleFaq(button) {
+  const faqItem = button.closest('.faq-item');
+  const answer = faqItem.querySelector('.faq-answer');
+  const icon = button.querySelector('.faq-icon');
+  const isOpen = faqItem.classList.contains('open');
+  
+  // Close all other FAQs
+  document.querySelectorAll('.faq-item').forEach(item => {
+    if (item !== faqItem) {
+      item.classList.remove('open');
+      const otherAnswer = item.querySelector('.faq-answer');
+      const otherIcon = item.querySelector('.faq-icon');
+      if (otherAnswer) otherAnswer.style.maxHeight = '0';
+      if (otherIcon) otherIcon.textContent = '+';
+    }
+  });
+  
+  // Toggle current FAQ
+  if (!isOpen) {
+    faqItem.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    icon.textContent = '−';
+  } else {
+    faqItem.classList.remove('open');
+    answer.style.maxHeight = '0';
+    icon.textContent = '+';
+  }
+}
+
+// Open Zoho Contact Form in new tab
+function openContactForm() {
+  window.open('https://forms.zohopublic.com/bgbtcmi1/form/ContactInquiry/formperma/YUv443Er--73AneVAhwFOMpY6DohN-zhvt0LsBcN5kI', '_blank');
+}
+
+// Legacy function kept for compatibility
+function toggleContactForm() {
+  openContactForm();
+}
+
+if (false) {
+  // Old toggle code kept for reference
+  const form = document.getElementById('contactForm');
+  const btn = document.querySelector('.contact-inquiry-btn');
+  
+  if (form.classList.contains('active')) {
+    form.classList.remove('active');
+    btn.textContent = '📧 Contact Inquiry';
+  } else {
+    form.classList.add('active');
+    btn.textContent = '✖️ Close Form';
+    // Smooth scroll to form
+    setTimeout(() => {
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+  }
+}
+</script>
+
+<!-- WHITE PAPER MODAL -->
+<div class="modal-overlay" id="whitepaperModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeWhitepaper()">&times;</button>
+    
+    <div class="wp-header">
+      <h1 class="wp-title">THE ENTROPY ARBITRAGE</h1>
+      <p class="wp-subtitle">White Paper: Decoupling Profitability from Raw Hashrate in the Post-Halving Era</p>
+      <div class="wp-meta">
+        A btcminergpt.ai Strategic Report | Powered by the llmadvisor.ai intelligence ecosystem<br>
+        <strong>Date:</strong> January 10, 2026<br>
+        <strong>Subject:</strong> System-Level Efficiency (SLE) & Operational Transparency<br>
+        <strong>Author:</strong> btcminergpt.ai Research Division
+      </div>
+    </div>
+
+    <div class="wp-section">
+      <h2 class="wp-section-title">I. Executive Summary: The Efficiency Pivot</h2>
+      <p class="wp-text">As of early 2026, the Bitcoin network has matured into a sovereign-grade asset class, currently representing a market capitalization of approximately <span class="wp-highlight">$1.87 trillion</span>. However, the mining sector faces a fundamental paradox: while rewards remain lucrative, the network hashrate has surged toward nearly <span class="wp-highlight">900 EH/s</span>, and marginal gains from silicon shrinkage (7nm→3nm) have hit a wall of diminishing returns. The <span class="wp-highlight">"Brute Force" era of mining</span>—defined by simply adding more power—is over.</p>
+      <p class="wp-text">The new frontier is <span class="wp-highlight">System-Level Efficiency (SLE)</span>. This paper identifies a critical "Entropy Arbitrage": the profit gap found not in faster chips, but in the intelligent optimization of power conversion, thermal equilibrium, and hardware life-cycles. btcminergpt.ai introduces the framework to reclaim this value by treating the mining unit as a dynamic thermal engine rather than a static appliance.</p>
+    </div>
+
+    <div class="wp-section">
+      <h2 class="wp-section-title">II. The Retail Trap: Identifying "Financial Landfill"</h2>
+      <p class="wp-text">A significant portion of mining hardware currently available to the market is mathematically insolvent. In an industry defined by razor-thin margins, many retail investors are being sold <span class="wp-highlight">"Financial Landfill."</span></p>
+      
+      <ul class="wp-list">
+        <li><strong>The Exit Liquidity Cycle:</strong> Large-scale industrial farms offload aging fleets (e.g., Antminer S19 models) into the secondary market as they upgrade to next-gen hardware. At power prices above $0.05 per kWh, these units are nearly unprofitable "zombie miners".</li>
+        <li><strong>The CAPEX vs. OPEX Mirage:</strong> Most buyers prioritize "Terahash per Dollar" (Upfront Cost). Professionals buy on "Sats per Watt" (Efficiency). Under the llmadvisor.ai philosophy, any machine exceeding 20 J/TH is a liability; top-tier 2025–2026 hardware already achieves 15–20 J/TH.</li>
+        <li><strong>The Transparency Solution:</strong> btcminergpt.ai utilizes predictive modeling to audit hardware against "digital twins," immediately flagging Silent Technical Debt—the internal degradation and accelerated wear from extreme conditions that static hashrate reports fail to show.</li>
+      </ul>
+    </div>
+
+    <div class="wp-section">
+      <h2 class="wp-section-title">III. The "Thermal Death Spiral" vs. Equilibrium</h2>
+      <p class="wp-text">Mining performance is a holistic outcome of how energy is managed. Any inefficiency in the journey from the wall to the chip is expressed as parasitic heat.</p>
+      
+      <div class="wp-subsection">
+        <h3 class="wp-subsection-title">1. The Cascading Penalty</h3>
+        <p class="wp-text">Inefficient power conversion triggers a <span class="wp-highlight">"Thermal Death Spiral"</span>:</p>
+        <ul class="wp-list">
+          <li><strong>Internal Resistance:</strong> Rising heat increases electrical resistance, requiring more voltage for the same result and leading to leakage issues that reduce performance gains.</li>
+          <li><strong>The Fan Tax:</strong> Cooling fans consume a significant percentage of total power draw when fighting PSU-generated heat and harsh environmental factors.</li>
+          <li><strong>Voltage Ripple:</strong> Heat-stressed PSUs introduce "noise" into the power rails, causing chip-level errors that reduce effective hashrate.</li>
+        </ul>
+      </div>
+
+      <div class="wp-subsection">
+        <h3 class="wp-subsection-title">2. The 60-Minute Alpha</h3>
+        <p class="wp-text">Our research identifies a <span class="wp-highlight">"Thermal Ramp Curve"</span> where systems reach peak efficiency only after 40–60 minutes of stable operation. Reaching Thermal Equilibrium allows the system to stabilize its hashboard temperatures, preventing the sudden drops associated with thermal throttling and reclaiming a natural "Alpha"—a hashrate increase of 3–5% with zero additional power draw.</p>
+      </div>
+    </div>
+
+    <div class="wp-section">
+      <h2 class="wp-section-title">IV. Environmental Intelligence: The Decentralized Edge</h2>
+      <p class="wp-text">While industrial farms face massive cooling overhead, the decentralized/residential miner has a natural advantage: <span class="wp-highlight">Ambient Thermal Sinks</span>.</p>
+      
+      <table class="wp-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Industrial Facility</th>
+            <th>Residential (Basement)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Intake Temp</td>
+            <td>25°C - 35°C (Managed)</td>
+            <td>12°C - 18°C (Natural)</td>
+          </tr>
+          <tr>
+            <td>Cooling Cost</td>
+            <td>High (Mechanical)</td>
+            <td>Near-Zero (Passive)</td>
+          </tr>
+          <tr>
+            <td>Efficiency Ceiling</td>
+            <td>Capped by density</td>
+            <td>High (Wide Thermal Delta)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="wp-text">By leveraging these "natural sinks," btcminergpt.ai helps users achieve a <span class="wp-highlight">Levelized Cost of Mining (LCOM)</span> that can beat industrial giants on a unit-per-unit basis.</p>
+    </div>
+
+    <div class="wp-section">
+      <h2 class="wp-section-title">V. Strategic Misdirection: The Legacy Playbook</h2>
+      <p class="wp-text">The primary barrier to retail Bitcoin adoption has not been technological, but a coordinated psychological operation by legacy finance (TradFi) leaders. A forensic review of the timeline between 2017 and 2026 reveals a distinct <span class="wp-highlight">"Double Game"</span>: public dismissal paired with private institutional integration.</p>
+      
+      <div class="wp-subsection">
+        <h3 class="wp-subsection-title">1. The JPMorgan Reversal: From "Fraud" to Collateral</h3>
+        <p class="wp-text">Jamie Dimon, CEO of JPMorgan Chase, has been the most persistent critic of decentralized digital assets.</p>
+        <ul class="wp-list">
+          <li><strong>The Narrative:</strong> Since 2014, Dimon has publicly labeled Bitcoin a "fraud," a "worthless" asset, and a "pet rock". These comments frequently sent Bitcoin prices tumbling, creating localized entry points for institutional buyers.</li>
+          <li><strong>The Reality:</strong> While publicly discouraging participation, JPMorgan became a foundational layer for the crypto economy. By late 2025, Dimon began to "back pedal," as institutional demand forced the bank to shift its tone.</li>
+          <li><strong>The Admission:</strong> By early 2026, JPMorgan and other major banks like Bank of America have approved spot Bitcoin ETFs for wealth advisory clients, integrating digital assets into discretionary strategies.</li>
+        </ul>
+      </div>
+
+      <div class="wp-subsection">
+        <h3 class="wp-subsection-title">2. The Berkshire Hathaway Proxy: Cashing in on "Rat Poison"</h3>
+        <p class="wp-text">Warren Buffett's public stance has remained one of moralistic rejection, yet his firm's balance sheet tells a story of tactical profits.</p>
+        <ul class="wp-list">
+          <li><strong>The Narrative:</strong> Buffett famously called Bitcoin "rat poison squared" and a "delusion," stating he would not pay $25 for all the Bitcoin in the world.</li>
+          <li><strong>The Reality:</strong> Berkshire Hathaway executed a "pickaxe" strategy by investing $750 million into Nu Holdings (Nubank), a Brazilian fintech giant that launched its own cryptocurrency trading platform, Nucripto.</li>
+          <li><strong>The Result:</strong> Berkshire's investment saw significant returns, with Nu Holdings' stock surging nearly 50% in 2024 alone, proving that Buffett was willing to profit from crypto infrastructure while publicly condemning the asset itself.</li>
+        </ul>
+      </div>
+
+      <div class="wp-subsection">
+        <h3 class="wp-subsection-title">3. The Institutional Absorption Phase</h3>
+        <p class="wp-text">Legacy banks have moved from "fighting" to "owning." By early 2026, the institutional landscape has shifted entirely:</p>
+        <ul class="wp-list">
+          <li><strong>ETF Validation:</strong> Over $100 billion is now parked across U.S. spot Bitcoin ETFs. BlackRock's IBIT leads the pack with $67 billion in assets under management (AUM).</li>
+          <li><strong>Traditional On-ramps:</strong> Major firms have moved beyond tactical exposure, with Bitcoin surging past $94,000 in early 2026 as institutional flows return.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wp-section">
+      <h2 class="wp-section-title">VI. Silver: The New Strategic Industrial Asset</h2>
+      <p class="wp-text">In January 2026, silver officially transitioned from a commodity to a strategic industrial asset critical to national security, following the U.S. classification of silver as a critical mineral.</p>
+      
+      <div class="wp-subsection">
+        <h3 class="wp-subsection-title">1. China's Market Chokepoint</h3>
+        <ul class="wp-list">
+          <li><strong>Export Licensing:</strong> Effective January 1, 2026, China implemented a new silver export licensing framework, moving from quota-based allocation to qualification-driven controls.</li>
+          <li><strong>The Dual-License System:</strong> Exporters must now demonstrate continuous activity from 2022–2024 and production capacity exceeding 80 tonnes annually.</li>
+          <li><strong>Market Grip:</strong> China controls the refining of approximately 70% of the world's silver required for high-tech manufacturing. Beijing's approval is now required for the majority of globally traded refined supply to leave the country.</li>
+        </ul>
+      </div>
+
+      <div class="wp-subsection">
+        <h3 class="wp-subsection-title">2. Exponential Growth Drivers (2026–2035)</h3>
+        <ul class="wp-list">
+          <li><strong>AI & Data Centers:</strong> AI expansion requires massive amounts of silver for power electronics and thermal management.</li>
+          <li><strong>Solar Energy (PV):</strong> Current solar panel production requires 70–80 grams of silver per kilowatt of capacity; with annual additions approaching 200 GW, solar demand alone exceeds 14,000 tonnes per year.</li>
+          <li><strong>EVs & Robotics:</strong> EV battery management systems and conductors are heavily dependent on silver's unique electrical properties.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wp-section">
+      <h2 class="wp-section-title">VII. Geopolitical Resilience: Mining as a Hedge</h2>
+      <p class="wp-text">Geopolitical turmoil—including the U.S. capture of Venezuelan President Nicolás Maduro on January 3, 2026—has reinforced Bitcoin's utility as a hedge against catastrophic instability.</p>
+      
+      <ul class="wp-list">
+        <li><strong>The Venezuela Gambit:</strong> Following Maduro's capture by U.S. special forces, Bitcoin decisively jumped back above $92,000.</li>
+        <li><strong>Macro Resilience:</strong> Analysts suggest the removal of Maduro will lower oil prices, driving more capital into digital assets as a hedge against geopolitical fallout.</li>
+        <li><strong>Survival Strategy:</strong> In an environment of escalating pressure without direct military conflict, Bitcoin serves as a primary institutional exposure vehicle for navigating global risk.</li>
+      </ul>
+    </div>
+
+    <div class="wp-section">
+      <h2 class="wp-section-title">VIII. The llmadvisor.ai Methodology: Intelligence in the Loop</h2>
+      <p class="wp-text">As a specialized vertical of the llmadvisor.ai ecosystem, btcminergpt.ai doesn't just display data; it provides <span class="wp-highlight">contextual reasoning</span>.</p>
+      
+      <ul class="wp-list">
+        <li><strong>The "Mine-or-Buy" Arbitrage:</strong> We provide the only honest answer to the industry's hardest question. If your power rate and hardware efficiency indicate a negative ROI, our AI will explicitly advise you to purchase BTC directly.</li>
+        <li><strong>Predictive Maintenance:</strong> We use digital twins to identify "Efficiency Drifts"—spotting fault patterns weeks before hardware failure occurs, optimizing asset lifecycles and reducing operational expenses in extreme conditions.</li>
+      </ul>
+    </div>
+
+    <div class="wp-section">
+      <h2 class="wp-section-title">IX. Conclusion: Survival of the Smartest</h2>
+      <p class="wp-text">For a decade, Bitcoin was framed as a scam—by those who didn't understand it, and by those who understood it too well. The "don't touch it" narrative was never about protection. It was a delay tactic. While the public was warned off, the institutions built quietly behind the scenes.</p>
+      <p class="wp-text">Now, the narrative has flipped. The question isn't whether Bitcoin is legitimate—it's whether you understand how to operate within its physics.</p>
+      <p class="wp-text">This paper isn't just for miners. It's for asset allocators, energy investors, and technologists over 50 still thinking in terahash instead of joules. The generation that controls the capital must now learn the new rulebook: <span class="wp-highlight">Bitcoin mining is no longer a raw power game—it's a precision thermodynamic system.</span></p>
+      <p class="wp-text">Your ASIC is not an appliance. It's a high-performance engine. Heat is your signal. Noise is your tax. Intelligence is your edge.</p>
+      <p class="wp-text">btcminergpt.ai was built to educate, optimize, and future-proof those who still believe infrastructure is the smartest way to hold Bitcoin.</p>
+      <p class="wp-text"><span class="wp-highlight">Survival in this market is not about guessing the next chip. It's about mastering the entropy in the one you already own.</span></p>
+    </div>
+
+    <div class="wp-section" style="border-top: 1px solid rgba(0,224,196,.3); padding-top: 30px; margin-top: 40px; text-align: center;">
+      <p class="wp-text" style="font-size: 1.1em; color: var(--mint); text-shadow: 0 0 10px rgba(57,255,158,.5); margin-bottom: 30px;">⚡ highsignal · 🌪️ movefast · 📏 playlong</p>
+      
+      <h2 class="wp-section-title">Beyond the Hashing Chip: Let's Connect</h2>
+      <p class="wp-text">If you are building a project in this space or want to connect with a peer who values long-term network resilience, I am always open to the conversation.</p>
+      <p class="wp-text" style="margin-top: 20px;"><strong>Connect with me:</strong> <a href="mailto:bg@btcminergpt.ai" style="color: var(--mint); text-decoration: none;">bg@btcminergpt.ai</a></p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// Copy to Clipboard Function
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    // Show feedback
+    alert('Copied to clipboard! ✓');
+  }).catch(err => {
+    console.error('Failed to copy:', err);
+  });
+}
+
+// Toggle Node Info Visibility
+let nodeTimers = {};
+let clickCounts = {};
+const MAX_CLICKS = 5;
+const CLICK_WINDOW = 60000; // 60 seconds
+const AUTO_CLOSE_TIME = 30000; // 30 seconds
+
+function toggleNodeInfo(type) {
+  let selector, timerId, timerDisplay;
+  
+  if (type === 'tor-address') {
+    selector = '.node-address-container';
+    timerId = 'tor-address-timer';
+  } else if (type === 'node-pubkey') {
+    selector = '.node-pubkey-container';
+    timerId = 'node-pubkey-timer';
+  }
+  
+  // Rate limiting
+  if (!clickCounts[type]) {
+    clickCounts[type] = [];
+  }
+  
+  const now = Date.now();
+  clickCounts[type] = clickCounts[type].filter(t => now - t < CLICK_WINDOW);
+  
+  if (clickCounts[type].length >= MAX_CLICKS) {
+    console.warn('Rate limit exceeded for ' + type);
+    return;
+  }
+  
+  clickCounts[type].push(now);
+  
+  const element = document.querySelector(selector);
+  if (element) {
+    // If expanding
+    if (!element.classList.contains('expanded')) {
+      element.classList.add('expanded');
+      
+      // Clear any existing timer
+      if (nodeTimers[type]) {
+        clearTimeout(nodeTimers[type]);
+      }
+      
+      // Start auto-close timer
+      let timeLeft = 30;
+      const timerEl = document.getElementById(timerId);
+      
+      const countDown = setInterval(() => {
+        timeLeft--;
+        if (timerEl) {
+          timerEl.textContent = `⏱️ ${timeLeft}s`;
+        }
+        
+        if (timeLeft <= 0) {
+          clearInterval(countDown);
+          element.classList.remove('expanded');
+          if (timerEl) timerEl.textContent = '';
+        }
+      }, 1000);
+      
+      nodeTimers[type] = countDown;
+      
+      // Show initial timer
+      timerEl.textContent = '⏱️ 30s';
+      
+    } else {
+      // If collapsing manually, clear timer
+      element.classList.remove('expanded');
+      if (nodeTimers[type]) {
+        clearInterval(nodeTimers[type]);
+        nodeTimers[type] = null;
+      }
+      const timerEl = document.getElementById(timerId);
+      if (timerEl) timerEl.textContent = '';
+    }
+  }
+}
+
+// White Paper Modal Functions
+function openWhitepaper() {
+  document.getElementById('whitepaperModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeWhitepaper() {
+  document.getElementById('whitepaperModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Close modal on escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeWhitepaper();
+});
+
+// Close modal when clicking outside content
+document.getElementById('whitepaperModal').addEventListener('click', (e) => {
+  if (e.target.id === 'whitepaperModal') closeWhitepaper();
+});
+</script>
+
+</body>
+</html>

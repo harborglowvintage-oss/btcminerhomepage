@@ -1,0 +1,7 @@
+# Security Policy for btcminergpt.ai
+# https://securitytxt.org/
+
+Contact: https://www.btcminergpt.ai/#contact-form
+Expires: 2027-01-28T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.btcminergpt.ai/.well-known/security.txt

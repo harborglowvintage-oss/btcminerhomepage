@@ -1,0 +1,15 @@
+# btcminergpt.ai - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.btcminergpt.ai/sitemap.xml
+
+# Block bad bots
+User-agent: SemrushBot
+User-agent: AhrefsBot
+User-agent: DotBot
+Disallow: /
+
+# SEO-friendly crawl delay
+Crawl-delay: 1
